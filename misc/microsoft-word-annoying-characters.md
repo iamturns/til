@@ -1,0 +1,9 @@
+Microsoft word annoying characters
+==================================
+
+“
+”
+‘
+’
+–
+…
