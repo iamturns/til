@@ -1,5 +1,5 @@
 Git daily standup
------------------
+=================
 
 A summary of commits from the day before
 
