@@ -1,0 +1,39 @@
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name example.com;
+
+    root <%= fetch(:deploy_to) %>/current/public;
+
+    error_log /var/log/nginx/<%= fetch(:application) %>.error.log;
+    access_log /var/log/nginx/<%= fetch(:application) %>.access.log;
+
+    try_files $uri $uri/ @php_index;
+    index index.php index.html index.htm;
+    error_page 404 = /404;
+
+    location = /robots.txt  { access_log off; log_not_found off; }
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location ~ /\. { return 404; }
+
+    location @php_index {
+        rewrite ^(.*) /index.php?$1 last;
+    }
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PHP_VALUE "
+            display_startup_errors = 0
+            display_errors = 0
+            log_errors = 1
+            error_log = /var/log/nginx/<%= fetch(:application) %>.php-error.log
+            date.timezone = UTC
+        ";
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+    }
+
+}
