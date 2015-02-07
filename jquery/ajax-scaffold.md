@@ -1,5 +1,5 @@
-Jquery AJAX cheatsheet
-======================
+Jquery AJAX scaffold
+====================
 
 The most common methods:
 
