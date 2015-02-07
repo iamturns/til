@@ -1,0 +1,18 @@
+.youtube-video .video-wrapper
+{
+  display: none;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; //16:9
+  position: relative;
+  width: 100%;
+}
+
+.youtube-video .video-wrapper .video
+{
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
