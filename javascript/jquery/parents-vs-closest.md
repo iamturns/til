@@ -1,5 +1,5 @@
-javascript / jquery / parents vs closest
-========================================
+Jquery - parents vs closest
+===========================
 
 Two seemingly similar functions are actually quite different;
 
