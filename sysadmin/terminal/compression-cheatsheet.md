@@ -1,5 +1,5 @@
-Bash compression cheatsheet
-===========================
+Compression cheatsheet
+======================
 
 Tar
 ---
