@@ -6,3 +6,12 @@ Jquery simple wrapper
     //...
 })(jQuery);
 ```
+
+Coffeescript:
+
+```
+(($) ->
+  $ ->
+    # Document ready
+)(jQuery)
+```

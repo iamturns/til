@@ -17,3 +17,12 @@ $(window).load(function() {
     //...
 });
 ```
+
+Coffeescript document ready shortcut:
+
+```
+(($) ->
+  $ ->
+    # ...
+)(jQuery)
+```
