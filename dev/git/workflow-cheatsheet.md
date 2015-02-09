@@ -26,6 +26,7 @@ git checkout [[feature name]]
 git fetch origin master
 git rebase origin/master
 git checkout master
+git pull
 git merge [[feature name]]
 git push
 git branch -d [[feature name]]
