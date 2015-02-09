@@ -49,6 +49,22 @@ Good idea after applying, if not needed again
 git stash drop stash@{[[num]]}
 ```
 
+**Pop**
+
+Stash should be a temporary holding place; ideally you will have 1 stash, and then apply and drop it soon
+
+To apply and drop the latest stash
+
+```
+git stash pop
+```
+
+If you get conflicts with the above command, you will need to fix and then drop the stash manually
+
+```
+git stash drop
+```
+
 **Remove all stashes**
 
 ```
