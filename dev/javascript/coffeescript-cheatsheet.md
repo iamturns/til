@@ -41,7 +41,7 @@ Coffeescript cheatsheet
 * Single quotes = Literal
 * Double quotes = Allow for interpolated values, eg:
 
-`â€œThe variable is #{variable} - awesome"`
+`"The variable is #{variable} - awesome"`
 
 #### Multiline strings
 
