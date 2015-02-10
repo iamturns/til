@@ -22,12 +22,20 @@ Done
 ----
 
 ```
-git checkout [[feature name]]
-git fetch origin master
-git rebase origin/master
+# Update master
 git checkout master
-git pull
+git fetch origin
+git rebase origin/master
+
+# Merge master into feature branch
+git checkout [[feature name]]
+git rebase master
+
+# Fast forward master branch to include feature
+git checkout master
 git merge [[feature name]]
+
+# Done
 git push
 git branch -d [[feature name]]
 ```
