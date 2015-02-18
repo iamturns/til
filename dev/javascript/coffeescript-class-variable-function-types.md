@@ -4,17 +4,17 @@ Coffeescript class variable & function types
 Recommended
 
 ```
-class Example
+window.ClassExample = class Example
 
-  classVar = 1 #Regular class variable
-  @classVar = 1 #Instance class variable
-  classVar: 1 #Prototype class variable
+  classVar: 1 # Instance variable. Recommended. Accessed within class via `@classVar` and `instance.classVar`
+  @classVar = 1 # Prototype variable. Only accessed from outside via `window.ClassExample.classVar`
+  classVar = 1 # Regular variable. Only accessed within scope via `classVar`
 
-  functionName: -> #Prototype function
-  @functionName: -> #Instance function
+  functionName: -> # Instance function. Recommended. Accessed within class via `@functionName()` and `instance.functionName`
+  @functionName: -> # Prototype function. Only accessed from outside via `window.ClassExample.functionName`
 
-    functionVar = 1 #Regular variable
-    @functionVar = 1 #Instance variable
+    @functionVar = 1 # Instance variable. Recommended. Accessed within class via `@classVar` and `instance.classVar`
+    functionVar = 1 # Regular variable. Only accessed within scope via `functionVar`
 
 ```
 
