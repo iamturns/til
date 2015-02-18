@@ -33,7 +33,7 @@ git rebase master
 
 # Fast forward master branch to include feature
 git checkout master
-git merge [[feature name]]
+git rebase [[feature name]]
 
 # Done
 git push
