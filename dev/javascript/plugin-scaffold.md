@@ -142,16 +142,15 @@ Coffeescript:
       option_one: 'default value'
     }
 
-    constructor: (@el, @$el, options = {}) ->
+    constructor: (@$el, options = {}) ->
       @options = $.extend({}, DEFAULT_OPTIONS, options)
 
   # jQuery interface
 
   $.fn.exampleClass = (options = {}) ->
     return @each () ->
-      el = @
-      $el = $(el)
-      new_plugin_instance = new window.ExampleClass(el, $el, options)
+      $el = $(@)
+      new_plugin_instance = new window.ExampleClass($el, options)
       $el.data('example_class', new_plugin_instance)
 
 )(jQuery)
