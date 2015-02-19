@@ -156,13 +156,13 @@ Coffeescript:
       newPluginInstance = new window.ExampleClass(el, $el, options)
       $el.data('exampleClass', newPluginInstance)
 
-  # Site implementation
+)(jQuery)
 
+(($) ->
   $ ->
     $('element').exampleClass()
 
     $('element').exampleClass
       option_one: 'new value'
-
 )(jQuery)
 ```
