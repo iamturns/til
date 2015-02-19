@@ -151,8 +151,8 @@ Coffeescript:
     return @each () ->
       el = @
       $el = $(el)
-      newPluginInstance = new window.ExampleClass(el, $el, options)
-      $el.data('exampleClass', newPluginInstance)
+      new_plugin_instance = new window.ExampleClass(el, $el, options)
+      $el.data('example_class', new_plugin_instance)
 
 )(jQuery)
 
