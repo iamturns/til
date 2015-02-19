@@ -138,8 +138,6 @@ Coffeescript:
 
   window.ExampleClass = class ExampleClass
 
-    options: {}
-
     DEFAULT_OPTIONS = {
       option_one: 'default value'
     }
