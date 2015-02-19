@@ -24,3 +24,28 @@ table,td{border-collapse:collapse!important;mso-table-lspace:0;mso-table-rspace:
 <center>
 <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
 ```
+
+New tables:
+
+```
+<table cellpadding="0" cellspacing=”0” width=”xx”>
+```
+
+New cells:
+
+```
+<td width=”xxx” height=”xxx” align=”center”>
+```
+
+Avoid padding and margins - use extra tr/td rows with spacer gifs
+
+Style embedders
+---------------
+
+http://premailer.dialect.ca/
+
+This one looks interesting too (Downloadable PHP script)
+http://www.pelagodesign.com/sidecar/emogrifier/
+
+And this, with API:
+http://inlinestyler.torchboxapps.com/
