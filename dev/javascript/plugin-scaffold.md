@@ -14,17 +14,29 @@ Simple:
     };
 
     var publicFunction = function() {
-        //...
+      //...
     };
 
+    // Method 1:
+
+    $.namespace = {}
+    $.namespace.publicFunction = publicFunction
+    $.namespace.publicValue = publicValue
+
+    //Method 2: (personal preference)
+
     $.extend({
-        pluginName: {
+        namespace: {
             publicValue: publicValue,
             publicFunction: publicFunction
         }
     });
 
 })(jQuery);
+
+console.log(jQuery.namespace.publicFunction())
+console.log(jQuery.namespace.publicValue)
+
 ```
 
 Advanced:
@@ -122,32 +134,35 @@ Advanced:
 Coffeescript:
 
 ```
-window.ExampleClass = class ExampleClass
-  defaultOptions: {}
-
-  constructor: (@el, @$el, options = {}) ->
-    @options = $.extend @defaultOptions, options
-
-# jQuery interface
-
 (($) ->
+
+  window.ExampleClass = class ExampleClass
+
+    options: {}
+
+    DEFAULT_OPTIONS = {
+      option_one: 'default value'
+    }
+
+    constructor: (@el, @$el, options = {}) ->
+      @options = $.extend({}, DEFAULT_OPTIONS, options)
+
+  # jQuery interface
+
   $.fn.exampleClass = (options = {}) ->
     return @each () ->
       el = @
       $el = $(el)
       newPluginInstance = new window.ExampleClass(el, $el, options)
       $el.data('exampleClass', newPluginInstance)
-)(jQuery)
 
-# Site implementation
-
-(($) ->
+  # Site implementation
 
   $ ->
     $('element').exampleClass()
 
     $('element').exampleClass
-      optionKey: 'option value'
+      option_one: 'new value'
 
 )(jQuery)
 ```
