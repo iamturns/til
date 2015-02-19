@@ -148,7 +148,7 @@ Coffeescript:
   # jQuery interface
 
   $.fn.exampleClass = (options = {}) ->
-    return @each () ->
+    return @.each ->
       $el = $(@)
       new_plugin_instance = new window.ExampleClass($el, options)
       $el.data('example_class', new_plugin_instance)
