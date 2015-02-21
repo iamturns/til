@@ -37,7 +37,18 @@ New cells:
 <td width=”xxx” height=”xxx” align=”center”>
 ```
 
-Avoid padding and margins - use extra tr/td rows with spacer gifs
+Gmail
+-----
+
+- `<style>` must be in `<head>`, not `<body>`
+- Only element selectors, no class names or IDs matches (eg: table, div)
+- Strips out media queries
+
+More oddities
+-------------
+
+- Avoid padding and margins - use extra tr/td rows with spacer gifs
+
 
 Style embedders
 ---------------
