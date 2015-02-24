@@ -21,21 +21,23 @@ git rebase origin/master
 Done
 ----
 
+One last sync;
+
 ```
-# Update master
-git checkout master
-git fetch origin
+git fetch origin master
 git rebase origin/master
+```
 
-# Merge master into feature branch
-git checkout [[feature name]]
-git rebase master
+Merge (should do fast forward with linear history);
 
-# Fast forward master branch to include feature
+```
 git checkout master
-git rebase [[feature name]]
+git merge [[feature name]]
+```
 
-# Done
+That's it!
+
+```
 git push
 git branch -d [[feature name]]
 ```
