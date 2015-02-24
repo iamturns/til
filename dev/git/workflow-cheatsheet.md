@@ -14,21 +14,18 @@ Master to branch sync
 ---------------------
 
 ```
-git fetch origin master
-git rebase origin/master
+git checkout master
+git pull --rebase
+git checkout [[feature name]]
+git rebase master
 ```
 
 Done
 ----
 
-One last sync;
+Perform one last sync (as above)
 
-```
-git fetch origin master
-git rebase origin/master
-```
-
-Merge (should do fast forward with linear history);
+The merge below should perform a fast forward with linear history:
 
 ```
 git checkout master
