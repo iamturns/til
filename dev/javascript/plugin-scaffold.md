@@ -71,7 +71,7 @@ Advanced:
 
     function pluginInstance(el, options) {
 
-        var options = $.extend({}, instanceDefaultOptions, options),
+        var options = $.extend(true, {}, instanceDefaultOptions, options),
             $el = $(el);
 
         init();
@@ -143,7 +143,7 @@ Coffeescript:
     }
 
     constructor: (@$el, options = {}) ->
-      @options = $.extend({}, DEFAULT_OPTIONS, options)
+      @options = $.extend(true, {}, DEFAULT_OPTIONS, options)
 
   # jQuery interface
 
