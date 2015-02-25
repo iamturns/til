@@ -136,7 +136,7 @@ Coffeescript:
 ```
 (($) ->
 
-  window.ExampleClass = class ExampleClass
+  $.exampleClass = class ExampleClass
 
     DEFAULT_OPTIONS = {
       option_one: 'default value'
@@ -150,7 +150,7 @@ Coffeescript:
   $.fn.exampleClass = (options = {}) ->
     return @.each ->
       $el = $(@)
-      new_plugin_instance = new window.ExampleClass($el, options)
+      new_plugin_instance = new $.exampleClass($el, options)
       $el.data('example_class', new_plugin_instance)
 
 )(jQuery)
