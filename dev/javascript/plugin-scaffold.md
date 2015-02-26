@@ -145,13 +145,11 @@ Coffeescript:
     constructor: (@$el, options = {}) ->
       @options = $.extend(true, {}, DEFAULT_OPTIONS, options)
 
-  # jQuery interface
-
   $.fn.exampleClass = (options = {}) ->
     return @.each ->
       $el = $(@)
-      new_plugin_instance = new $.exampleClass($el, options)
-      $el.data('example_class', new_plugin_instance)
+      plugin_instance = new $.exampleClass($el, options)
+      $el.data('example_class', plugin_instance)
 
 )(jQuery)
 
