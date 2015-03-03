@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 
-  position: absolute;
+  position: fixed; /* could be absolute, but in some cases prevents touch devices swiping towards it */
   top: 0;
   left: 0;
 
