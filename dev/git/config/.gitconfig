@@ -1,0 +1,7 @@
+[user]
+	name = Matthew Turnbull
+	email = turnbullm@gmail.com
+[core]
+	excludesfile = /path/to/home/directory/.gitconfig_excludes
+[push]
+	default = simple
