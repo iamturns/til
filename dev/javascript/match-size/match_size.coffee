@@ -1,19 +1,25 @@
 # $('element').matchSize 'width', $('element-2')
 # $('element').matchSize 'height', $('element-2')
-# $('element').matchSize 'width', $('element-2'),
-#   refresh_on_window_resize:
-#     enabled: true
-#     throttle: 100
+# $('element').matchSize(
+#   'width',
+#   $('element-2'),
+#   {
+#     callback_adjust_size: (size) ->
+#       size + 100
+#     refresh_on_window_resize_enabled: true
+#     refresh_on_window_resize_throttle: 100
+#   }
 
 (($) ->
 
   $.matchSize = class MatchSize
 
-    DEFAULT_OPTIONS = {
-      refresh_on_window_resize:
-        enabled: true
-        throttle: 100
-    }
+    DEFAULT_OPTIONS =
+      callback_adjust_size: undefined
+      refresh_on_window_resize_enabled: true
+      refresh_on_window_resize_throttle: 100
+
+    EVENT_RUN = 'match_heights:run'
 
     constructor: (@$el, @size_type, @$target, options = {}) ->
 
@@ -24,18 +30,25 @@
       if @get_valid_size_types().indexOf(@size_type) is -1
         throw 'invalid size type'
 
+      @$document = $(document)
+
       @attach_events()
-      @run()
+
+      @$document.trigger(EVENT_RUN)
 
     get_valid_size_types: ->
       ['width', 'height']
 
     attach_events: ->
-      $(document).on 'match_size:update', => @run()
+      @attach_event_document_update()
+      @attach_event_window_resize()
 
-      @attach_event_window_resize() if @options.refresh_on_window_resize.enabled
+    attach_event_document_update: ->
+      $(document).on EVENT_RUN, => @run()
 
     attach_event_window_resize: ->
+
+      return unless @options.refresh_on_window_resize_enabled
 
       timeout = null
 
@@ -44,12 +57,15 @@
         clearTimeout(timeout)
 
         timeout = setTimeout(
-          => @run(),
-          @options.refresh_on_window_resize.throttle
+          => @$document.trigger(EVENT_RUN),
+          @options.refresh_on_window_resize_throttle
         )
 
     run: ->
       size = @get_target_size()
+
+      if @options.callback_adjust_size?
+        size = @options.callback_adjust_size(size)
       @set_element_size(size)
 
     get_target_size: ->
