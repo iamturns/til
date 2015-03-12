@@ -1,12 +1,34 @@
 Kill .DS_Store files
 ====================
 
-Careful with this, it can traverse into shared directories
+To see if you have '.DS_Store' files within this directory or subdirectories
 
 ```
-sudo find / -name ".DS_Store" -depth -exec rm {} \;
+find . -name ".DS_Store"
 ```
 
-Then install Asepsis and it'll never happen again
+To delete them:
+
+```
+find . -name ".DS_Store" -exec rm {} \;
+```
+
+Careful running this on the `/` path, as it can traverse into shared network directories 
 
 
+Asepsis
+-------
+
+Install this and never worry about these files again: http://asepsis.binaryage.com/
+
+To migrate existing .DS_Store files from `~/`
+
+```
+asepsisctl migratein
+```
+
+From another directory, eg: /Applications
+
+```
+asepsisctl --root /Applications migratein
+```
