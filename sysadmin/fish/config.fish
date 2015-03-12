@@ -24,6 +24,12 @@ function ll
 end
 
 ###
+# rbenv
+###
+
+. (rbenv init -|psub)
+
+###
 # Git
 ###
 
