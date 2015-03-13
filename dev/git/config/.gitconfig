@@ -3,5 +3,6 @@
 	email = turnbullm@gmail.com
 [core]
 	excludesfile = /path/to/home/directory/.gitconfig_excludes
+	autocrlf = input
 [push]
 	default = simple
