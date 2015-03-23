@@ -103,7 +103,7 @@ square = function(x) {
 };
 ```
 
-*Note: There is no need to write â€˜return'*
+*Note: There is no need to write "return'*
 
 #### Default values
 
@@ -159,8 +159,8 @@ for element in array
   # code here
 
 
-# Loops through food array, assigning â€˜foodâ€™ to each, and calling eat(food);
-eat food for food in [â€˜toastâ€™, â€˜cheeseâ€™, â€˜chocolateâ€™, â€˜wineâ€™] when food isnt â€˜chocolate'
+# Loops through food array, assigning "food" to each, and calling eat(food);
+eat food for food in ["toast", "cheese", "chocolate", "wine"] when food isnt "chocolate"
 
 shortNames = (name for name in list when name.length < 5)
 
@@ -182,7 +182,7 @@ healthy = 200 > cholesterol > 60
 try
    nonexistent / undefined
 catch error
-   â€œThe error is: #{error}"
+  The error is: #{error}"
 finally
     cleanUp()
 ```
@@ -194,9 +194,9 @@ finally
 ```
 solipsism = true if mind? and not world?
 
-footprints = yeti ? â€œbearâ€ //If â€˜yetiâ€™ exists, footprints = yeti, otherwise footprints = â€œbear"
+footprints = yeti ? "bear" // If "yeti" exists, footprints = yeti, otherwise footprints = "bear"
 
-speed ?= 15 //if â€˜speedâ€™ exists, speed = speed, otherwise speed = 15
+speed ?= 15 //if "speed" exists, speed = speed, otherwise speed = 15
 
 zip = lottery.drawWinner?().address?.zipcode
 
