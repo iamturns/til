@@ -1,17 +1,6 @@
 Animation libraries
 ===================
 
-Javascript vs CSS
------------------
-
-Javascript;
-
-- Can pause, rewind, easily queue actions
-
-CSS;
-
-- Hardware accelerated
-
 Velocity
 --------
 
@@ -24,6 +13,8 @@ Same as jQuery syntax. Animations are sped up by reducing read/writes.
 Can also apply values on translateX, translateY, etc
 
 Calculates easing etc in javascript, sets them on the element
+
+'Stagger' is v nice, but could probably be implemented easily with some JS and CSS3
 
 Personally, I've had some performance problems on mobile with this
 
@@ -71,6 +62,17 @@ And then apply 'animated', using javascript if you like, to trigger it
 
 Other
 =====
+
+Javascript vs CSS
+-----------------
+
+- http://davidwalsh.name/css-js-animation
+- http://www.extreme-creations.co.uk/blog/velocity-js-vs-animate-css-which-is-faster-smoother-more-controllable/
+
+Performance comparison
+----------------------
+
+- http://codepen.io/GreenSock/pen/pmknI
 
 Detect when CSS3 animation ends
 -------------------------------
