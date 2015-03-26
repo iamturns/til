@@ -18,5 +18,7 @@ http://flexboxin5.com/
 - flex-direction
 - flex-wrap
 - justify-content
+  - horizontal alignment
 - align-items
+  - vertical alignment
 - align-content
