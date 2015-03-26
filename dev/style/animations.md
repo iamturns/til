@@ -66,6 +66,14 @@ Other
 Javascript vs CSS
 -----------------
 
+Javascript benefits;
+
+- Queue animations
+- Trigger events after animations finish
+- Greater control (play, rewind, etc)
+
+Links;
+
 - http://davidwalsh.name/css-js-animation
 - http://www.extreme-creations.co.uk/blog/velocity-js-vs-animate-css-which-is-faster-smoother-more-controllable/
 
