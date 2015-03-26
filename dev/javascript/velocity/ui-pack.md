@@ -50,6 +50,14 @@ var mySequence = [
 RegisterEffect
 --------------
 
+*Note*
+
+  This turned out to be quite limited
+  
+  No ability to animate two properties at the same time with different options
+  
+  Best part is 'stagger' and 'drag', but can be implemented yourself fairly easily
+
 Combine multiple velocity calls into a single effect that can be referenced by name
 
 Do NOT accept loop, easing, or progress options, nor used with `queue: false`
