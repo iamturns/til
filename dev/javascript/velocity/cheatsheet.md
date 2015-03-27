@@ -130,7 +130,7 @@ Easing
 
 - http://easings.net/
   - Except for back, bounce, and elastic
-- 'spring' (bonus!)
+    - These are achieved with 'spring' physics (see below)
 - CSS3 named easings;
   - ease
   - ease-in
