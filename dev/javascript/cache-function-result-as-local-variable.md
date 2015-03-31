@@ -3,7 +3,7 @@ Coffeescript: Cache function result as local variable
 
 ```
 class ExampleClass
-  @_something
+  _something: undefined
 
   usage: ->
     something = @get_something()
