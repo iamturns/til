@@ -59,7 +59,7 @@ Sections
 Starts with hash, ends with slash. Text between this is a 'block'.
 
 ```
-{{%nothing}}
+{{#nothing}}
 Not displayed
 {{/nothing}}
 ```
