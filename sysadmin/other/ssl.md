@@ -13,14 +13,12 @@ You're done! Stop reading :)
 Generate private key
 ====================
 
-`sudo openssl genrsa -out [full_domain_including_possible_subdomain].key 2048`
-
-Some like to pass in the `des3` param, which will attach a password to the key. Sounds like a good idea, but is actually a pain, as you need to enter the password everytime apache boots. Just keep the generated file secure on the server.
+`sudo openssl genrsa -des3 -out [[example.com]].key 2048`
 
 Generate CSR
 ============
 
-`sudo openssl req -new -key [domain_as_above].key -out [domain_as_above].csr`
+`sudo openssl req -new -key [[example.com]].key -out [[example.com]].csr`
 
 - Country = AU
 - State = Victoria
@@ -31,6 +29,21 @@ Generate CSR
 - Email Address = Blank
 - Challenge password = Blank
 - Optional company name = Blank
+
+Remove passphrase
+=================
+
+This prevents entering the passphrase everytime the web server reboots
+
+```
+sudo cp [[example.com]].key [[example.com]].key.org
+sudo openssl rsa -in [[example.com]].key.org -out [[example.com]].key
+```
+
+Optional - self sign
+====================
+
+`sudo openssl x509 -req -days 365 -in [[example.com]].csr -signkey [[example.com]].key -out [[example.com]].crt`
 
 Save the key file
 =================
@@ -45,8 +58,8 @@ Secure key file
 An example (differs for each server setup):
 
 ```
-sudo chmod 600 [domain].key
-sudo chown root:root [domain].key
+sudo chmod 600 [[example.com]].key
+sudo chown root:root [[example.com]].key
 ```
 
 Storage location
@@ -55,6 +68,12 @@ Storage location
 Pick a convention, I like this:
 
 ```
-/storage/home/[name]/ssl/private/[domain].key
-/storage/home/[name]/ssl/certs/[domain].csr
+/storage/home/[[name]]/ssl/private/[[example.com]].key
+/storage/home/[[name]]/ssl/certs/[[example.com]].csr
+```
+
+Or
+
+```
+/etc/ssl/private/
 ```
