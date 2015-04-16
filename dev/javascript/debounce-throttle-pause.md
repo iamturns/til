@@ -1,9 +1,18 @@
-Javascript debounce / throttle / pause
-======================================
+Javascript debounce / throttle
+==============================
 
-To avoid firing too many requests for noisy events
+Throttle will call function at beginning, and then again every Xms if the event is still firing.
 
-Quick example implementation below;
+Debounce will wait Xms has elapsed until function is called.
+
+
+- https://github.com/cowboy/jquery-throttle-debounce/
+- http://underscorejs.org/#debounce
+- http://mootools.net/more/docs/1.5.1/Class/Events.Pseudos#Pseudos:throttle
+- http://mootools.net/more/docs/1.5.1/Class/Events.Pseudos#Pseudos:pause
+
+Custom
+------
 
 ```
 resize_timeout = null
@@ -15,10 +24,3 @@ $(window).on 'resize', ->
     do_something_here()
   , resize_throttle);
 ```
-
-If you want something a little better;
-
-- https://github.com/cowboy/jquery-throttle-debounce/
-- http://underscorejs.org/#debounce
-- http://mootools.net/more/docs/1.5.1/Class/Events.Pseudos#Pseudos:throttle
-- http://mootools.net/more/docs/1.5.1/Class/Events.Pseudos#Pseudos:pause
