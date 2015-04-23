@@ -1,4 +1,5 @@
 # OS files
+#
 .DS_Store
 .DS_Store?
 ._*
@@ -8,7 +9,15 @@ ehthumbs.db
 Thumbs.db
 
 # IDE files
+#
 .idea
 *.iml
 
+# Package managers
+#
+bower_components
+node_modules
+npm-debug.log
+
 # Project files
+#
