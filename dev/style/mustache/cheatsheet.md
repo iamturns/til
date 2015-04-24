@@ -58,11 +58,15 @@ Sections
 
 Starts with hash, ends with slash. Text between this is a 'block'.
 
+If variable is false, empty array, or does not exist; the block is skipped
+
 ```
 {{#nothing}}
 Not displayed
 {{/nothing}}
 ```
+
+If variable is an object, it is dereferenced
 
 Instead of `name.first` and `name.last`:
 
@@ -70,15 +74,9 @@ Instead of `name.first` and `name.last`:
 {{#name}}The name is: {{first}} {{last}}{{/name}}
 ```
 
-Lists / loop:
+If variable is an array, the block is looped
 
-```
-{{#stooges}}
-<b>{{name}}</b>
-{{/stooges}}
-```
-
-Simple array list / loop:
+The `.` contains the value
 
 ```
 {{#musketeers}}
@@ -86,7 +84,15 @@ Simple array list / loop:
 {{/musketeers}}
 ```
 
-Using a function:
+If the variable is an array of objects, they are dereferenced within the loop
+
+```
+{{#stooges}}
+<b>{{name}}</b>
+{{/stooges}}
+```
+
+Functions can be used within sections
 
 ```
 {{#beatles}}
@@ -115,7 +121,7 @@ Partials
 
 ```
 {#names}}
-  {{> user}}
+  {{>user}}
 {{/names}}
 ```
 
