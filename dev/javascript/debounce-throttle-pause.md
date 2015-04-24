@@ -5,7 +5,6 @@ Throttle will call function at beginning, and then again every Xms if the event 
 
 Debounce will wait Xms has elapsed until function is called.
 
-
 - https://github.com/cowboy/jquery-throttle-debounce/
 - http://underscorejs.org/#debounce
 - http://mootools.net/more/docs/1.5.1/Class/Events.Pseudos#Pseudos:throttle
