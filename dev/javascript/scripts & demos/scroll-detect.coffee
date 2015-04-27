@@ -3,17 +3,17 @@
 class ScrollDetect
 
   constructor: ->
-    $(document.body).on('scroll', @_getDebounceScrolling())
-    $(document.body).on('scroll', @_getDebounceScrollEnd())
+    $(window).on('scroll', @_getDebounceScrollStart())
+    $(window).on('scroll', @_getDebounceScrollEnd())
 
   _eventScrollEnd: ->
     console.log 'STOPPED SCROLLING'
 
-  _eventScrolling: ->
+  _eventScrollStart: ->
     console.log 'SCROLLING'
 
   _getDebounceScrollEnd: ->
-    _.debounce(@_eventScrollEnd, 250)
+    _.debounce(@_eventScrollEnd, 100)
 
-  _getDebounceScrolling: ->
-    _.debounce(@_eventScrolling, 250, true)
+  _getDebounceScrollStart: ->
+    _.debounce(@_eventScrollStart, 100, true)
