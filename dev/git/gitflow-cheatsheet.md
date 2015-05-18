@@ -1,6 +1,27 @@
 Gitflow cheatsheet
 ==================
 
+Workflow
+--------
+
+Start
+
+```
+git flow feature start {{name}}
+```
+
+Done
+
+```
+git checkout develop
+git pull
+git rebase develop feature/{{name}}
+git flow feature finish {{name}}
+```
+
+Commands
+--------
+
 https://github.com/nvie/gitflow/wiki/Command-Line-Arguments
 
 Create branches for you;
