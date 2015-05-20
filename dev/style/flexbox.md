@@ -18,25 +18,23 @@ Alignment
   - affects children
   - 'row' (default), 'column'
 
-
 - justify-content
   - for horizontal alignment / row direction
   - values;
-    - flex-start
+    - flex-start (default)
     - flex-end
     - center
     - space-between
     - space-around
 
-
 - align-items
   - for vertical alignment / column direction
   - values;
+    - stretch (default)
     - flex-start
     - flex-end
     - center
     - baseline
-    - stretch
     
 Align single items
 ------------------
@@ -53,20 +51,14 @@ Use `align-self` or `margin`
 }
 ```
 
-
 Flexible sizes
 --------------
 
 - flex-grow
   - refers to size relative to other flex items in container
-  - default: 0. Normally set to '1'
+  - 0 = do not stretch (default value)
+  - 1 = stretch
 - flex-shrink
   - The opposite of flex-grow. Generally not set. 
 - flex-basis
   - 'min-width' for flex items
-
-
-- flex
-  - number value
-  - `flex: 2 0 0;` twice as big as `flex: 1 0 0;`
-  - This syntax may be old, not sure, I see `flex-grow` referenced more
