@@ -1,6 +1,21 @@
 Gitflow cheatsheet
 ==================
 
+Install
+-------
+
+I recommend the 'AVH' edition, which has more features and is maintained
+
+https://github.com/petervanderdoes/gitflow
+
+```
+brew install git-flow-avh
+```
+
+Don't forget the fish completions!
+
+See `/sysadmin/fish/completions/git.fish`
+
 Workflow
 --------
 
@@ -17,6 +32,12 @@ git checkout develop
 git pull
 git rebase develop feature/{{name}}
 git flow feature finish {{name}}
+```
+
+To squash commits:
+
+```
+git flow feature finish -S {{name}}
 ```
 
 Commands
