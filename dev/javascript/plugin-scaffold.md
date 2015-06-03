@@ -149,7 +149,7 @@ Coffeescript:
     return @.each ->
       $el = $(@)
       instance = new $.ExampleClass($el, options)
-      $el.data('example_class', instance)
+      $el.data('example-class', instance)
 
 )(jQuery)
 
