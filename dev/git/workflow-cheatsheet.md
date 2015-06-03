@@ -1,7 +1,9 @@
 Git workflow cheatsheet
 =======================
 
-Works well for me :)
+A simple one, works well for me :)
+
+For something more advanced, see `gitflow-cheatsheet.md`
 
 Begin
 -----
