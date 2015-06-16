@@ -138,9 +138,8 @@ Coffeescript:
 
   $.ExampleClass = class ExampleClass
 
-    DEFAULT_OPTIONS = {
+    DEFAULT_OPTIONS =
       option_one: 'default value'
-    }
 
     constructor: (@$el, options = {}) ->
       @options = $.extend(true, {}, DEFAULT_OPTIONS, options)
