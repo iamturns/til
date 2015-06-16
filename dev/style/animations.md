@@ -71,6 +71,13 @@ Javascript benefits;
 - Queue animations
 - Trigger events after animations finish
 - Greater control (play, rewind, etc)
+- Interrupt
+- Cancel animation
+
+CSS benefits;
+
+- Easier to debug (just add a class)
+  - Eg: javascript triggers animation on hover, crazy hard to debug 
 
 Links;
 
