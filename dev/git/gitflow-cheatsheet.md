@@ -59,6 +59,6 @@ Sync as above
 Tweak and tidy git history
 
 ```
-git flow feature finish -r {{name}}
+git flow feature finish {{name}}
 git push
 ```

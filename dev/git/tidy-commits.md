@@ -1,6 +1,8 @@
 Git - tidy commits
 ==================
 
+Great resource: https://github.com/blog/2019-how-to-undo-almost-anything-with-git
+
 ## New commit message for last commit
 
 ```
