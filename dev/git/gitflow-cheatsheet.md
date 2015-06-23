@@ -35,8 +35,8 @@ To acccept all defaults (wise);
 git flow init -d
 ```
 
-Workflow
---------
+Feature
+-------
 
 ### Start
 
@@ -60,5 +60,47 @@ Tweak and tidy git history
 
 ```
 git flow feature finish {{name}}
+git push
+```
+
+Release
+-------
+
+See Semantic Versioning: http://semver.org/
+
+### Start
+
+```
+git flow release start {{version}}
+```
+
+### Done
+
+```
+git flow release finish {{version}}
+git checkout develop
+git push
+git checkout master
+git push
+```
+
+Hotfix
+------
+
+See Semantic Versioning: http://semver.org/
+
+### Start
+
+```
+git flow hotfix start {{version}}
+```
+
+### Done
+
+```
+git flow hotfix finish {{version}}
+git checkout develop
+git push
+git checkout master
 git push
 ```
