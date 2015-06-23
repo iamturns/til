@@ -60,6 +60,7 @@ Tweak and tidy git history
 
 ```
 git flow feature finish {{name}}
+git checkout develop
 git push
 ```
 
@@ -78,9 +79,9 @@ git flow release start {{version}}
 
 ```
 git flow release finish {{version}}
-git checkout develop
-git push
 git checkout master
+git push
+git checkout develop
 git push
 ```
 
@@ -99,8 +100,8 @@ git flow hotfix start {{version}}
 
 ```
 git flow hotfix finish {{version}}
-git checkout develop
-git push
 git checkout master
+git push
+git checkout develop
 git push
 ```
