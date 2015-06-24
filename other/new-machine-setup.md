@@ -170,3 +170,9 @@ npm install -g grunt-cli
 ```
 npm install -g bower
 ```
+
+### Gulp
+
+```
+npm install -g gulp
+```
