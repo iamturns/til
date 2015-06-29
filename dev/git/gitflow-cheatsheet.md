@@ -59,7 +59,7 @@ Sync as above
 Tweak and tidy git history
 
 ```
-git flow feature finish {{name}}
+git flow feature finish --no-ff {{name}}
 git checkout develop
 git push
 ```
