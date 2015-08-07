@@ -180,3 +180,9 @@ npm install -g gulp
 ### NodeJS
 
 https://nodejs.org/
+
+### Compass
+
+```
+gem install compass
+```
