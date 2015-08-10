@@ -3,7 +3,8 @@ div > p
 div + p
     p elements placed immediately after div elements
 div ~ p
-    p elements after (not immediate) div element, within the same parent
+    p elements after (sibling, next to) div elements, within the same parent
+    (does not have to be immediate)
 
 [attribute="value"]
 [attribute^="value"]
