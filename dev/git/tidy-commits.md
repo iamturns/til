@@ -50,3 +50,22 @@ Finish up with:
 ```
 git rebase --continue
 ```
+
+## Revert commit
+
+```
+git revert [[sha]]
+```
+
+Then, if you only want to revert SOME of the files within that commit,
+
+```
+git rebase --interactive HEAD~1
+git reset HEAD^
+```
+
+Commit what is needed, discard the rest, finish with:
+
+```
+git rebase --continue
+```
