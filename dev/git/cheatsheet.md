@@ -61,3 +61,10 @@ git checkout [[branch name]] #switch
 git checkout -b [[branch name]] #create and switch
 git branch -d [[branch name]] #delete
 ```
+
+Stash
+-----
+
+```
+git stash show -p 'stash@{0}' 
+```
