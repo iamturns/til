@@ -1,10 +1,9 @@
 div > p
     p elements with an immediate parent of div
 div + p
-    p elements placed immediately after div elements
+    p elements *immediately* after div elements
 div ~ p
-    p elements after (sibling, next to) div elements, within the same parent
-    (does not have to be immediate)
+    p elements *anywhere* after div elements, within the same parent
 
 [attribute="value"]
 [attribute^="value"]
