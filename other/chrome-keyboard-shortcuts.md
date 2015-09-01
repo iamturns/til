@@ -35,6 +35,11 @@ Cmd + ] = Next panel
 Cmd + Alt + [ = Previous panel in history
 Cmd + Alt + ] = Next panel in history
 
+Cmd + P = Search for file
+Cmd + Shift + P = Search for method or CSS selector
+
+Ctrl + G = Jump to line
+
 ### Elements panel
 
 H = Hide element
