@@ -53,6 +53,8 @@ git rebase --continue
 
 ## Revert commit
 
+### Pushed
+
 ```
 git revert [[sha]]
 ```
@@ -69,3 +71,12 @@ Commit what is needed, discard the rest, finish with:
 ```
 git rebase --continue
 ```
+
+### Not yet pushed
+
+```
+git reset --soft HEAD~1
+```
+
+Now, edit files
+
