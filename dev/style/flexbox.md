@@ -10,32 +10,88 @@ Links
 
 - http://flexboxin5.com/
 - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- http://jonibologna.com/content/images/flexboxsheet.pdf
 
+Axis
+----
+
+
+`       CROSS AXIS        `
+`|           |           |`
+`|           |           |`
+`| - - - MAIN AXIS - - - |`
+`|           |           |`
+`|           |           |`
+ 
+Activate
+--------
+
+```
+display: flex;
+```
+
+This is now the 'flex container'
+
+Its children are now 'flex items'
+ 
 Alignment
 ---------
 
 - flex-direction
-  - affects children
-  - 'row' (default), 'column'
+  - values;
+    - row (default)
+    - column
+
+- flex-wrap
+  - nowrap (default)
+    - Fit onto one line
+  - wrap
 
 - justify-content
-  - for horizontal alignment / row direction
+  - align items across the main axis
   - values;
     - flex-start (default)
+      - `| * * *         |`
     - flex-end
+      - `|         * * * |`
     - center
+      - `|     * * *     |`
     - space-between
+      - `| *     *     * |`
     - space-around
+      - `|   *   *   *   |`
 
 - align-items
-  - for vertical alignment / column direction
+  - align flex items on cross axis
+  - values;
+    - stretch (default)
+      - `| * * * |`
+      - `| * * * |`
+      - `| * * * |`
+      - `| * * * |`
+    - flex-start
+      - `| * * * |`
+      - `| *   * |`
+      - `|     * |`
+    - flex-end
+      - `|     * |`
+      - `| *   * |`
+      - `| * * * |`
+    - center
+      - `|     * |`
+      - `| * * * |`
+      - `|     * |`
+
+- align-content
+  - align multiple lines within a flex container by cross axis
   - values;
     - stretch (default)
     - flex-start
     - flex-end
     - center
-    - baseline
-    
+    - space-between
+    - space-around
+  
 Align single items
 ------------------
 
