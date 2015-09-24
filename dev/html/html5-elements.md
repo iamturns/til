@@ -51,3 +51,9 @@ nav
 Intended for major navigation information
 
 A group of links grouped together isn’t enough reason to use the nav element
+
+main
+----
+
+Only used once per page
+
