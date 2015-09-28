@@ -12,6 +12,10 @@ Style guide generators
     - Uses Markdown files
     - https://github.com/fbrctr/fabricator
     - http://fbrctr.github.io/demo/
+- Living Style Guide
+    - Ruby based
+    - http://livingstyleguide.org/
+    - Looks nice, but, all outputted in ONE giant page!
 - Kalei
     - Client side only
 - KSS
@@ -24,6 +28,14 @@ Style guide generators
     - Nice and simple, I like this!
     - http://trulia.github.io/hologram/
     - http://trulia.github.io/hologram-example/
+
+More reading
+------------
+
+- http://alistapart.com/blog/post/style-guide-generator-roundup
+- https://github.com/davidhund/styleguide-generators
+- http://www.smashingmagazine.com/2015/04/an-in-depth-overview-of-living-style-guide-tools/
+- http://styleguides.io/
 
 Atomic design
 =============
