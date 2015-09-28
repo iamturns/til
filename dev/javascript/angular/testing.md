@@ -1,3 +1,2 @@
 Protractor = end to end. Built on top of Selenium WebDriver
-Karma = unit testing (with Jasmine?)
-
+Karma = unit testing, with Jasmine. Does not require Angular.
