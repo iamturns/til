@@ -165,4 +165,7 @@ All calls to spy will throw value as error
 spyOn(object, 'functionName').and.throwError('example');
 ```
 
+@TODO
+-----
 
+Up to here: http://jasmine.github.io/2.3/introduction.html#section-Spies:_<code>and.throwError</code>
