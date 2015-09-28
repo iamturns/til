@@ -38,6 +38,8 @@ https://github.com/h5bp/Effeckt.css
 
 Docs suck, not even sure how to use it
 
+(Banner on top says it's not quite ready for prime time)
+
 Bounce.js
 ---------
 
