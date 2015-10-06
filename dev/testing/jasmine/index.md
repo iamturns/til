@@ -1,5 +1,25 @@
-Jasmine Cheatsheet
-==================
+Jasmine
+=======
+
+- Javascript unit testing
+- Influenced by RSpec
+- BDD style syntax
+- Supports headless out of box
+
+Related docs
+------------
+
+- Mocha
+  - Competitor (see comparison section in mocha doc)
+- Karma
+  - Tests can be plugged into Karma 
+- Protractor
+  - Tests can be plugged into Protractor
+
+
+
+Cheatsheet
+==========
 
 Test suite
 ----------
