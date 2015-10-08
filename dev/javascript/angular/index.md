@@ -189,6 +189,24 @@ Fix with;
 Directive overview
 ==================
 
+ngBind
+------
+
+Instead of
+
+    {{ whatever }}
+    
+Can do
+
+    <div ng-bind="whatever"></div>
+    
+ngBindTemplate
+--------------
+
+Bind multiples
+
+    <div ng-bind-template="{{whatever1}} {{whatever2}}"></div>
+
 ngModel
 -------
 
@@ -256,6 +274,21 @@ Falsy values;
 - undefined
 - NaN
 
+ngCloak
+-------
+
+Hides the page until Angular has populated everything
+
+Avoids flashes
+
+    <body ng-cloak>
+    
+Requires CSS, which can be fetched from Angular documentation, something like;
+
+    [ng-cloak] {
+      display: none;
+    }
+
 ngInclude
 ---------
 
@@ -272,7 +305,33 @@ Great for accessibility
 
 Convert numbers, dates, and currency into local formats
 
+ngCacheFactory
+--------------
 
+    var cache = $cacheFactory('cacheName');    
+    cache.put(key, val);
+    cache.get(key);
+    cache.info();
+
+
+ngCompile
+---------
+
+Processes directives
+
+      var compiled = $compile(markup)($scope);
+      
+ngParse
+-------
+
+Turns an expression into a function
+
+    var getEventName = $parse('event.name');
+    var eventName = getEventName(event);
+    
+    getEventName.assign(event, 'New name');
+    
+    
 
 Filters
 =======
@@ -335,21 +394,85 @@ Build your own
 
 ### How?
 
-    var module = angular.module('mainAppModule');
-    module.factory('serviceName', function() {
-      // service
-    });
-
-    var controller = function($serviceName) {
+    angular
+      .module('app')
+      .factory('exampleService', exampleService);
+      
+    function exampleService() {
+      return {
+        publicApi: 'hello'
+      }
+    }
+    
+    // controller.js
+    
+    var controller = function(exampleService) {
       
     };
 
+### Factory vs Service
 
+Notice the above example uses `factory()`, this is the recommended way
 
-Router
-======
+You may see elsewhere, the `.service('exampleService', exampleService)` method
+
+These services MUST be an object, as they are created with a `new exampleService()` by Angular
+
+Whereas a factory is invoked with `exampleService()` and can be anything
+
+It also allows code to be run before returning the object
+
+Either way, they are both singletons
+
+@TODO - I have some reports that for ES6 it's better to use services...
+
+Routes, views, and layouts
+==========================
 
 Depends on `angular-route.js`
 
 Configure via `$routeProvider`
 
+    var app = app.module('appName', ["ngRoute"]);
+
+    app.config(function($routeProvider) {
+      $routeProvider
+        .when("/main", {
+          templateUrl: 'example.html'
+        })
+        .when("/user/:username", {
+          
+        })
+        .otherwise({
+          redirectTo: "/main"
+        });
+    });
+
+### Layout
+
+    <div ng-view></div>
+
+### Controllers
+
+Can be specified within the router, alongside `templateUrl`
+
+Or kept within the html file, eg: `<div ng-controller="ControllerName">`
+
+### Route params
+
+    // Config
+
+    .when("/user/:username");
+    
+    // Controller
+    
+    function($routeParams) {
+      $routeParams.username;
+    }
+    
+### Browser redirect
+
+    function($location) {
+      $location.path('new-url');
+    }
+    
