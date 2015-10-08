@@ -5,3 +5,4 @@ Naming conventions
 - create / destroy
 - setUp / tearDown
 - display / hide
+- activate / deactivate
