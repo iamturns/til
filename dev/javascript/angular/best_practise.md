@@ -84,6 +84,8 @@ Helps with readability, debugging and nested callbacks
 
 Capture `this` into a variable (eg: `vm`) to use within all blocks
 
+Unless you're using ES6, then just use fat arrows to keep the `this` context 
+
     function CustomerController() {
       var vm = this;
       vm.name = 'Matt';
@@ -212,6 +214,142 @@ Notice where `ExampleController` sits - outside of the directive. This eliminate
     <div>{{ vm.max }</div>
     <div>{{ vm.min }</div>
 
-### Up to this
+### Use `activate()` within controllers
 
-https://github.com/johnpapa/angular-styleguide#resolving-promises-for-a-controller
+Bad;
+
+    function AvengersController(dataservice) {
+      var vm = this;
+      vm.avengers = [];
+      vm.title = 'Avengers';
+  
+      dataservice.getAvengers().then(function(data) {
+        vm.avengers = data;
+        return vm.avengers;
+      });
+    }
+    
+Good;
+
+    function AvengersController(dataservice) {
+      var vm = this;
+      vm.avengers = [];
+      vm.title = 'Avengers';
+  
+      activate();
+  
+      ////////////
+  
+      function activate() {
+        return dataservice.getAvengers().then(function(data) {
+          vm.avengers = data;
+          return vm.avengers;
+        });
+      }
+    }
+
+### Controllers that require a resolved promise to activate
+
+Use routes, see example here:
+
+https://github.com/johnpapa/angular-styleguide#style-y081
+
+### ngAnnotate
+
+Use `/* @ngInject */` so ensure it detects all dependencies
+
+### Naming
+
+#### Filenames
+
+- `name.controller.js`
+- `name.service.js`
+- `name.module.js`
+- `name.routes.js`
+- `name.config.js`
+- `name.directive.js`
+- `constants.js`
+
+#### Tests
+
+- `[[original filename]].spec.js`
+
+#### Controllers
+
+- `UpperCamelCaseController`
+
+#### Services & Factories
+
+- `camelCaseService`
+- `camelCase` - drop the suffix if it's obviously a service, eg: `logger`
+
+#### Directives
+
+Prefix short namespace
+
+- `xxCamelCase`
+
+#### Modules
+
+Main module: `app.module.js` named `app`
+
+Additional modules, eg: `admin.module.js` named `admin`
+
+#### Config
+
+Config for each module named similar to module file, `app.config.js`
+
+#### Routes
+
+`app.route.js`
+
+### App configuration
+
+Use services to set things up
+
+    angular.module('app').run(runBlock);
+
+    function runBlock(authenticator, translator) {
+        authenticator.initialize();
+        translator.initialize();
+    }
+
+### Tests
+
+Place unit tests with your code
+
+Place other tests within `tests` folder
+
+### Vendor globals
+
+Create constants for vendor libraries that are global variables
+
+    angular
+      .module('app.core')
+      .constant('moment', moment);
+
+
+
+Todd Motto
+==========
+
+https://github.com/toddmotto/angularjs-styleguide
+
+### One time binding syntax
+
+`{{ ::value }}`
+
+Improves performance for each dirty check
+
+
+
+mgechev
+=======
+
+https://github.com/mgechev/angularjs-style-guide
+
+- Use `$resource` instead of `$http` when possible
+- Do not manipulate DOM in controllers. Use directives instead.
+- Make filters as light as possible, as they are called very often during digest cycle
+- Careful of `$watch`, keep it simple and light
+  - Perhaps try `$watchCollection`
