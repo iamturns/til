@@ -6,9 +6,6 @@ John Papa
 
 https://github.com/johnpapa/angular-styleguide
 
-- Split into files
-- Use IIFE
-
 ### Declaring modules
 
 Don't use a variable
@@ -353,3 +350,17 @@ https://github.com/mgechev/angularjs-style-guide
 - Make filters as light as possible, as they are called very often during digest cycle
 - Careful of `$watch`, keep it simple and light
   - Perhaps try `$watchCollection`
+
+
+
+gocardless
+==========
+
+https://github.com/gocardless/angularjs-style-guide
+
+### Use resolvers to inject data
+
+Views are rendered when data is available. Avoids empty views whilst data is loading.
+
+See example here: https://github.com/gocardless/angularjs-style-guide#use-resolvers-to-inject-data
+
