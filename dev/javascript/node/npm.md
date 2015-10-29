@@ -21,24 +21,85 @@ Dependencies
 Scripts
 -------
 
-Best explained with an example
-
-`package.json`;
+Added within `scripts` section of `package.json`;
 
 ```
 "scripts": {
-    "postinstall": "bower install",
-
-    "prestart": "npm install",
-    "start": "http-server -a 0.0.0.0 -p 8000",
-    
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update"
+    "example": "command",
 }
 ```
 
 ```
-npm install
-npm start
-npm run update-webdriver
+npm run example
+```
+
+To see all scripts available;
+
+```
+npm run
+```
+
+### Shortcuts
+
+The following are the same as running `npm run [[shortcut]]`
+
+- npm test
+- npm start
+- npm stop
+
+This provides a standard interface
+
+It's also common for scripts to provide;
+
+- npm clean
+
+### Hooks
+
+npm will automatically run any script named pre{{task}} and post{{task}}
+
+Works for some internal commands;
+- install
+- uninstall
+- publish
+- update
+
+### Arguments
+
+`npm run {{task}} -- {{args}}`
+
+### Config
+
+All config options are exposed as environment variables prefixed with `npm_package_config_`
+
+    "config": {
+      "reporter": "xunit"
+    },
+    "scripts": {
+      "test": "mocha test/ --reporter $npm_package_config_reporter"
+    }
+
+Or can be checked within javascript using: `process.env.npm_package_config_reporter`
+
+#### Override
+
+`npm config set {{package name}}:{{config key}} {{value}}`
+
+`npm config delete {{package name}}:{{config key}}`
+
+This can be saved within `~/.npmrc`
+
+Version bumping
+---------------
+
+```
+npm version patch
+npm version minor
+npm version major
+```
+
+Will commit and tag package, then;
+
+```
+git publish
+npm publish
 ```
