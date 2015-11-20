@@ -66,5 +66,58 @@ Stash
 -----
 
 ```
-git stash show -p 'stash@{0}' 
+git stash show -p 'stash@{0}'
 ```
+
+Dots
+----
+
+Dots are used with `log` and `diff` commands
+
+### Diff
+
+### No dots
+
+Same as two dots (below)
+
+#### Two dots
+
+`git diff foo..bar`
+
+Will show the difference between the two branches (nothing unusual)
+
+#### Three dots
+
+`git diff foo...bar`
+
+Will show the difference between the "merge base" of the two branches, and 'bar'
+
+It ignores everything that has been done on 'foo'
+
+Useful to show changes that work on 'bar' has introduced since splitting from 'foo'
+
+### Log
+
+#### No dots
+
+`git log foo bar`
+
+All commits on foo OR bar, including before they split
+
+#### Two dots
+
+`git log foo..bar`
+
+The same as `git diff bar ^foo`
+
+Will show logs on 'bar', but not on 'foo'
+
+Useful to show logs that occurred after 'bar' split from 'foo'
+
+#### Three dots
+
+`git log foo...bar`
+
+Show logs on 'foo' OR 'bar', but not on both
+
+Useful to show logs that occurred after they split
