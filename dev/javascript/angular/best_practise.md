@@ -1,10 +1,32 @@
 Angular best practises
 ======================
 
+
+Index
+=====
+
+- John Papa
+  - https://github.com/johnpapa/angular-styleguide
+  - 12,871 stars
+  - An AngularJS god
+
+- Todd Motto
+  - https://github.com/toddmotto/angularjs-styleguide
+  - 3,143 stars
+  - Very similar to John Papa
+  
+- mgechev
+  - https://github.com/mgechev/angularjs-style-guide
+  - 3,668 stars
+
+- GoCardless
+  - https://github.com/gocardless/angularjs-style-guide
+  - 1,509 stars
+  - ES6 love
+
+
 John Papa
 =========
-
-https://github.com/johnpapa/angular-styleguide
 
 ### Declaring modules
 
@@ -167,7 +189,7 @@ Element if it's stand-alone, and attribute when it enhances an existing DOM elem
 
 Use the `controller as` syntax to match views
 
-Notice where `ExampleController` sits - outside of the directive. This eliminates issues where injection is created as unreadacble code after the `return`
+Notice where `ExampleController` sits - outside of the directive. This eliminates issues where injection is created as unreachable code after the `return`
 
     // exampleDirective.js
 
@@ -330,8 +352,6 @@ Create constants for vendor libraries that are global variables
 Todd Motto
 ==========
 
-https://github.com/toddmotto/angularjs-styleguide
-
 ### One time binding syntax
 
 `{{ ::value }}`
@@ -343,8 +363,6 @@ Improves performance for each dirty check
 mgechev
 =======
 
-https://github.com/mgechev/angularjs-style-guide
-
 - Use `$resource` instead of `$http` when possible
 - Do not manipulate DOM in controllers. Use directives instead.
 - Make filters as light as possible, as they are called very often during digest cycle
@@ -355,8 +373,6 @@ https://github.com/mgechev/angularjs-style-guide
 
 gocardless
 ==========
-
-https://github.com/gocardless/angularjs-style-guide
 
 ### Use resolvers to inject data
 
