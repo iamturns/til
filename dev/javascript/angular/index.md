@@ -424,7 +424,9 @@ It also allows code to be run before returning the object
 
 Either way, they are both singletons
 
-@TODO - I have some reports that for ES6 it's better to use services...
+#### ES6
+
+Each service should be a class. Attach to Angular using 'service', not 'factory'
 
 Routes, views, and layouts
 ==========================
