@@ -11,6 +11,9 @@ Links
 - http://flexboxin5.com/
 - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - http://jonibologna.com/content/images/flexboxsheet.pdf
+- https://github.com/philipwalton/flexbugs
+- https://philipwalton.github.io/solved-by-flexbox/
+
 
 Axis
 ----
