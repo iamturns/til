@@ -1,15 +1,19 @@
-Android emulator setup
-======================
+Setup Android
+=============
+
+Used to emulate and build the android app
+
+The following instructions are tailored for Mac OSX, however they could be translated for other OS'
 
 ### SDK
 
 Download here: https://developer.android.com/sdk/
 
-Do not need Android Studio; click 'Other download options'
+Do not need Android Studio, just the SDK Tools. Found under 'Other Download Options'
 
 ### Launch
 
-Unzip the file, and run command in terminal:
+Unzip the file in a sensible location, and run this within terminal:
 
 `android-sdk-macosx/tools/android`
 
@@ -29,7 +33,7 @@ Then hit 'Install packages' button
 
 ### Install accelerator
 
-File located at: android-sdk-macosx/extras/intel/Hardware_Accelerated_Execution_Manager/IntelHAXM_1.1.1_for_10_9_and_above.dmg
+File located at: `android-sdk-macosx/extras/intel/Hardware_Accelerated_Execution_Manager/IntelHAXM_1.1.1_for_10_9_and_above.dmg`
 
 #### Create AVD
 
@@ -37,12 +41,14 @@ AVD = Android Virtual Device
 
 - Tools > Manage AVDs
 - Create
-- Enter a name (eg: Android Version - Device, 4.4.2-Nexus5)
 - Device: The nexus ones are quite good
 - Target: The version of Android you want installed
+- AVD Name: Anything you like
+  - Recommended format: {{version}}-{{device}}
+  - eg: 4.4.2-Nexus5
 - CPU: Intel Atom (x86)
 - Skin: No skin
-- RAM: 2014
+- RAM: 2048
 - VM Heap: 64
 - Internal Storage: 1024
 - SD Card Size: 1024
