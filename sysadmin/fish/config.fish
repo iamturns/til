@@ -1,4 +1,15 @@
-set fish_greeting ""
+# Path to Oh My Fish install.
+set -gx OMF_PATH /Users/matt.turnbull/.local/share/omf
+
+# Customize Oh My Fish configuration path.
+#set -gx OMF_CONFIG /Users/matt.turnbull/.config/omf
+
+# Load oh-my-fish configuration.
+source $OMF_PATH/init.fish
+
+##########
+# CUSTOM #
+##########
 
 ###
 # Path
@@ -10,18 +21,17 @@ set PATH $HOME/.composer/vendor/bin $PATH
 # Homebrew
 set PATH /usr/local/bin /usr/local/sbin $PATH
 
+# Android SDK
+set PATH $HOME/Documents/android-sdk-macosx/platform-tools $PATH
+set PATH $HOME/Documents/android-sdk-macosx/tools $PATH
+
+# rbenv
+set PATH $HOME/.rbenv/bin $PATH
+
 # Local scripts
 set PATH $HOME/bin $PATH
 
 set -x PATH $PATH
-
-###
-# Functions
-###
-
-function ll
-  ls -lahH $argv
-end
 
 ###
 # rbenv
@@ -30,21 +40,15 @@ end
 . (rbenv init -|psub)
 
 ###
-# Git
+# Git radar
 ###
 
-set __fish_git_prompt_showstashstate 'yes'
-
 function fish_prompt
-  set_color 444444;
-  printf '%s' (prompt_pwd)
-  set_color normal
-
-  __fish_git_prompt
-
-  set_color 444444;
-  echo -n ' > '
-  set_color normal
+    set_color $fish_color_cwd
+    echo -n (prompt_pwd)
+    git-radar --fish --fetch
+    set_color normal
+    echo -n ' > '
 end
 
 ###
