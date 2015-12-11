@@ -15,7 +15,7 @@ Thumbs.db
 
 # Project
 #
-bower_components/
-node_modules/
+/bower_components/
+/node_modules/
+.sass-cache
 npm-debug.log
-sass-cache/
