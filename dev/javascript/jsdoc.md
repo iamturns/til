@@ -36,6 +36,9 @@ Types
 - undefined
 - null
 - ObjectName
+- Array
+- NodeList
+- HTMLElement[]
 
 More
 -----
