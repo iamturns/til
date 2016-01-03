@@ -12,24 +12,33 @@ source $OMF_PATH/init.fish
 ##########
 
 ###
+# Theme
+###
+
+set -g theme_display_ruby no
+
+###
 # Path
 ###
 
-# Composer global installs
-set PATH $HOME/.composer/vendor/bin $PATH
+# Local scripts
+set PATH $HOME/bin $PATH
 
 # Homebrew
 set PATH /usr/local/bin /usr/local/sbin $PATH
 
-# Android SDK
-set PATH $HOME/Documents/android-sdk-macosx/platform-tools $PATH
-set PATH $HOME/Documents/android-sdk-macosx/tools $PATH
-
 # rbenv
 set PATH $HOME/.rbenv/bin $PATH
 
-# Local scripts
-set PATH $HOME/bin $PATH
+# Go
+set PATH /usr/local/opt/go/libexec/bin $PATH
+
+# Composer PHP
+set PATH $HOME/.composer/vendor/bin $PATH
+
+# Android SDK
+set PATH $HOME/Documents/android-sdk-macosx/platform-tools $PATH
+set PATH $HOME/Documents/android-sdk-macosx/tools $PATH
 
 set -x PATH $PATH
 
