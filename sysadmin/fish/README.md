@@ -11,6 +11,7 @@ brew install fish
 - Install bobthefish theme
 - sudo pip install thefuck
 - omf install tab
+- npm install -g tldr
 
 Place following in `~/.config/fish/`;
 
