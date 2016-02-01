@@ -1,184 +1,188 @@
-ESDoc
+Code documentation
+==================
+
+Powered by [ESDoc](https://esdoc.org).
+
+Refer to [commands](../../development/commands.md) to generate code documentation.
+
+Overview
+--------
+
+To document code, place a comment block immediately before it, eg:
+
+```
+/** This is example documentation for the example function */
+function exampleFunction() {}
+```
+
+Documentation usually spans over multiple lines and contains several 'documentation tags' with more information, eg:
+
+```
+/**
+ * This is example documentation for the example function
+ * @param {string} exampleParameter
+ */
+function exampleFunction(exampleParameter) {}
+```
+
+
+
+Cheatsheet
+==========
+
+```
+/**
+ * Description at top. Can link to other parts of code using {@link Identifier}.
+ * Text can span multiple lines. Supports markdown syntax and HTML.
+ *
+ * @example <caption>Optional example heading</caption>
+ * const exampleCodeLine1 = true;
+ * const exampleCodeLine2 = true;
+ *
+ * @example
+ * const canYouUseMultipleExampleTags = true;
+ */
+class Example {
+
+  /**
+   * Optional description.
+   * @param {type} paramName
+   * @param {type} paramName - with an optional description
+   * @param {type} [paramName] - this parameter is optional
+   * @param {type} [paramName=defaultValue]
+   * @param {(type1|type2)} paramName
+   * @param {type[]} paramName - an array containing `type`s
+   * @param paramName - no type provided, accepts all (*) types
+   * @param {...type} paramName - spread param
+   * @return {type} - with an optional description
+   */
+  methodName(paramName) {
+
+    /**
+     * Optional description.
+     * @type {type}
+     */
+    this.propertyName = 'example';
+
+  }
+
+  /**
+   * Optional description.
+   * @type {type}
+   */
+  get example() {}
+
+  /**
+   * Optional description.
+   * @type {type}
+   */
+  set example(value) {}
+
+}
+```
+
+
+
+Types
 =====
 
-Very similar to JSDoc, read that cheatsheet first
-
-Remember, can be documented on one line: `/** @tag */`
+- Array
+- boolean
+- function
+- number
+- Object
+- string
+- undefined
+- null
+- function(funcParam1: type, funcParam2: type): funcReturnType
+- {objectPropertyName1: type, objectPropertyName2: type}
+- AnyObjectNameYouLike
+- NodeList
+- HTMLElement
 
 
 
 Identifiers
 ===========
 
-- `ClassName`
-- `ClassName#methodOrMemberName`
-- `ClassName.staticMethodOrMemberName`
-- `functionName`
-- `variableName`
+- ClassName
+- ClassName#memberName
+- ClassName.staticMemberName
+- globalFunctionName
+- globalVariableName
 
 
 
-Tests
-=====
+More tags
+=========
 
-**ONLY SUPPORTS MOCHA**
-
-```
-/** @test {MyClass} */
-describe('MyClass is super useful class.')
-```
-
-```
-/** @test {MyClass#sayMyName} */
-it('say my name')
-```
-
-
-
-Tags
-====
-
-All
----
-
-```
-Description at top. Maybe with a link to {@link Identifier}. Support markdown
-@access public|protected|private
-```
-
-### More
-
-```
-@see http://example.com
-@desc not usually required, as first section without tag is used by default
-@todo with optional description
-@experimental optional description
-@deprecated optional description
-@ignore
-@version 0.0.1
-@example
-const myExample = true;
-@example
-const multipleExamples = true;
-```
-
-Class
------
-
-Labels it as a class and gets extends automatically
-
-But if using interface / implements pattern, this is nice;
-
-```
-/** @interface */
-class MyInterface
-```
-
-```
-/** @implements {MyInterface} */
-class MyClass
-```
-
-Methods and functions
----------------------
-
-```
-@param {type} paramName optional description
-@param {type} paramName - can separate with a dash, looks nicer, normalized in doc output
-@return {type} optional description
-@throws {Identifier} optional description
-```
-
-### More
-
-```
-@emits {Identifier} optional description
-@listens {Identifier} optional description
-@abstract
-  This method must be overridden when class extends this one
-@override
-  If you extend a class and override something, mark it with this tag
-```
-
-### Param = object
-
+These are less common, but sometimes useful;
+ 
 ```
 /**
- * @param {Object} param - this is object param
- * @param {number} param.foo - this is property param
- * @param {string} param.bar - this is property param
+ * @throws {identifier} - with an optional description when this is thrown
+ *
+ * @interface
+ * @implements {identifer to class marked with @interface}
+ *
+ * @abstract
+ *     - This method *must* be overriden when sub classing
+ * @override
+ *     - If you override a method within a sub class, mark it with this tag
+ *
+ * @emits {identifer} - optional description
+ * @listens {identifer} - optional description
+ *
+ * @protected
+ * @private
+ *     - Identifiers beginning with an underscore are automatically marked with this
+ *
+ * @see http://example.com/
+ * @version version number
+ * @ignore
+ * @experimental optional description
+ * @deprecated optional description
  */
-function myFunc(param)
 ```
 
-Alternative;
+A complete list is available on the [ESDoc website](https://esdoc.org/tags.html).
+
+
+
+Documenting object properties
+=============================
+
+These can be documented with destructuring syntax as the `{type}`, eg:
 
 ```
-/**
- * @param {{foo: number, bar: string}} param - this is object param.
- */
-function myFunc(param)
+{{objectPropertyName1: type, objectPropertyName2: type}}
 ```
 
-### Param = destructuring
+This quickly becomes difficult to read and maintain, so prefer to use the longer technique described below.
+
+Parameter
+---------
 
 ```
-/**
- * @param {Object} param - this is object param
- * @param {number} param.foo - this is property param
- * @param {string} param.bar - this is property param
- */
-function myFunc({foo, bar})
+@param {Object} objectParamName
+@param {type} objectParamName.objectPropertyName1
+@param {type} objectParamName.objectPropertyName2
 ```
 
-Alternative;
+Return
+------
 
 ```
-/**
- * this is object destructuring.
- * @param {{foo: number, bar: string}} param - this is object param.
- */
-function myFunc({foo, bar})
+@return {Object}
+@property {type} objectPropertyName1
+@property {type} objectPropertyName2
 ```
 
-### Param = function
-
+Member or variable
+------------------
+  
 ```
-/**
- * @param {function(foo: number, bar: string): boolean} param - this is function param.
- */
-function myFunc(param)
-```
-
-### Return = object
-
-Use `@property`
-
-```
-/**
- * @return {Object} this is description.
- * @property {number} foo this is description.
- * @property {number} bar this is description.
- */
-function myFunction()
-```
-
-Members and variables
----------------------
-
-```
-@type {type}
-```
-
-### Type = object
-
-Use `@property`
-
-```
-/**
- * @type {Object}
- * @property {number} p.foo
- * @property {string} p.bar
- */
-this.p = {foo: 123, bar: "abc"};
+@type {Object}
+@property {type} objectPropertyName1
+@property {type} objectPropertyName2
 ```
