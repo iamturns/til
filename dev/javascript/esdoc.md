@@ -52,8 +52,7 @@ class Example {
    * @param {type} [paramName=defaultValue]
    * @param {(type1|type2)} paramName
    * @param {type[]} paramName - an array containing `type`s
-   * @param paramName - no type provided, accepts all (*) types
-   * @param {...type} paramName - spread param
+   * @param {...type} paramName - spread / rest parameter
    * @return {type} - with an optional description
    */
   methodName(paramName) {
@@ -86,6 +85,7 @@ class Example {
 Types
 =====
 
+- *
 - Array
 - boolean
 - function
@@ -97,8 +97,15 @@ Types
 - function(funcParam1: type, funcParam2: type): funcReturnType
 - {objectPropertyName1: type, objectPropertyName2: type}
 - AnyObjectNameYouLike
+
+### Common objects
+
 - NodeList
+    - Returned from `document.querySelectorAll()`
 - HTMLElement
+    - Returned from `document.getElementById()`, `document.querySelector()`
+- Error
+    - When using `throw new Error()`
 
 
 
