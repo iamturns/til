@@ -60,6 +60,7 @@ git branch [[branch name]] #create
 git checkout [[branch name]] #switch
 git checkout -b [[branch name]] #create and switch
 git branch -d [[branch name]] #delete
+git push [[remote name]] --delete [[branch name]] #delete on remote
 ```
 
 Stash
@@ -121,3 +122,4 @@ Useful to show logs that occurred after 'bar' split from 'foo'
 Show logs on 'foo' OR 'bar', but not on both
 
 Useful to show logs that occurred after they split
+
