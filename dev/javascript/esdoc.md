@@ -47,7 +47,9 @@ class Example {
   /**
    * Optional description.
    * @param {type} paramName
-   * @param {type} paramName - with an optional description
+   * @param {type} paramName - With an optional description.
+   * Parameter description can support multiple lines.
+   * Supports markdown syntax, HTML, and {@link Identifier}.
    * @param {type} [paramName] - this parameter is optional
    * @param {type} [paramName=defaultValue]
    * @param {(type1|type2)} paramName
@@ -124,7 +126,7 @@ More tags
 =========
 
 These are less common, but sometimes useful;
- 
+
 ```
 /**
  * @throws {identifier} - with an optional description when this is thrown
