@@ -1,0 +1,32 @@
+AWS instances
+=============
+
+- T2
+    - Baseline level of CPU with ability to burst above baseline
+    - Accrue CPU credits when idle, and use CPU credits when active
+    - Good for;
+        - Development environments
+        - Build servers
+        - Code repositories
+        - Low-traffic websites and web applications
+        - Micro services
+        - Early product experiments
+        - Small databases
+- M4 & M3
+    - General purpose
+    - Balance of compute, memory, asnd network
+    - Good for;
+        - Small and mid-size databases
+        - Data processing tasks that require additional memory
+        - Caching fleets
+        - Backend servers
+- C4 & C3
+    - Compute optimized
+- R3
+    - Memory optimized
+- G2
+    - GPU optimized
+- I2
+    - IO optimized
+- D2
+    - Storage size optimized
