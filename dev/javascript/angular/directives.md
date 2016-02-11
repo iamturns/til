@@ -5,6 +5,45 @@ Creates custom elements and events which encapsulates HTML and logic
 
 
 
+Cheatsheet
+==========
+
+Scope types
+-----------
+
+- `=`
+    - Two way model binding
+    - Cannot use `{{ }}`
+- `@`
+    - One way bind
+    - Passes as string
+- `&`
+    - Callback method
+    
+Great reference: https://gist.github.com/CMCDragonkai/6282750
+
+Link
+----
+
+- Used to manipulate the DOM
+
+require
+-------
+
+Anything passed here (can be an array) are injected into the 'link' function
+
+### Examples
+
+- 'controllerName'
+    - Look on own element
+    - Not sure if this is useful?
+- '^controllerName'
+    - Look on own element, or any parents
+- '^^controllerName'
+    - Searches parents only
+
+
+
 Basic setup
 ===========
 
