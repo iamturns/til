@@ -102,6 +102,7 @@ Types
 
 ### Common objects
 
+- this
 - NodeList
     - Returned from `document.querySelectorAll()`
 - HTMLElement
