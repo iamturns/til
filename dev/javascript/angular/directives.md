@@ -13,13 +13,28 @@ Scope types
 
 - `=`
     - Two way model binding
-    - Cannot use `{{ }}`
+    - Accepts an expression directly
+        - Do not use `{{ }}`
+    - Should be 'assignable', eg: `controller.property`
+        - However, some use this to pass in "true" or "false" and receive an actual boolean
+        - But then updating the true/false within the directive will throw an error, as it can't be assigned back
+        - Consider using `<` instead 
+- `<`
+    - Same as above, but ONE WAY binding
+    - Changes made within directive are NOT updated to parents
 - `@`
-    - One way bind
-    - Passes as string
+    - String
+    - One way bound
+    - Can use `{{ expression }}`
 - `&`
-    - Callback method
-    
+    - Execute expression
+    - Angular wraps a function around whatever you pass in
+        - `functionName()`
+        - `count = count + value`
+        - `increment(amount)` - call with `localParam({amount: 10})`
+
+Official docs hidden in `$compile`: https://docs.angularjs.org/api/ng/service/$compile#-scope-
+
 Great reference: https://gist.github.com/CMCDragonkai/6282750
 
 Link
