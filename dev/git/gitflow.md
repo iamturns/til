@@ -1,5 +1,5 @@
-Gitflow cheatsheet
-==================
+Gitflow
+=======
 
 Install
 -------

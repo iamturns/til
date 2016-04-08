@@ -1,5 +1,5 @@
-Git workflow cheatsheet
-=======================
+Git workflow
+============
 
 A simple one, works well for me :)
 

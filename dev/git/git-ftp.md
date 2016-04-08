@@ -1,5 +1,5 @@
-Git FTP cheatsheet
-==================
+Git FTP
+=======
 
 https://github.com/git-ftp/git-ftp
 

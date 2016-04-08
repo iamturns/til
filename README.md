@@ -15,13 +15,13 @@ Dev
 - [Config](dev/git/config/README.md)
 - [Daily standup command](dev/git/daily-standup.md)
 - [Force rebase](dev/git/force-rebase.md)
-- [Git FTP](dev/git/git-ftp-cheatsheet.md)
-- [Git Flow](dev/git/git-flow-cheatsheet.md)
+- [Git FTP](dev/git/git-ftp.md)
+- [Git Flow](dev/git/git-flow.md)
 - [Patch](dev/git/patch.md)
 - [Stash](dev/git/stash.md)
 - [Tidy commits](dev/git/tidy-commits.md)
 - [Versioning](dev/git/versioning.md)
-- [Workflow](dev/git/workflow-cheatsheet.md)
+- [Workflow](dev/git/workflow.md)
 
 ### HTML
 
