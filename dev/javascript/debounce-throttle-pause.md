@@ -1,5 +1,5 @@
-Javascript debounce / throttle
-==============================
+Javascript debounce / throttle / pause
+======================================
 
 Throttle will call function at beginning, and then again every Xms if the event is still firing.
 

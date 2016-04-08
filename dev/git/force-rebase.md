@@ -1,5 +1,5 @@
-Force push
-==========
+Force rebase
+============
 
 Sometimes, you really want to rebase, but you've already pushed
 
