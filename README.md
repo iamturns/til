@@ -12,11 +12,11 @@ Dev
 ### Git
 
 - [Cheatsheet](dev/git/cheatsheet.md)
-- [Config](dev/git/config/README.md)
+- [Config](dev/git/config/)
 - [Daily standup command](dev/git/daily-standup.md)
 - [Force rebase](dev/git/force-rebase.md)
 - [Git FTP](dev/git/git-ftp.md)
-- [Git Flow](dev/git/git-flow.md)
+- [Git Flow](dev/git/gitflow.md)
 - [Patch](dev/git/patch.md)
 - [Stash](dev/git/stash.md)
 - [Tidy commits](dev/git/tidy-commits.md)
@@ -37,7 +37,7 @@ Dev
 - [ESDoc](dev/javascript/esdoc.md)
 - [Event target vs current target](dev/javascript/event-target-vs-current-target.md)
 - [Input events](dev/javascript/input-events.md)
-- [jspm](dev/javasript/jspm.md)
+- [jspm](dev/javascript/jspm.md)
 - [Modules](dev/javascript/modules.md)
 - [npm](dev/javascript/npm.md)
 - [Package managers](dev/javascript/package-managers.md)
@@ -265,7 +265,7 @@ Sysadmin
 - [Run command all subdirectories](sysadmin/terminal/run-command-all-subdirectories.md)
 - [Search](sysadmin/terminal/search.md)
 - [Storing scripts](sysadmin/terminal/storing-scripts.md)
-- [Top command](sysadmin/terminal/top.md)
+- [Top command](sysadmin/terminal/top-command.md)
 - [vim](sysadmin/terminal/vim.md)
 
 ### Vagrant
