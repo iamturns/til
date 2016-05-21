@@ -12,7 +12,6 @@ Dev
 ### Git
 
 - [Cheatsheet](dev/git/cheatsheet.md)
-- [Config](dev/git/config/)
 - [Daily standup command](dev/git/daily-standup.md)
 - [Force rebase](dev/git/force-rebase.md)
 - [Git FTP](dev/git/git-ftp.md)

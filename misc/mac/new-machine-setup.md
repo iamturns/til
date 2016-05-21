@@ -1,33 +1,122 @@
 New machine setup
 =================
 
-### Finder
+Also see;
+ - [Apps](./apps.md).
+ - [Fish setup](/sysadmin/fish/setup.md).
 
-- Preferences > Set new finder window shows home
-- Remove crud from Finders favourites list (especially 'All my files')
 
-#### View hidden files
 
-```
-defaults write com.apple.finder AppleShowAllFiles YES
-```
+Settings
+========
+
+Finder
+------
+
+Open Finder and remove crud from Finders favourites list (especially 'All my files')
+
+View hidden files in Finder;
+
+    defaults write com.apple.finder AppleShowAllFiles YES
 
 Hold 'alt' on your keyboard, then right click on the Finder icon in the dock and click Relaunch
 
-### Apps
 
-- Google Chrome
-- Xcode
-- PhpStorm
-- Virtualbox
-- Vagrant
-- Asepsis 
-- Twitter
-- Evernote
-- SequalPro
-- Sourcetree
 
-#### Virtualbox images
+SSH keys
+========
+
+Generate with this command;
+
+    ssh-keygen -t rsa -C "turnbullm@gmail.com"
+
+- Default location is good
+- Enter a strong password
+- id_rsa.pub = public key
+- id_rsa = private key
+
+Copy to clipboard:
+
+    pbcopy < ~/.ssh/id_rsa.pub
+
+Add to GitHub: https://github.com/settings/ssh
+
+
+
+Directories
+===========
+
+    mkdir ~/Code
+    sudo ln -s ~/Code /var/www
+    mkdir ~/Code/personal
+    mkdir ~/Code/play
+    mkdir ~/Code/vendor
+    mkdir ~/Code/{{company name}}
+
+
+
+Brew
+====
+
+http://brew.sh/
+
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Run `brew doctor` to make sure everything was okay
+
+
+
+Git
+===
+
+    brew install git
+    brew install git-flow-avh
+    git config --global user.name "Matthew Turnbull"
+    git config --global user.email "turnbullm@gmail.com"
+
+
+
+Ruby
+====
+
+    brew install --HEAD ruby-build
+    brew install --HEAD rbenv
+
+    rbenv install --list
+
+Install the latest and use as global default, eg;
+
+    rbenv install 2.2.1
+    rbenv rehash
+    rbenv global 2.2.1
+
+
+
+More
+====
+
+    # node & npm
+    brew install node
+
+    # python & pip
+    brew install python
+
+    # global npm
+    npm install -g gulp
+    npm install -g bower
+
+    # global gems
+    gem install bundler
+    gem install compass
+
+    # Composer
+    curl -sS https://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/local/bin/composer
+
+
+
+IE virtualization
+=================
 
 http://modern.ie/
 
@@ -35,154 +124,42 @@ Download the packages you want
 
 Devices > Install Guest Additions
 
-Take a snapshot!
+Take a snapshot in Virtualbox
 
-### Brew
 
-http://brew.sh/
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+LaunchBar
+=========
 
-run `brew doctor` to make sure everything was okay
+- Under index, disable;
+    - Snippets
+    - iTunes Library
+    - iPhoto Library
+    - Safari stuff under Web
+    - Dev resources (clutters search)
+    - Tags (don't use em)
 
-### Fish
+- Search for following under each group, and remove;
+    - iTunes
+    - Terminal
 
-A much better shell
+- Under emoji, go to options, and tick 'Available as sub search only'
+    - This prevents emoji from clogging up results
 
-```
-brew install fish
-```
+- Under index, add;
+    - Code
+        - Search 1 sub folder level
+        - Folders only
+    - Home
+        - No search scope, just to have 'home' as an entry
+        - Make sure abbreviation is tilde
 
-Tell system about new shell:
-
-```
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-```
-
-Set as default shell:
-
-```
-chsh -s /usr/local/bin/fish
-```
-
-Fish config:
-
-https://github.com/turnbullm/til/tree/master/sysadmin/fish
-
-### SSH keys
-
-- id_rsa.pub = public key
-- id_rsa = private key
-
-```
-ssh-keygen -t rsa -C "turnbullm@gmail.com"
-```
-
-Default location is good
-
-Enter a strong password
-
-Hand out your public key
-
-Copy to clipboard:
-
-```
-pbcopy < ~/.ssh/id_rsa.pub
-```
-
-Add to GitHub: https://github.com/settings/ssh
-
-### Git
-
-System usually comes with an old git
-
-```
-brew install git
-```
-
-Git config:
-
-https://github.com/turnbullm/til/tree/master/dev/git/config
-
-#### Gitflow
-
-```
-brew install git-flow
-```
-
-### www
-
-```
-mkdir ~/Code
-sudo ln -s ~/Code /var/www
-```
-
-### Ruby
-
-```
-brew install --HEAD ruby-build
-brew install --HEAD rbenv
-
-rbenv install --list
-
-rbenv install 2.2.1
-
-rbenv rehash
-
-rbenv local 2.2.1
-```
-
-### Bundler
-
-```
-gem install bundler
-```
-
-### Composer
-
-```
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-```
-
-### Python & Pip
-
-```
-brew install python
-```
-
-### Node & NPM
-
-```
-brew install node
-```
-
-### Grunt
-
-```
-npm install -g grunt-cli
-```
-
-### Bower
-
-```
-npm install -g bower
-```
-
-### Gulp
-
-```
-npm install -g gulp
-```
-
-### NodeJS
-
-https://nodejs.org/
-
-### Compass
-
-```
-gem install compass
-```
+- Settings
+    - Modifier taps: Both off
+    - Instant Info Browsing = TICKED
+    - No search in spotlight (just change global key for that in settings)
+    - No snippets (text expander rules!)
+    - Clipboard shortcuts;
+      - All + C = Clipboard history
+      - All + V = Paste and remove from history
+      - Select from history = NOPE
