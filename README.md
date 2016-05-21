@@ -212,7 +212,7 @@ Sysadmin
 
 ### Fish
 
-- [Config](sysadmin/fish/config.fish)
+- [Config](sysadmin/fish/config/config.fish)
 - [Setup](sysadmin/fish/setup.md)
 
 ### Gulp

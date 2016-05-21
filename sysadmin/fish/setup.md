@@ -1,9 +1,20 @@
-Fish
-====
+Fish setup
+==========
 
-```
-brew install fish
-```
+A much better shell
+
+    brew install fish
+
+Tell system about new shell:
+
+    echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+
+Set as default shell:
+
+    chsh -s /usr/local/bin/fish
+
+Place `./config` (within this repo) into `~/.config/fish/` (on machine);
+Next steps;
 
 - iTerm2-color-schemes github
 - Solarized dark high contrast
@@ -12,9 +23,3 @@ brew install fish
 - sudo pip install thefuck
 - omf install tab
 - npm install -g tldr
-
-Place following in `~/.config/fish/`;
-
-- config.fish
-- /completions
-- /functions
