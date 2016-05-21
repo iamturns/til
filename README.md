@@ -309,6 +309,7 @@ Misc
 
 ### Mac
 
+- [Apps](misc/mac/apps.md)
 - [.DS_Store files](misc/mac/ds-store-files.md)
 - [New machine setup](misc/mac/new-machine-setup.md)
 - [Spotlight remove results](misc/mac/spotlight-remove-results.md)
