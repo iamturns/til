@@ -136,6 +136,7 @@ Dev
 ### Ruby
 
 - [Overview](dev/ruby/overview.md)
+- [rbenv](dev/ruby/rbenv.md)
 
 ### Style
 
