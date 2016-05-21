@@ -175,7 +175,6 @@ Dev
 
 - [ASCII comments](dev/other/ascii-comments.md)
 - [Folder structure](dev/other/folder-structure.md)
-- [IntelliJ keyboard shortcuts](dev/other/intellij-keyboard-shortcuts.md)
 - [Ionic](dev/other/ionic.md)
 - [Jekyll](dev/other/jekyll.md)
 - [Mustache](dev/other/mustache.md)
@@ -296,6 +295,7 @@ Misc
 ----
 
 - [Android emulator setup](misc/android-emulator-setup.md)
+- [Keyboard shortcuts](misc/keyboard-shortcuts.md)
 - [Language acronyms](misc/language-acronyms.md)
 - [Microsoft Word annoying characters](misc/microsoft-word-annoying-characters.md)
 - [PayPal](misc/paypal.md)
@@ -304,7 +304,6 @@ Misc
 ### Chrome
 
 - [Copy HTML output to clipboard](misc/chrome/copy-html-output-to-clipboard.md)
-- [Keyboard shortcuts](misc/chrome/keyboard-shortcuts.md)
 - [Restart](misc/chrome/restart.md)
 
 ### Mac
