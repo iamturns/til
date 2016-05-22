@@ -40,19 +40,22 @@ Fun
 - Franz - chat (slack, hangouts, facebook messenger, etc)
 - Skype
 - Spotify
+    - Connect to last.fm
 - Steam
+    - Turn off automatic chat login
 - Twitter
-- VLC - videos
-- VOX - playing music
+- VLC
+- VOX - playing audio files
 
 Dev
 ---
 
+- Chrome Canary
 - Dash - Offline docs
 - DiffMerge
 - Docker
 - FileZilla
-- Firefox - Testing
+- Firefox - For testing
 - GitUp
     - Not 100% sure on this
 - iTerm - better terminal
@@ -70,7 +73,6 @@ Misc
 
 - Adobe Creative Cloud
 - licecap - creating gifs
-    - Possibly something better now?
 - PhotoSweeper X - detect duplicate images
 - Rest - take breaks
 - Ulysses - writing
