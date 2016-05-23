@@ -163,3 +163,18 @@ LaunchBar
       - All + C = Clipboard history
       - All + V = Paste and remove from history
       - Select from history = NOPE
+
+
+
+Dock
+====
+
+- Finder
+- Chrome
+- Calendar
+- iTerm
+- IDE
+- TimeDoser
+- Franz
+- Activity Monitor
+    - With 'Show CPU history'
