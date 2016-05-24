@@ -59,6 +59,8 @@ Dev
 - GitUp
     - Not 100% sure on this
 - iTerm - better terminal
+    - http://iterm2colorschemes.com/
+    - My fave: Solarized dark high contrast
 - Marked - markdown viewer
 - NodeJS
 - Sequel Pro
