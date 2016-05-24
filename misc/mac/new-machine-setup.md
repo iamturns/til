@@ -70,6 +70,7 @@ Git
 ===
 
     brew install git
+    brew install git-extras
     brew install git-flow-avh
     git config --global user.name "Matthew Turnbull"
     git config --global user.email "turnbullm@gmail.com"
