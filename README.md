@@ -110,6 +110,10 @@ Dev
 - [Entity wrappers](dev/php/drupal/entity-wrappers.md)
 - [Using latest jQuery](dev/php/drupal/using-latest-jquery/README.md)
 
+### PHP / Laravel
+
+- [Setup](dev/php/laravel/setup.md)
+
 ### PHP / Magento
 
 - [Embed block in email](dev/php/magento/embed-block-in-email.md)
