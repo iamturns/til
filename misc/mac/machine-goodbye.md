@@ -1,0 +1,43 @@
+Machine goodbye
+===============
+
+- Check for git repo's with unpushed or unsaved files
+    - Don't forget any important files in .gitignore that can only manually be saved (eg: TODO lists, etc)
+    - Commands;
+        - Fetch all data repo may not have: `git fetch --all`
+        - See remote branches that you may not have: `git branch -r`
+        - Push all to remote: `git push --all [[remote name]]`
+        - Push tags to remote: `git push --tags [[remote name]]`
+- Remove SSH keys
+- Check for apps to sign out of and/or clear data, eg;
+    - Google Drive
+    - Dropbox
+    - Boxcryptor
+    - 1Password
+    - Adobe Creative Cloud
+    - Evernote
+    - App Store
+    - Franz
+    - GitHub Desktop
+    - Ulysses
+    - iMovie
+    - Lightroom
+    - Skype
+    - Slack
+    - Spotify
+    - Steam
+    - Twitter
+- Remove cloud based synced files, eg;
+    - Google Drive
+    - Dropbox
+    - Boxcryptor
+- Check common directories and delete stuff
+    - Downloads
+    - Documents
+    - Desktop
+- Browsers - reset, clear all cookies etc;
+    - Chrome
+    - Firefox
+- CCleaner
+    - Clean everything
+- Empty trash
