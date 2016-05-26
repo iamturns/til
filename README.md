@@ -184,6 +184,7 @@ Dev
 - [Mustache](dev/other/mustache.md)
 - [Naming conventions](dev/other/naming-conventions.md)
 - [Social sharing](dev/other/social-sharing.md)
+- [Swagger](dev/other/swagger.md)
 - [SVN](dev/other/svn.md)
 
 Sysadmin
