@@ -214,11 +214,6 @@ Sysadmin
 - [Librarian-chef](sysadmin/chef/librarian-chef.md)
 - [Littlechef](sysadmin/chef/littlechef.md)
 
-### Fish
-
-- [Config](sysadmin/fish/config/config.fish)
-- [Setup](sysadmin/fish/setup.md)
-
 ### Gulp
 
 - [Browser sync](sysadmin/gulp/browser-sync.md)
