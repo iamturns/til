@@ -18,6 +18,7 @@ Dev
 - [Git Flow](dev/git/gitflow.md)
 - [Patch](dev/git/patch.md)
 - [Stash](dev/git/stash.md)
+- [Sync branches](dev/git/sync-branches.md)
 - [Tidy commits](dev/git/tidy-commits.md)
 - [Versioning](dev/git/versioning.md)
 - [Workflow](dev/git/workflow.md)
