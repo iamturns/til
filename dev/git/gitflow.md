@@ -29,7 +29,7 @@ Create branches for you;
 git flow init
 ```
 
-To acccept all defaults (wise);
+To accept all defaults (wise);
 
 ```
 git flow init -d
@@ -49,7 +49,7 @@ git flow feature start {{name}}
 ```
 git checkout develop
 git pull
-git rebase develop feature//{{name}}
+git rebase develop feature/{{name}}
 ```
 
 ### Done
