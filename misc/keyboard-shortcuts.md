@@ -9,13 +9,12 @@ Global
 ======
 
 - All + Space = Spotlight
-- All + C = Clipboard history
 - All + V = Paste and remove from history
 - All + T = Text expander search
-- All + S = iTerm / Shell
-- Cmd + Space = Hold down = Send text or file to launchbar
+- All + \ = iTerm / Shell
+- Cmd + Space = Hold down to send selected text or file to LaunchBar
 - Ctrl + ~ = Switch between windows of the same app
-- Ctrl + Cmd + Space = Character viewer
+- Ctrl + Cmd + Space = Character viewer / emoji
 
 
 
@@ -43,16 +42,23 @@ Spectacle
 Launchbar
 =========
 
+- . (dot) = URL
+- Cmd + Space = Hold down to send selected text or file to LaunchBar
+
+With result
+-----------
+
 - Enter = Open
 - Right arrow = Browse
-- Right arrow + HOLD = Browse info
 - Space = Text input
 - Tab = Send
-- . (dot) = URL
-- Cmd + B = Recent items
+
+
+Special
+-------
+
+- To discovermore , hover mouse over item and click
 - Tab = enter date or time within calendar input
-- Shift + Space = Navigate into folder
-- Shift + Cmd + N = New folder
 
 
 
@@ -123,8 +129,8 @@ Developer toolbar
 
 
 
-IntelliJ
-========
+JetBrains / IntelliJ / WebStorm / PhpStorm
+==========================================
 
 - Add / remove a cursor: Alt + Shift + Click
 - Select all occurrences: Ctrl + Cmd + G
@@ -133,6 +139,8 @@ IntelliJ
 - Delete line: Cmd + Backspace
 - Duplicate line: Cmd + D
 - Move line up /down : Alt + Shift + Up / Down arrow
+
+- Dash documentation: Cmd + Shift + D
 
 Zen coding
 ----------

@@ -1,116 +1,136 @@
-New machine setup
-=================
-
-Also see;
- - [Apps](./apps.md).
- - [Fish setup](/sysadmin/fish/setup.md).
+Machine hello
+=============
 
 
 
-Settings
-========
+First
+=====
+
+Download Xcode via App Store. It takes forever!
+
+
 
 Finder
-------
+======
 
-Open Finder and remove crud from Finders favourites list (especially 'All my files')
+- Open Finder
+- View
+    - Customize toolbar
+        - Add in 'Path'
+- Preferences
+    - Sidebar
+        - Remove crud, including;
+            - All my files
+            - iCloud Drive
+            - Tags
+    - Advanced
+        - Tick 'Show all filename extensions'
 
-View hidden files in Finder;
+Hidden files
+------------
+
+In terminal;
 
     defaults write com.apple.finder AppleShowAllFiles YES
 
-Hold 'alt' on your keyboard, then right click on the Finder icon in the dock and click Relaunch
+Hold alt (⌥), right click Finder in dock, Relaunch
 
 
 
-SSH keys
+First apps
+==========
+
+- Google Chrome
+- iTerm
+
+
+
+Commands
 ========
 
-Generate with this command;
+```bash
+### SSH key ###
 
-    ssh-keygen -t rsa -C "turnbullm@gmail.com"
+ssh-keygen -t rsa -C "machine_identifier_matthew_turnbull_turnbullm@gmail.com"
 
-- Default location is good
-- Enter a strong password
-- id_rsa.pub = public key
-- id_rsa = private key
+# Default location is good
+# Enter a strong password
 
-Copy to clipboard:
+### Directories ###
 
-    pbcopy < ~/.ssh/id_rsa.pub
+mkdir ~/Code
+sudo ln -s ~/Code /var/www
+mkdir ~/Code/personal
+mkdir ~/Code/play
+mkdir ~/Code/vendor
+mkdir ~/Code/{{company name}}
 
-Add to GitHub: https://github.com/settings/ssh
+#
+# Brew
+#
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#
+# Git
+#
+
+brew install git
+git config --global user.name "Matthew Turnbull"
+git config --global user.email "turnbullm@gmail.com"
+
+#
+# Node & npm
+#
+
+brew install node
+
+# global modules
+
+npm install -g gulp
+npm install -g bower
+
+#
+# Ruby
+#
+
+brew install --HEAD ruby-build
+brew install --HEAD rbenv
+
+# install latest and use as global default
+
+rbenv install --list
+rbenv install 2.2.1
+rbenv rehash
+rbenv global 2.2.1
+
+# global gems
+
+gem install bundler
+gem install compass
+
+#
+# Python & pip
+#
+
+brew install python
+
+#
+# Composer
+#
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '070854512ef404f16bac87071a6db9fd9721da1684cd4589b1196c3faf71b9a2682e2311b36a5079825e155ac7ce150d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
 
 
 
-Directories
-===========
+Terminal setup
+==============
 
-    mkdir ~/Code
-    sudo ln -s ~/Code /var/www
-    mkdir ~/Code/personal
-    mkdir ~/Code/play
-    mkdir ~/Code/vendor
-    mkdir ~/Code/{{company name}}
-
-
-
-Brew
-====
-
-http://brew.sh/
-
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-Run `brew doctor` to make sure everything was okay
-
-
-
-Git
-===
-
-    brew install git
-    git config --global user.name "Matthew Turnbull"
-    git config --global user.email "turnbullm@gmail.com"
-
-
-
-Ruby
-====
-
-    brew install --HEAD ruby-build
-    brew install --HEAD rbenv
-
-    rbenv install --list
-
-Install the latest and use as global default, eg;
-
-    rbenv install 2.2.1
-    rbenv rehash
-    rbenv global 2.2.1
-
-
-
-More
-====
-
-    # node & npm
-    brew install node
-
-    # python & pip
-    brew install python
-
-    # global npm
-    npm install -g gulp
-    npm install -g bower
-
-    # global gems
-    gem install bundler
-    gem install compass
-
-    # Composer
-    curl -sS https://getcomposer.org/installer | php
-    sudo mv composer.phar /usr/local/bin/composer
+Refer to my ['turns-terminal'](https://github.com/turnbullm/turns-terminal) repo.
 
 
 
@@ -127,41 +147,46 @@ Take a snapshot in Virtualbox
 
 
 
-LaunchBar
-=========
+LaunchBar config
+================
 
-- Under index, disable;
+When you see 'Conflicting Keyboard Shortcuts';
+    - Open Spotlight Preferences
+    - Keyboard shortcuts
+    - Show Spotlight search
+    - Assign to 'All + Space' 
+
+Preferences
+-----------
+
+- Shortcuts
+    - Untick all except 'Search in Launchbar'
+- Actions
+    - Preferred Terminal application: iTerm
+- Clipboard
+    - Untick all keyboard shortcuts
+    - Except 'Paste and remove from history'
+        - Set to All + V
+- Advanced
+    - Untick 'Show Dock Icon'
+
+Index
+-----
+
+- Disable;
     - Snippets
     - iTunes Library
     - iPhoto Library
     - Safari stuff under Web
-    - Dev resources (clutters search)
-    - Tags (don't use em)
-
-- Search for following under each group, and remove;
+- Search for following, then click into each group and disable;
     - iTunes
     - Terminal
-
 - Under emoji, go to options, and tick 'Available as sub search only'
     - This prevents emoji from clogging up results
-
-- Under index, add;
-    - Code
-        - Search 1 sub folder level
-        - Folders only
-    - Home
-        - No search scope, just to have 'home' as an entry
-        - Make sure abbreviation is tilde
-
-- Settings
-    - Modifier taps: Both off
-    - Instant Info Browsing = TICKED
-    - No search in spotlight (just change global key for that in settings)
-    - No snippets (text expander rules!)
-    - Clipboard shortcuts;
-      - All + C = Clipboard history
-      - All + V = Paste and remove from history
-      - Select from history = NOPE
+- New > Add folder > ~/Code
+    - Options;
+        - Search scope: 1 sub folder level
+        - Search for: Folders
 
 
 

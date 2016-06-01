@@ -4,14 +4,37 @@ Apps
 Must have
 ---------
 
-In order;
-
 - Google Chrome
-- 1Password
-- TextExpander
+    - Pushbullet settings
+        - General
+            - Tick: Use dark icon
+            - Untick: Open things I push to this browser automatically
+        - Notifications
+            - Untick: Show notifications on my computer
 - LaunchBar
+    - See setup in ['machine hello' document](./machine-hello.md)
 - Google Drive
+    - Remember to only selectively sync some directories
 - Dropbox
+- 1Password
+    - Link to Dropbox
+    - Preferences > Browsers
+        - Disable: Automatically sign in after filling usernames and passwords
+        - Enable: Allow filling on pages that closely match saved websites
+- TextExpander
+    - File in Google Drive (license is for TextExpander 5 only)
+    - License stored in 1Password
+    - Don't check for updates
+    - Preferences
+        - Sync
+            - Link to Dropbox
+        - Appearance
+            - Untick: Show TextExpander in menu bar
+            - Tick: Hide TextExpander icon in Dock
+- iTerm - better terminal
+    - http://iterm2colorschemes.com/
+    - My fave: Solarized dark high contrast
+    - Set system wide hotkey: All + \
 
 System
 ------
@@ -40,6 +63,7 @@ Fun
 - Franz - chat (slack, hangouts, facebook messenger, etc)
 - Skype
 - Spotify
+    - Enable high quality streaming
     - Connect to last.fm
 - Steam
     - Turn off automatic chat login
@@ -58,9 +82,6 @@ Dev
 - Firefox - For testing
 - GitUp
     - Not 100% sure on this
-- iTerm - better terminal
-    - http://iterm2colorschemes.com/
-    - My fave: Solarized dark high contrast
 - Marked - markdown viewer
 - NodeJS
 - Sequel Pro
