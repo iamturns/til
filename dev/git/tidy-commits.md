@@ -6,20 +6,22 @@ Excellent resources;
 - https://github.com/blog/2019-how-to-undo-almost-anything-with-git
 - http://sethrobertson.github.io/GitFixUm/
 
-## New commit message for last commit
+New commit message for last commit
+----------------------------------
 
 ```
 git commit --amend -m "New commit message"
 ```
 
-## Interactive rebase on last X commits
+Interactive rebase on last X commits
+------------------------------------
 
 ```
 git rebase --interactive HEAD~[[number of commits]]
 ```
 
-## Interactive rebase since branch creation
-
+Interactive rebase since branch creation
+----------------------------------------
 
 Visually see which commit created the new branch:
 
@@ -33,8 +35,8 @@ Then pass it into:
 git rebase --interactive [[sha]]
 ```
 
-## Split commits
-
+Split commits
+-------------
 
 Mark commit(s) as 'edit' in interactive rebase:
 
@@ -54,7 +56,8 @@ Finish up with:
 git rebase --continue
 ```
 
-## Revert commit
+Revert commit
+-------------
 
 ### Pushed
 
