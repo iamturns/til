@@ -31,7 +31,7 @@ Dev
 - [Email template scaffold](dev/html/email-template-scaffold.md)
 - [HTML5 elements](dev/html/html5-elements.md)
 
-### Javascript
+### JavaScript
 
 - [AirBNB style guide](dev/javascript/airbnb-style-guide.md)
 - [Debounce / throttle / pause](dev/javascript/debounce-throttle-pause.md)
@@ -51,7 +51,7 @@ Dev
 - [Velocity.js](dev/javascript/velocityjs.md)
 - [Zone.js](dev/javascript/velocityjs.md)
 
-### Javascript / Angular
+### JavaScript / Angular
 
 - [Animation](dev/javascript/angular1/animation.md)
 - [Best practise](dev/javascript/angular1/best-practise.md)
@@ -60,18 +60,18 @@ Dev
 - [Providers](dev/javascript/angular1/providers.md)
 - [Testing](dev/javascript/angular1/testing.md)
 
-### Javascript / Coffeescript
+### JavaScript / Coffeescript
 
 - [Cheatsheet](dev/javascript/coffeescript/cheatsheet.md)
 - [Class variable function types](dev/javascript/coffeescript/class-variable-function-types.md)
 
-### Javascript / Google Maps
+### JavaScript / Google Maps
 
 - [Disable interaction](dev/javascript/google-maps/disable-interaction.md)
 - [Responsive](dev/javascript/google-maps/responsive.md)
 - [Show world](dev/javascript/google-maps/show-world.md)
 
-### Javascript / jQuery
+### JavaScript / jQuery
 
 - [AJAX scaffold](dev/javascript/jquery/ajax-scaffold.md)
 - [No](dev/javascript/jquery/no.md)
@@ -80,7 +80,7 @@ Dev
 - [Plugin scaffold](dev/javascript/jquery/plugin-scaffold.md)
 - [Simple wrapper](dev/javascript/jquery/simple-wrapper.md)
 
-### Javascript / Scripts
+### JavaScript / Scripts
 
 - [accordion.coffee](dev/javascript/scripts/accordion.coffee)
 - [columns.coffee](dev/javascript/scripts/columns.coffee)
@@ -90,6 +90,10 @@ Dev
 - [scroll-to.js](dev/javascript/scripts/scroll-to.js)
 - [sticky-header-knockout.coffee](dev/javascript/scripts/sticky-header-knockout.coffee)
 - [YouTube autoplay](dev/javascript/scripts/youtube-autoplay/README.md)
+
+### JavaScript / TypeScript
+
+- [Overview](dev/javascript/typescript/overview.md)
 
 ### PHP
 
