@@ -147,6 +147,21 @@ Take a snapshot in Virtualbox
 
 
 
+Dock
+====
+
+- Finder
+- Chrome
+- Calendar
+- iTerm
+- IDE
+- TimeDoser
+- Franz
+- Activity Monitor
+    - With 'Show CPU history'
+
+
+
 LaunchBar config
 ================
 
@@ -189,16 +204,10 @@ Index
         - Search for: Folders
 
 
+JetBrains config
+================
 
-Dock
-====
-
-- Finder
-- Chrome
-- Calendar
-- iTerm
-- IDE
-- TimeDoser
-- Franz
-- Activity Monitor
-    - With 'Show CPU history'
+- Editor > General > Smart Keys
+    - Disable 'Insert pair bracket'
+    - Disable 'Insert pair quote'
+    - Disable 'Insert pair }'
