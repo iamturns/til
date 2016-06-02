@@ -162,6 +162,18 @@ Dock
 
 
 
+Hide .DS_Store from desktop
+===========================
+
+- Press Shift-Command-Control-4, and drag out a square over any area. Release the mouse when done, and the area is now on your clipboard.
+- Open Preview and press Command-N to open a window with your capture.
+- Press Command-A to select all, then press Delete.
+- Press Command-C to copy this empty grey square to clipboard.
+- Select ".DS_Store" and Command-I to get info.
+- Select the icon in the top-left and Command-V to replace with transparency from clipboard.
+
+
+
 LaunchBar config
 ================
 
