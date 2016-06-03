@@ -51,12 +51,12 @@ Dev
 
 ### Javascript / Angular
 
-- [Animation](dev/javascript/angular/animation.md)
-- [Best practise](dev/javascript/angular/best-practise.md)
-- [Directives](dev/javascript/angular/directives.md)
-- [Overview](dev/javascript/angular/overview.md)
-- [Providers](dev/javascript/angular/providers.md)
-- [Testing](dev/javascript/angular/testing.md)
+- [Animation](dev/javascript/angular1/animation.md)
+- [Best practise](dev/javascript/angular1/best-practise.md)
+- [Directives](dev/javascript/angular1/directives.md)
+- [Overview](dev/javascript/angular1/overview.md)
+- [Providers](dev/javascript/angular1/providers.md)
+- [Testing](dev/javascript/angular1/testing.md)
 
 ### Javascript / Coffeescript
 
