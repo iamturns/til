@@ -51,7 +51,7 @@ Dev
 - [Velocity.js](dev/javascript/velocityjs.md)
 - [Zone.js](dev/javascript/velocityjs.md)
 
-### JavaScript / Angular
+### JavaScript / Angular 1
 
 - [Animation](dev/javascript/angular1/animation.md)
 - [Best practise](dev/javascript/angular1/best-practise.md)
@@ -59,6 +59,14 @@ Dev
 - [Overview](dev/javascript/angular1/overview.md)
 - [Providers](dev/javascript/angular1/providers.md)
 - [Testing](dev/javascript/angular1/testing.md)
+
+### JavaScript / Angular 2
+
+- [Bindings overview](dev/javascript/angular2/bindings-overview.md)
+- [Dependency injection](dev/javascript/angular2/dependency-injection.md)
+- [Overview](dev/javascript/angular2/overview.md)
+- [Routing](dev/javascript/angular2/routing.md)
+- [Template syntax](dev/javascript/angular2/template-syntax.md)
 
 ### JavaScript / Coffeescript
 

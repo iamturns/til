@@ -198,6 +198,17 @@ var exampleObject = {
 
 
 
+Promises
+========
+
+```javascript
+return new Promise<type>(resolve => resolve('resolve must match type'));
+```
+
+`<type>` is for the resoled value. Rejections are hardcoded to `any`.
+
+
+
 Interface
 =========
 
@@ -547,11 +558,36 @@ Mixins
 ======
 
 ```javascript
+class ExampleClass implements ExampleMixin, ExampleMixin2 {}
+```
+
+The `implements` treats the classes as interfaces, so only the types (and not the implementation) is used.
+
+Unfortunately, all properties and types must be manually added to the class to satisfy the compiler.
+
+```javascript
 class ExampleMixin {
   exampleFunction() {
     return true;
   }
 }
 
-class ExampleClass implements ExampleMixin, ExampleMixin2 {}
+
+class ExampleClass implements ExampleMixin {
+  exampleFunction: () => boolean;
+}
+```
+
+The mixins also need to be manually applied;
+
+```
+applyMixins(ExampleClass, [ExampleMixin1, ExampleMixin2]);
+
+function applyMixins(derivedCtor: any, baseCtors: any[]) {
+    baseCtors.forEach(baseCtor => {
+        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+            derivedCtor.prototype[name] = baseCtor.prototype[name];
+        });
+    });
+}
 ```
