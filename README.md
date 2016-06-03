@@ -319,6 +319,7 @@ Misc
 - [Microsoft Word annoying characters](misc/microsoft-word-annoying-characters.md)
 - [PayPal](misc/paypal.md)
 - [Ubuntu mono sound](misc/ubuntu-mono-sound.md)
+- [Visual Studio Code](misc/vscode.md)
 
 ### Chrome
 
