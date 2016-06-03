@@ -219,7 +219,5 @@ Index
 JetBrains config
 ================
 
-- Editor > General > Smart Keys
-    - Disable 'Insert pair bracket'
-    - Disable 'Insert pair quote'
-    - Disable 'Insert pair }'
+- Editor > General > Appearance
+    - Enable 'Show whitespaces'
