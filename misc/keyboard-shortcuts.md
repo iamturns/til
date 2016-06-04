@@ -8,12 +8,12 @@ All = Shift + Ctrl + Alt + Cmd
 Global
 ======
 
-- All + Space = Spotlight
+- All + E = Evernote quick note
 - All + V = Paste and remove from history
 - All + T = Text expander search
 - All + \ = iTerm / Shell
+- All + Space = Spotlight
 - Cmd + Space = Hold down to send selected text or file to LaunchBar
-- Ctrl + ~ = Switch between windows of the same app
 - Ctrl + Cmd + Space = Character viewer / emoji
 
 

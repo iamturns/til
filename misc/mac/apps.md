@@ -54,6 +54,7 @@ Productivity
 
 - Evernote
     - Sign in with `+evernote` account
+    - Shortcut for 'Quick Note': All + E
 - TickTick
 - Workflowy
 
