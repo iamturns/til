@@ -135,6 +135,8 @@ Dev
     - Possibly install an older version on purpose, check reviews
 - Vagrant
 - Virtualbox
+- Visual Studio Code
+    - `ext install EditorConfig`
 - Xcode
 
 Misc
