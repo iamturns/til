@@ -16,6 +16,7 @@ Dev
 - [Force rebase](dev/git/force-rebase.md)
 - [Git FTP](dev/git/git-ftp.md)
 - [Git Flow](dev/git/gitflow.md)
+- [Line endings](dev/git/line-endings.md)
 - [lolcommits](dev/git/lolcommits.md)
 - [Patch](dev/git/patch.md)
 - [Stash](dev/git/stash.md)
