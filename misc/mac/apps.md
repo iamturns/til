@@ -11,6 +11,9 @@ Must have
             - Untick: Open things I push to this browser automatically
         - Notifications
             - Untick: Show notifications on my computer
+- Firefox
+    - Sign in for bookmarks
+    - Within Bookmarks, delete everything except for 'Bookmarks Toolbar > LaunchBar Index'
 - LaunchBar
     - See setup in ['machine hello' document](./machine-hello.md)
     - When you see 'Conflicting Keyboard Shortcuts';
@@ -36,6 +39,8 @@ Must have
             - iTunes Library
             - iPhoto Library
             - Safari stuff under Web
+        - Google Chrome Bookmarks > Options > Access items via sub-search only > Enable
+        - Google Chrome History > Options > Access items via sub-search only > Enable
         - Search for following, then click into each group and disable;
             - iTunes
             - Terminal
@@ -45,6 +50,9 @@ Must have
             - Options;
                 - Search scope: 1 sub folder level
                 - Search for: Folders
+        - New > Web Bookmarks > Firefox
+            - Untick annoying directories (Bookmarks Menu, Bookmarks Toolbar, Unsorted Bookmarks)
+            - Options > Enable 'Allow searching for hostname'
 - Google Drive
     - Remember to only selectively sync some directories
 - Dropbox
