@@ -11,6 +11,8 @@ Must have
             - Untick: Open things I push to this browser automatically
         - Notifications
             - Untick: Show notifications on my computer
+    - Magic Actions settings
+        - Disable: Instant control over volume
 - Firefox
     - Sign in for bookmarks
     - Within Bookmarks, delete everything except for 'Bookmarks Toolbar > LaunchBar Index'
