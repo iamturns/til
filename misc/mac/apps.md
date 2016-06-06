@@ -13,6 +13,38 @@ Must have
             - Untick: Show notifications on my computer
 - LaunchBar
     - See setup in ['machine hello' document](./machine-hello.md)
+    - When you see 'Conflicting Keyboard Shortcuts';
+        - Open Spotlight Preferences
+        - Keyboard shortcuts
+        - Show Spotlight search
+        - Assign to 'All + Space'
+    - Users & Groups > Login Items > Add LaunchBar
+    - Preferences
+        - Shortcuts
+            - Untick all except 'Search in Launchbar'
+        - Actions
+            - Preferred Terminal application: iTerm
+        - Clipboard
+            - Untick all keyboard shortcuts
+            - Except 'Paste and remove from history'
+                - Set to All + V
+        - Advanced
+            - Untick 'Show Dock Icon'
+    - Index
+        - Disable;
+            - Snippets
+            - iTunes Library
+            - iPhoto Library
+            - Safari stuff under Web
+        - Search for following, then click into each group and disable;
+            - iTunes
+            - Terminal
+        - Under emoji, go to options, and tick 'Available as sub search only'
+            - This prevents emoji from clogging up results
+        - New > Add folder > ~/Code
+            - Options;
+                - Search scope: 1 sub folder level
+                - Search for: Folders
 - Google Drive
     - Remember to only selectively sync some directories
 - Dropbox
@@ -66,6 +98,7 @@ Fun
 - Spotify
     - Enable high quality streaming
     - Connect to last.fm
+    - Disable launch on startup
 - Steam
     - Turn off automatic chat login
 - Twitter
@@ -77,12 +110,16 @@ Dev
 
 - Chrome Canary
 - Dash - Offline docs
+    - Disable launch on startup
 - DiffMerge
 - Docker
 - FileZilla
 - Firefox - For testing
 - GitUp
     - Not 100% sure on this
+- JetBrains
+    - Editor > General > Appearance
+        - Enable 'Show whitespaces'
 - Marked - markdown viewer
 - NodeJS
 - Sequel Pro
