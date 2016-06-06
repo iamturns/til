@@ -170,3 +170,23 @@ Create apps;
 
     open .
     open /Applications/
+
+### Calendar settings
+
+  - General
+      - Notifications
+          - Use browser notifications instead of interruptive alerts
+          - Disable: Play sound
+      - Week starts on
+          - Monday
+  - Notifications
+      - Events
+          - Notification | 10 | minutes
+          - Email        | 1 | days
+          - Email        | 3 | days
+          - Email        | 1 | weeks
+      - All day events
+          - Notification | 0 | days  | 9:00am
+          - Email        | 1 | days  | 9:00am
+          - Email        | 3 | days  | 9:00am
+          - Email        | 1 | weeks | 9:00am
