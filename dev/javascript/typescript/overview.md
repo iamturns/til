@@ -173,6 +173,31 @@ let {a, b}: {a: string, b: number} = { a: "baz", b: 100 }
 
 
 
+Objects
+=======
+
+```javascript
+var exampleObject = {
+  propertyName: propertyType
+} = {
+  propertyName: propertyValue
+};
+```
+
+Or with assertions;
+
+```javascript
+var exampleObject = {
+  propertyName: <propertyType> propertyValue
+};
+
+var exampleObject = {
+  propertyName: propertyValue as propertyType
+};
+```
+
+
+
 Interface
 =========
 
