@@ -157,9 +157,16 @@ Download icons: `./apps/nativefier-icons`
 
 Create apps;
 
-    nativefier --name "Brain.fm" --icon ~/Downloads/brainfm.png --counter --overwrite "https://brain.fm" ~/Documents/Nativefier/Brain.fm/
-    nativefier --name "Calendar" --icon ~/Downloads/calendar.png --counter --overwrite "https://calendar.google.com/" ~/Documents/Nativefier/Calendar/
-    nativefier --name "Calendar (Work)" --icon ~/Downloads/calendar-work.png --counter --overwrite "https://calendar.google.com/" ~/Documents/Nativefier/Calendar-Work/
-    nativefier --name "Trello" --icon ~/Downloads/trello.png --counter --overwrite "https://trello.com" ~/Documents/Nativefier/Trello/
+    mkdir ~/Documents/Nativefier/
+    cd ~/Documents/Nativefier/
 
-Note: The output directory may need to be a full path rather than `~/`
+    nativefier --name "Inbox" --icon ~/Downloads/nativefier-icons/email.png --counter "https://inbox.google.com/"
+    nativefier --name "Inbox (Work)" --icon ~/Downloads/nativefier-icons/email-work.png --counter "https://inbox.google.com/"
+    nativefier --name "Google Calendar" --icon ~/Downloads/nativefier-icons/calendar.png --counter "https://calendar.google.com/"
+    nativefier --name "Google Calendar (Work)" --icon ~/Downloads/nativefier-icons/calendar-work.png --counter "https://calendar.google.com/"
+
+    nativefier --name "Trello" --icon ~/Downloads/nativefier-icons/trello.png --counter "https://trello.com" ~/Documents/Nativefier/Trello/
+    nativefier --name "Brain.fm" --icon ~/Downloads/nativefier-icons/brainfm.png --counter "https://brain.fm" ~/Documents/Nativefier/Brain.fm/
+
+    open .
+    open /Applications/
