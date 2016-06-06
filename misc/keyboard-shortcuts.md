@@ -66,7 +66,7 @@ iTerm
 =====
 
 - Shift + Alt + Cmd + Drag = WOW! Drag the WINDOW part, not the tab
-- All + Right, All + Left = Cycle between panes
+- Cmd + Right, Cmd + Left = Cycle between panes
 
 
 

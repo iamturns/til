@@ -75,9 +75,9 @@ Must have
     - http://iterm2colorschemes.com/
     - My fave: Solarized dark high contrast
     - Set system wide hotkey: All + \
-    - Add two new hotkeys
-        - All + Right = Next pane
-        - All + Left = Previous pane
+    - Override two hotkeys;
+        - Cmd + Right = Next pane
+        - Cmd + Left = Previous pane
 
 System
 ------
