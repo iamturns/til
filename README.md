@@ -48,6 +48,7 @@ Dev
 - [Stampit](dev/javascript/stampit.md)
 - [Stop event behaviour](dev/javascript/stop-event-behaviour.md)
 - [Velocity.js](dev/javascript/velocityjs.md)
+- [Zone.js](dev/javascript/velocityjs.md)
 
 ### Javascript / Angular
 
