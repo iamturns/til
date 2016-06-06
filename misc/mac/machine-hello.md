@@ -90,6 +90,10 @@ gem install bundler
 ### Python & pip ###
 
 brew install python
+
+### Misc ###
+
+brew install imagemagick
 ```
 
 
