@@ -85,6 +85,7 @@ System
 ------
 
 - Android File Transfer - for getting files from android phone
+- AppCleaner - uninstalling apps
 - Asepsis - access NTFS drives
 - Boxcryptor - access encrypted files stored on cloud
 - Caffeine - shortcut to keep mac on (good for presentations etc)
