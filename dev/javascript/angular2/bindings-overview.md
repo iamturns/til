@@ -36,7 +36,7 @@ Expressions often refer to values that exist within the **expression context**, 
 Property binding
 ----------------
 
-Note: sets *properties*, not *attributes* (more later)
+Note: sets *properties*, not *attributes* (see 'Attributes & properties' in [Template syntax](./template-syntax.md))
 
 ### Syntax
 
@@ -85,6 +85,12 @@ Has the same restrictions as the expression parser, but supports;
 * assignment (`=`)
 * chaining (`;` and `,`)
     * `<button (click)="doSomething(); doSomethingElse()" />`
+
+### Style guide
+
+`05-15` - Use `on` prefix for event handlers, but not for events, eg;
+
+    <div (eventName)="onEventName($event)"></div>
 
 Two way binding
 ---------------

@@ -81,11 +81,13 @@ Within the component;
 
 Now the hosting parent component;
 
-    <user-detail (deleteRequest)="deleteHero($event)" [user]="currentUser" />
-    
+    <user-detail (deleteRequest)="onDeleteUser($event)" [user]="currentUser" />
+
 The `$event` will contain the user passed into the EventEmitter.
 
+Style guide '05-15': Use `on` prefix for event handlers, but not for events, eg;
 
+    <div (eventName)="onEventName($event)"></div>
 
 ngModel
 =======
@@ -253,12 +255,14 @@ Declare within the component;
     @Input() user: User;
     @Output() deleteRequest = new EventEmitter<User>();
 
-Or within the `@Component` decorator;
+Or within the `@Component` or `@Directive` decorator;
 
     @Component({
       inputs: ['user'],
       outputs: ['deleteRequest'],
     })
+
+Note: the above goes against the style guide (05-12).
 
 Aliasing
 --------
@@ -266,12 +270,14 @@ Aliasing
 Use this syntax;
 
     @Output(publicAlias) propertyName = ...
-    
+
 Or;
 
     @Component({
       outputs: ['propertyName:publicAlias']    
     })
+
+Note: aliasing is marked as 'avoid' in the style guide (05-13).
 
 
 
