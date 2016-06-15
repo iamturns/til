@@ -9,7 +9,7 @@ Install
 =======
 
 ```bash
-brew install imagemagick
+brew install imagemagick ffmpeg
 gem install lolcommits
 ```
 
@@ -18,10 +18,19 @@ gem install lolcommits
 Setup
 =====
 
-* Animate = 1
-* Delay = 4
-* Fork = true
-* Attempt to remove or shrink 'sha' `lolcommits --config -p loltext`
+```bash
+lolcommits --enable --delay=5 --animate=1 --fork
+```
+
+
+
+More
+====
+
+```bash
+lolcommits --browse
+lolcommits --disable
+```
 
 
 
