@@ -53,7 +53,7 @@ Use an event object named `$event`;
     
 Then;
 
-    onClickMe(event: any) {
+    onClickMe(event: Event) {
       event.stopPropagation();
     }
 
