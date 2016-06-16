@@ -128,6 +128,16 @@ Star templates
 
 The `*` before attributes is syntactic sugar to highlight directives that modify HTML using templates.
 
+Also known as attribute directives.
+
+Powered by the `<template>` tag: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
+
+`<template>` tags are hidden within the browser.
+
+Within the app, Angular removes `<template>` tags (and children).
+
+The asterix / star for structural directives (`*ngIf`, `*ngFor`), implies that under the hood, Angular will replace the asterix with a `<template>`.
+
 NgIf
 ----
 

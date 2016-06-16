@@ -62,6 +62,7 @@ Dev
 
 ### JavaScript / Angular 2
 
+- [Attribute directives](dev/javascript/angular2/attribute-directives.md)
 - [Bindings overview](dev/javascript/angular2/bindings-overview.md)
 - [Dependency injection](dev/javascript/angular2/dependency-injection.md)
 - [Overview](dev/javascript/angular2/overview.md)
