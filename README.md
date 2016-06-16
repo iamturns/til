@@ -64,6 +64,7 @@ Dev
 
 - [Attribute directives](dev/javascript/angular2/attribute-directives.md)
 - [Bindings overview](dev/javascript/angular2/bindings-overview.md)
+- [Component styles](dev/javascript/angular2/component-styles.md)
 - [Dependency injection](dev/javascript/angular2/dependency-injection.md)
 - [Overview](dev/javascript/angular2/overview.md)
 - [Routing](dev/javascript/angular2/routing.md)
