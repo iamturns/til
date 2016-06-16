@@ -24,14 +24,14 @@ header
 
 Represents a group of introductory or navigational aids and usually contains the section's heading
 
-Most sections and articles have one
+Most sections and articles have one. Can also belong in aside and header.
 
 footer
 ------
 
 Contains information about its parent element, eg: who wrote it, copyright, links to  related content, etc
 
-NOT a description of the position
+NOT a description of the position. Can also belong in aside and header.
 
 aside
 -----
