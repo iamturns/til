@@ -10,14 +10,13 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   selector: '[egHighlight]'
 })
 export class HighlightDirective {
+  @Input() egHighlight: string;
   private defaultColor = 'red';
   private el: HTMLElement;
 
   constructor(el: ElementRef) {
     this.el = el.nativeElement;
   }
-
-  @Input() egHighlight: string;
 
   @Input() set egHighlightDefaultColor(colorName: string) {
     this.defaultColor = colorName || this.defaultColor;

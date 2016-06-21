@@ -62,6 +62,7 @@ Dev
 
 ### JavaScript / Angular 2
 
+- [Animations](dev/javascript/angular2/animations.md)
 - [Attribute directives](dev/javascript/angular2/attribute-directives.md)
 - [Bindings overview](dev/javascript/angular2/bindings-overview.md)
 - [Component styles](dev/javascript/angular2/component-styles.md)
