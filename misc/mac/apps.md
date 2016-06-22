@@ -7,7 +7,7 @@ Must have
 - Google Chrome
     - Pushbullet settings
         - General
-            - Tick: Use dark icon
+            - Tick: Use dark iconi
             - Untick: Open things I push to this browser automatically
         - Notifications
             - Untick: Show notifications on my computer
@@ -68,13 +68,6 @@ Must have
         - Appearance
             - Untick: Show TextExpander in menu bar
             - Tick: Hide TextExpander icon in Dock
-- iTerm - better terminal
-    - http://iterm2colorschemes.com/
-    - My fave: Solarized dark high contrast
-    - Set system wide hotkey: All + \
-    - Override two hotkeys;
-        - Cmd + Right = Next pane
-        - Cmd + Left = Previous pane
 
 System
 ------
