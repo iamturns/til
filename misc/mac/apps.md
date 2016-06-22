@@ -13,21 +13,20 @@ Must have
             - Untick: Show notifications on my computer
     - Magic Actions settings
         - Disable: Instant control over volume
-- Firefox
-    - Sign in for bookmarks
-    - Within Bookmarks, delete everything except for 'Bookmarks Toolbar > LaunchBar Index'
+    - Spreed
+        - Tick: Disable Spreed button on all sites
+- Dropbox
 - LaunchBar
-    - See setup in ['machine hello' document](./machine-hello.md)
     - When you see 'Conflicting Keyboard Shortcuts';
         - Open Spotlight Preferences
         - Keyboard shortcuts
         - Show Spotlight search
         - Assign to 'All + Space'
-    - Users & Groups > Login Items > Add LaunchBar
+    - Users & Groups > Login Items > Add LaunchBar (and tick 'Hide')
     - Preferences
         - Shortcuts
             - Untick all except 'Search in Launchbar'
-        - Actions
+        - Actions > Options
             - Preferred Terminal application: iTerm
         - Clipboard
             - Untick all keyboard shortcuts
@@ -37,27 +36,23 @@ Must have
             - Untick 'Show Dock Icon'
     - Index
         - Disable;
-            - Snippets
+            - Snippets (use TextExpander)
             - iTunes Library
             - iPhoto Library
             - Safari stuff under Web
+        - Emoji > Options > Access items via sub-search only > Enable
         - Google Chrome Bookmarks > Options > Access items via sub-search only > Enable
         - Google Chrome History > Options > Access items via sub-search only > Enable
         - Search for following, then click into each group and disable;
             - iTunes
             - Terminal
-        - Under emoji, go to options, and tick 'Available as sub search only'
-            - This prevents emoji from clogging up results
+        - New > Add folder > Dropbox > Launchbar Bookmarks
         - New > Add folder > ~/Code
             - Options;
                 - Search scope: 1 sub folder level
                 - Search for: Folders
-        - New > Web Bookmarks > Firefox
-            - Untick annoying directories (Bookmarks Menu, Bookmarks Toolbar, Unsorted Bookmarks)
-            - Options > Enable 'Allow searching for hostname'
 - Google Drive
     - Remember to only selectively sync some directories
-- Dropbox
 - 1Password
     - Link to Dropbox
     - Preferences > Browsers
