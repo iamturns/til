@@ -15,6 +15,8 @@ Finder
     - Customize toolbar
         - Add in 'Path'
 - Preferences
+    - General
+        - New Finder window shows: 
     - Sidebar
         - Remove crud, including;
             - All my files
