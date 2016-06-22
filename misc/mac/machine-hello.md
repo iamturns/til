@@ -8,6 +8,8 @@ First
 
 Download Xcode via App Store. It takes forever!
 
+When complete, open and accept the T&Cs. 
+
 
 
 Finder
@@ -52,12 +54,15 @@ ssh-keygen -t rsa -C "machine_identifier_matthew_turnbull_turnbullm@gmail.com"
 
 mkdir ~/Code
 sudo ln -s ~/Code /var/www
-mkdir ~/Code/personal
-mkdir ~/Code/play
-mkdir ~/Code/vendor
-mkdir ~/Code/{{company name}}
 
-### Brew ###
+# Enter password
+
+mkdir /var/www/personal
+mkdir /var/www/play
+mkdir /var/www/vendor
+mkdir /var/www/@@COMPANY_NAME@@
+
+### Homebrew ###
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -75,6 +80,11 @@ brew install node
 
 brew install --HEAD ruby-build
 brew install --HEAD rbenv
+
+# Init rbenv
+# This is one time only, and will be automatically run within terminal setup later
+
+eval "$(rbenv init -)"
 
 # Install latest and use as global default
 
@@ -101,7 +111,7 @@ brew install imagemagick
 Terminal setup
 ==============
 
-Refer to my ['turns-terminal'](https://github.com/turnbullm/turns-terminal) repo.
+Refer to my ['ily-terminal'](https://github.com/turnbullm/ily-terminal) repo.
 
 
 
