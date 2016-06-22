@@ -1,12 +1,7 @@
 Machine hello
 =============
 
-
-
-First
-=====
-
-Download Xcode via App Store. It takes forever!
+First step: download Xcode via App Store. It takes forever!
 
 When complete, open and accept the T&Cs. 
 
@@ -49,6 +44,9 @@ ssh-keygen -t rsa -C "machine_identifier_matthew_turnbull_turnbullm@gmail.com"
 
 # Default location is good
 # Enter a strong password
+
+# Copy public key to clipboard and save to GitHub, BitBucket, etc;
+cat ~/.ssh/id_rsa.pub | pbcopy
 
 ### Directories ###
 
