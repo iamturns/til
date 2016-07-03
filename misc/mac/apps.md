@@ -51,6 +51,8 @@ Must have
             - Options;
                 - Search scope: 1 sub folder level
                 - Search for: Folders
+        - Search Templates (UTF-8) > New > Google Calendar;
+            - http://www.google.com/calendar/event?ctext=*&action=TEMPLATE&pprop=HowCreated%3AQUICKA
 - Google Drive
     - Remember to only selectively sync some directories
 - 1Password
