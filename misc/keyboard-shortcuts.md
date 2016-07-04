@@ -156,6 +156,5 @@ Zen coding
 Workflowy
 =========
 
-Cmd + Ctrl + Left / Right = In and out
-Ctrl + Shift + 9/0 = Prev / Next sibling
-
+- Cmd + Ctrl + Left / Right = In and out
+- Ctrl + Shift + 9/0 = Prev / Next sibling
