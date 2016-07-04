@@ -128,4 +128,4 @@ Shortcut;
   - the starting size of an element before grow/shrink come into play
   - set to `auto` by default
       - meaning: use width, max-width, min-width, etc
-  - generally ruires `flex-shrink` to be disabled to strictly adhere to this values
+  - generally requires `flex-shrink` to be disabled to strictly adhere to this values
