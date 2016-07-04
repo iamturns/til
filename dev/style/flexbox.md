@@ -113,11 +113,19 @@ Use `align-self` or `margin`
 Flexible sizes
 --------------
 
+Shortcut;
+
+    flex: @@flex-grow@@ @@flex-shrink@@ @@flex-basis@@
+
 - flex-grow
   - refers to size relative to other flex items in container
   - 0 = do not stretch (default value)
   - 1 = stretch
 - flex-shrink
-  - The opposite of flex-grow. Generally not set. 
+  - 1 = shrink (default)
+  - 0 = do not shrink (keep to minimum width)
 - flex-basis
-  - 'min-width' for flex items
+  - the starting size of an element before grow/shrink come into play
+  - set to `auto` by default
+      - meaning: use width, max-width, min-width, etc
+  - generally ruires `flex-shrink` to be disabled to strictly adhere to this values
