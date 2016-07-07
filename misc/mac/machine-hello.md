@@ -7,6 +7,16 @@ When complete, open and accept the T&Cs.
 
 
 
+Faster keyboard
+===============
+
+```bash
+defaults write -g InitialKeyRepeat -int 7
+defaults write -g KeyRepeat -int 0
+```
+
+
+
 Finder
 ======
 
