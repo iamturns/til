@@ -16,7 +16,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Speeeeeeeeeeeeeeeeeeeed!
 defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
+defaults write -g KeyRepeat -int 2
 ```
 
 Logout / login for settings to take effect
