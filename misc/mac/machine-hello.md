@@ -11,9 +11,15 @@ Faster keyboard
 ===============
 
 ```bash
-defaults write -g InitialKeyRepeat -int 7
-defaults write -g KeyRepeat -int 0
+# Repeat key when key is held down
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Speeeeeeeeeeeeeeeeeeeed!
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
 ```
+
+Logout / login for settings to take effect
 
 
 
