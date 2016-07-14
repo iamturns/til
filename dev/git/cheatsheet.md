@@ -63,6 +63,12 @@ git branch -d [[branch name]] #delete
 git push [[remote name]] --delete [[branch name]] #delete on remote
 ```
 
+Remove local branches that have been merged;
+
+```
+git branch --merged develop | grep -v "\*" | grep "$feature/" | xargs -n 1 git branch -d
+````
+
 Stash
 -----
 
