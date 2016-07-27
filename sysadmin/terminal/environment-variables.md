@@ -1,46 +1,41 @@
-Environment variables
-=====================
+# Environment variables
 
-Setting
--------
+## View
 
-### Linux & OS X
+* Bash
 
-`export {{ENVIRONMENT_VARIABLE_NAME}}={{value}}`
+		echo ${{ENVIRONMENT_VARIABLE_NAME}}
 
-### Windows
+## Set globally
 
-`set {{ENVIRONMENT_VARIABLE_NAME}}={{value}}`
+* Bash
 
-### Fish
+		export {{ENVIRONMENT_VARIABLE_NAME}}={{value}}
 
-`set -gx {{ENVIRONMENT_VARIABLE_NAME}} {{value}}`
+* Fish
 
-Setting for one command
------------------------
+		set -gx {{ENVIRONMENT_VARIABLE_NAME}} {{value}}
 
-### Linux & OS X
+* Windows
 
-`{{ENVIRONMENT_VARIABLE_NAME}}={{value}} {{command}}`
+		set {{ENVIRONMENT_VARIABLE_NAME}}={{value}}
 
-### Fish
+## Set for one command
 
-`env {{ENVIRONMENT_VARIABLE_NAME}}={{value}} {{command}]`
+* Bash
 
-Remove
-------
+		{{ENVIRONMENT_VARIABLE_NAME}}={{value}} {{command}}
 
-### Linux & OS X
+* Fish
 
-`unset {{ENVIRONMENT_VARIABLE_NAME}}`
+		env {{ENVIRONMENT_VARIABLE_NAME}}={{value}} {{command}]
 
-### Fish
+## Remove
 
-`set -e {{ENVIRONMENT_VARIABLE_NAME}}`
+* Bash
 
-View
-----
+		unset {{ENVIRONMENT_VARIABLE_NAME}}
 
-### Linux & OS X
+* Fish
 
-`echo ${{ENVIRONMENT_VARIABLE_NAME}}`
+		set -e {{ENVIRONMENT_VARIABLE_NAME}}
