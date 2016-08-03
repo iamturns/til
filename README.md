@@ -329,6 +329,7 @@ Misc
 ### Mac
 
 - [Apps](misc/mac/apps.md)
+- [Diff apps](misc/mac/diff-apps.md)
 - [.DS_Store files](misc/mac/ds-store-files.md)
 - [Machine goodbye](misc/mac/machine-goodbye.md)
 - [Machine hello](misc/mac/machine-hello.md)
