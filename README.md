@@ -13,6 +13,7 @@ Dev
 
 - [Cheatsheet](dev/git/cheatsheet.md)
 - [Daily standup command](dev/git/daily-standup.md)
+- [Emoji](dev/git/emoji.md)
 - [Force rebase](dev/git/force-rebase.md)
 - [Git FTP](dev/git/git-ftp.md)
 - [Git Flow](dev/git/gitflow.md)
