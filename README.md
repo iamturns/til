@@ -92,6 +92,11 @@ Dev
 - [Plugin scaffold](dev/javascript/jquery/plugin-scaffold.md)
 - [Simple wrapper](dev/javascript/jquery/simple-wrapper.md)
 
+### JavaScript / RxJS
+
+- [Overview](dev/javascript/rxjs/overview.md)
+- [Upgrade(dev/javascript/rxjs/upgrade.md)
+
 ### JavaScript / Scripts
 
 - [accordion.coffee](dev/javascript/scripts/accordion.coffee)
