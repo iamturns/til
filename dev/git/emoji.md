@@ -9,29 +9,20 @@ Release
 - :tada: New release
 - :bookmark: Version tag
 
-Feature
--------
+Commit
+------
 
 - :sparkles: New
 - :zap: New backward-incompatible
 - :poop: Deprecated
 - :fire: Removed
+- :bug: Broken code fix
+- :lock: Security fix
+- :art: Improving format / structure of code
 
-Fix
----
+Code
+----
 
-- :bug:
-- :green_heart: CI build
-- :racehorse: performance
-- :non-potable_water: memory leak
-- :lock: security
-- :shirt: linter / strict / deprecation warnings
-
-Small
------
-
-- :art: improving format / structure of code
-- :construction: WIP
 - :speaker: logging
 - :memo: docs
 - :white_check_mark: tests
@@ -39,6 +30,10 @@ Small
 - :rocket: devops / deployment
 - :snowflake: configuration
 - :wrench: tooling
+- :green_heart: CI build
+- :racehorse: performance
+- :non-potable_water: memory leak
+- :shirt: linter / strict / deprecation warnings
 
 Dependencies
 ------------
@@ -52,3 +47,8 @@ Browser
 - :penguin: when fixing something on Linux
 - :apple: when fixing something on macOS
 - :checkered_flag: when fixing something on Windows
+
+Misc
+----
+
+- :construction: WIP
