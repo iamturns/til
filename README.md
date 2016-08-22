@@ -45,6 +45,7 @@ Dev
 - [npm](dev/javascript/npm.md)
 - [Package managers](dev/javascript/package-managers.md)
 - [Redraw](dev/javascript/redraw.md)
+- [Redux](dev/javascript/redux.md)
 - [RequireJS](dev/javascript/requirejs.md)
 - [Sleep](dev/javascript/sleep.md)
 - [Stampit](dev/javascript/stampit.md)
