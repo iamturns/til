@@ -13,7 +13,7 @@ Commit
 ------
 
 - :sparkles: New
-- :zap: New backward-incompatible
+- :zap: Backward-incompatible change
 - :poop: Deprecated
 - :fire: Removed
 - :bug: Broken code fix
@@ -40,6 +40,7 @@ Dependencies
 
 - :arrow_up: when upgrading dependencies
 - :arrow_down: when downgrading dependencies
+- :arrow_forward: locking dependency
 
 Browser
 -------
