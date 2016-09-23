@@ -41,17 +41,13 @@ Alignment
 ---------
 
 - flex-direction
+  - determines how flex items are placed in the flex container
   - values;
     - row (default)
     - column
 
-- flex-wrap
-  - nowrap (default)
-    - Fit onto one line
-  - wrap
-
 - justify-content
-  - align items across the main axis
+  - align flex items on main axis (left and right)
   - values;
     - flex-start (default)
       - `| * * *         |`
@@ -65,7 +61,7 @@ Alignment
       - `|   *   *   *   |`
 
 - align-items
-  - align flex items on cross axis
+  - align flex items on cross axis (up and down)
   - values;
     - stretch (default)
       - `| * * * |`
@@ -85,8 +81,14 @@ Alignment
       - `| * * * |`
       - `|     * |`
 
+- flex-wrap
+  - determines if flex items are forced into single line (default) or can wrap onto multiple lines
+  - values;
+    - nowrap (default)
+    - wrap
+
 - align-content
-  - align multiple lines within a flex container by cross axis
+  - align multiple lines within a flex container by cross axis (up and down)
   - values;
     - stretch (default)
     - flex-start
