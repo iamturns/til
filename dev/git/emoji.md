@@ -15,6 +15,7 @@ Commit type
 
 - :sparkles: / :new: New
 - :zap: Backward-incompatible change
+
 - :poop: Deprecated
 - :fire: Removed
 - :bug: Bug fix
@@ -23,6 +24,8 @@ Commit type
 - :unamused: / :zzz: Chore
 - :bulb: idea
 - :construction: WIP
+
+- :fuelpump: :pencil2: :thumbsup: :smile: :evergreen_tree: :moon: :dizzy: Change / improvement (not needed, either new or backwards incompatible change)
 
 Code changes
 ------------
