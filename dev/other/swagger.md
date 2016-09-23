@@ -9,101 +9,161 @@ info:
   title: Example name here
   version: '1.0.0'
 basePath: /v1
+consumes:
+  - application/json
 produces:
   - application/json
+paths:
+  /example-path:
+    get | put | post | delete | options | head | patch:
+      `Operation Object`
+  /example-path/{exampleQueryParam}:
+    get | put | post | delete | options | head | patch:
+          `Operation Object`
+parameters:
+  # Global parameters
+  # @TODO
+securityDefinitions:
+  # Global security scheme definitions
+  # @TODO
+security:
+  # Global security
+  # @TODO
 ```
 
-Path with params
+Operation Object
 ----------------
 
 ```
-path: /pet/{petId}
+tags:
+  - One
+  - Two
+summary: Short summary. Less than 120 characters.
+description: |
+  Verbose explanation.
+  Can span multiple lines.
+parameters:
+  - Param 1 (`Parameter Object`)
+  - Param 2 (`Parameter Object`)
+  - Param 3 (`Parameter Object`)
+responses:
+  'HTTP Status Code':
+    `Response Object`
+  '200':
+    `Response Object`
+  default:
+    `Response Object`
 ```
 
-Common keys
------------
+Parameter Object
+----------------
 
-- `type` values;
-    - string
-    - number
-    - integer
-    - boolean
-    - array
-    - file
-- `format`;
-    - Values;
-        - int32
-        - int64
-        - float
-        - double
-        - byte
-        - binary
-        - date
-        - date-time
-        - password
-    - Can be any custom string value, eg;
-        - email
-        - uuid
-        - whatever-you-want
-- If `type` is 'array'
-    - Use `items` key to specify schema
-    - Can set `collectionFormat`;
-        - csv (default)
-            - Comma separated
-            - Eg: `foo1, foo2`
-        - ssv
-            - Space separated
-            - Eg: `foo1 foo2`
-        - tsv
-            - Tab separated
-            - Eg: `foo1\tfoo2`
-        - pipes
-            - Pipe separated
-            - Eg: `foo1|foo2`
-        - multi
-            - For 'query' or 'formData'
-            - `foo1=val1&foo2=val2`
-- If `type` is 'object'
-    - Use `properties` for schema
-- Parameters must specify `in`, one of;
-    - query
-    - header
-    - path
-    - formData
-    - body
-- Parameters can specify `required`
-    - Default is `false`
-    - If `in` is 'path', then this must be `true`
-- $ref
-    - Eg: `$ref: '#/definitions/DefinitionName'`
+```
+name: exampleParameterName
+in: query | header | path | formData | body
+  # `query`: /example?eg=###
+  # `path`: /example/{eg}
+  # `body`: Request payload
+    # Can only be *one* parameter with this
+    # The `name` has no effect (documentation purposes only)
+    # Requires `schema` property
+description: Optional description
+required: true
+  # Optional, defaults to `false`
+  # Unless `in` is `path`, then `required: true` MUST be set
+allowEmptyValue: true
+  # Optional, defaults to `false`
+  # Only valid when `in` is `query` or `formData`
+schema:
+  # Required if `in` is `body`
+  # See 'Schema Object'
+# Note: The remaining properties are listed for quick reference
+  # ALL of 'Items Object' below is available (and contains more documentation)
+type: string | integer | number | boolean | array | object
+format: date | date-time | email | password | uuid | whatever-you-want
+schema: See 'Schema Object'. Required if `in` is `body`.
+items: Nested 'Items Object'. Required if `type` is `array`.
+collectionFormat: csv | ssv | tsv | pipes | multi
+default: anything
+```
 
-Common types + format pairs
----------------------------
+Response Object
+---------------
 
-- integer
-    - type: integer
-    - format: int32
-- long
-    - type: integer
-    - format: int64
-- float
-    - type: number
-    - format: float
-- double
-    - type: number
-    - format: double
-- string
-    - type: string
-- boolean
-    - type: boolean
-- date
-    - type: string
-    - format: date
-- dateTime
-    - type: string
-    - format: date-time
-- password
-    - type: string
-    - format: password
+@TODO
 
-See list here: http://swagger.io/specification/#dataTypeFormat
+description
+schema
+headers
+examples
+
+
+
+Items Object
+------------
+
+```
+type: string | integer | number | boolean | array
+format: date | date-time | email | password | uuid | whatever-you-want
+  # Optional
+  # Note: value can be ANTHING!
+  # More common formats: int32, int64, float, double, byte, binary, hostname, ipv4, ipv6, uri 
+items:
+  # Required if `type` is `array`
+  # Value is another 'Items Object'
+collectionFormat: csv | ssv | tsv | pipes | multi
+  # Optional, only valid when `type` is `array`
+  # `csv`: `eg1, eg2` (default)
+  # `ssv`: `eg1 eg2`
+  # `tsv`: `eg1\teg2`
+  # `pipes`: `eg1|eg2`
+  # `multi`: `eg=eg1&eg=eg2`
+    # Only valid when `in` is `query` or `formData`
+default: anything
+maximum: number
+exclusiveMaximum: boolean
+minimum: number
+exclusiveMinimum: boolean
+maxLength: integer
+minLength: integer
+enum:
+  - one
+  - two
+```
+
+Schema Object
+-------------
+
+Uses all of 'Items Object' above.
+
+Importantly, `type` can also be `object`.
+
+```
+$ref: '#/definitions/DefinitionName'
+  # Optional
+  # Reference to a 'Schema object' defined in `definitions`
+properties:
+  # Optional
+  # Used only if `type` is `object`
+  - examplePropertyKey:
+    # Value is another 'Schema Object'
+additionalProperties:
+  # Optional
+  # Used only if `type` is `object`
+  # Constrains additional / custom properties
+  # Set to `{}` to disable
+required:
+  # Optional
+  # Used only if `type` is `object`
+  # Specify list of required keys
+  - propertyKey1
+  - propertyKey2
+allOf:
+  # Allows to validate against multiple Schema Objects
+  # This is an advanced technique
+```
+
+-------------
+
+http://swagger.io/specification/
+
