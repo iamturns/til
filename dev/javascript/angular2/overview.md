@@ -65,3 +65,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 }
 ```
+
+Change detection
+----------------
+
+"By default, Angular 2 does *not* do deep object comparison to detect changes, it only takes into account properties used by the template"
+
+"When using OnPush detectors, then the framework will check an OnPush component when any of its input properties changes, when it fires an event, or when an observable fires an event"
