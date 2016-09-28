@@ -1,24 +1,25 @@
-Swagger
-=======
+OpenAPI Specification / Swagger
+===============================
 
-This is a cheatsheet summarising some of the [Swagger specification](http://swagger.io/specification/).
+Formerly known as Swagger RESTful API Documentation Specification.
 
 Considerations:
 
-- Not *everything* is documented
+- Not *everything* is documented ([view the full specification](https://openapis.org/specification))
 - Assumes YAML format
 - Assumes a RESTful JSON API
 
 Root Document
 -------------
 
-### Common
-
 ```
 swagger: '2.0'
 info:
   title: API Name
   version: '1.0.0'
+  description: |
+    Optional long description.
+    May span multiple lines.
 schemes:
   - http
   - https
@@ -27,23 +28,27 @@ consumes:
 produces:
   - application/json
 paths:
-  /example-path:
+  /example-path/{example-query-param}:
+    parameters: `Parameter Object`
+      # Optional parameters that apply to entire path
+      # Can be overridden within `Operation Object`, but cannot be removed
     get | put | post | delete | options | head | patch: `Operation Object`
-  /example-path/{exampleQueryParam}:
-    get | put | post | delete | options | head | patch: `Operation Object`
-```
 
-### Tags
+###
+# Tags
+# Only useful to provide a description for tags used in `Operation Object`s.
+###
 
-```
 tags:
   - name: TagName1
-    description: Optional description.
-```
+    description: Description
+  - name: TagName2
+    description: Description
 
-### Reuse
+###
+# References
+###
 
-```
 definitions:
   # Store `Schema Object` for re-use
   # Referenced elsewhere with `$ref: '#/definitions/ExampleObjectName'`
@@ -52,20 +57,15 @@ parameters:
   # Store `Parameter Object` for re-use
   # Referenced elsewhere with `$ref: '#/parameters/example-param-name'`
   example-param-name-1: `Parameter Object`
-responses:
-  # Store `Response Object` for re-use
-  # Referenced elsewhere `$ref: '#/responses/ExampleResponseName'`
-  ExampleResponseName1: `Response Object`
-```
 
-### Security
+###
+# Security
+###
 
-```
 securityDefinitions: `Security Definitions Object`
 security: `Security Requirement Object`
-  # Global security
-  # Logical OR between security requirements
-  # Individual operations can override
+  # Global security settings, individual `Operation Object` can override
+  # Logical OR between multiple `Security Requirement Object`
 ```
 
 Operation Object
@@ -76,26 +76,18 @@ parameters:
   - `Parameter Object`
   - `Parameter Object`
   - $ref: '#/parameters/example-param-name'
-    # Reference to a `Parameter Object` stored in `parameters` in `Root Document`
+      # Reference to a `Parameter Object` stored in `parameters` in `Root Document`
 responses:
-  'HTTP Status Code':
-    `Response Object`
-  '200':
-    $ref: '#/responses/ExampleResponseName'
-      # Reference to a `Response Object` stored in `responses` in `Root Document`
-  default:
-    `Response Object`
-```
-
-### Additional
-
-```
-summary: Short summary. Less than 120 characters.
+  HTTP Status Code: `Response Object`
+    # Common HTTP Status Codes: 200, 404
+  default: `Response Object`
+summary: Optional short summary. Less than 120 characters.
 description: |
-  Verbose explanation.
+  Optional verbose description.
   Can span multiple lines.
 tags:
-  - TagName1
+  - OptionalTagName1
+  - OptionalTagName2
 security: `Security Requirement Object`
   # Logical OR between security requirements
   # Overrides `security` in `Root Document`
@@ -111,36 +103,16 @@ in: query | header | path | formData | body
   # `path`: /example/{eg}
   # `body`: Request payload
     # Can only be *one* parameter per path marked as `body`
-    # The `name` has no effect (documentation purposes only)
+    # The `name` has no effect, and is usually kept as `body`
     # Requires `schema` property
-description: Optional description.
+description: Optional description
 required: true
   # Optional, defaults to `false`
-  # Unless `in` is `path`, then `required: true` MUST be set
+  # Unless `in` is `path`, then must be `true`
 `Items Object`
-  # Merged in at this level
-  # IMPORTANT: `type` can also be `object`
-  #
-  # Cheatsheet:
-    # type: string | integer | number | boolean | array | object
-    # format: date | date-time | email | password | uuid | whatever-you-want
-    #
-    # If `type` is `array`
-      # items: `Items Object`
-      # collectionFormat: csv | ssv | tsv | pipes | multi
-```
-
-### Body
-
-If `in` is `body`
-
-```
+  # type, format, etc (see `Items Object`)
 schema: `Schema Object`
-```
-
-### Additional
-
-```
+  # Only valid when `in` is `body`
 allowEmptyValue: true
   # Optional, defaults to `false`
   # Only valid when `in` is `query` or `formData`
@@ -150,21 +122,22 @@ Response Object
 ---------------
 
 ```
-description: Optional description.
+description: Required description
 schema: `Schema Object`
+  # `type` may also be `file`
 headers:
+  # Optional
   example-header-name-1:
-    - description: Optional description.
+    - description: Optional description
       `Items Object`
-        # Merged in at this level
-        #
-        # Cheatsheet:
-          # type: string | integer | number | boolean | array | object
-          # format: date | date-time | email | password | uuid | whatever-you-want
-          #
-          # If `type` is `array`
-            # items: `Items Object`
-            # collectionFormat: csv | ssv | tsv | pipes | multi
+examples:
+  # Optional, example of the response message
+  # Useful if the example generated by Swagger UI is misleading
+  application/json:
+    objectProperty1: objectValue
+    objectProperty2:
+      - arrayValue1
+      - arrayValue2
 ```
 
 Items Object
@@ -175,14 +148,11 @@ type: string | integer | number | boolean | array
 format: date | date-time | email | password | uuid | whatever-you-want
   # Optional
   # Note: value can be ANTHING!
-  # More common formats: int32, int64, float, double, byte, binary, hostname, ipv4, ipv6, uri 
-```
+  # More common formats: int32, int64, float, double, byte, binary, hostname, ipv4, ipv6, uri
 
-### Arrays
-
-If `type` is `array`
-
-```
+###
+# <type = array>
+###
 items: `Items Object`
 collectionFormat: csv | ssv | tsv | pipes | multi
   # Optional
@@ -192,20 +162,20 @@ collectionFormat: csv | ssv | tsv | pipes | multi
   # `pipes`: `eg1|eg2`
   # `multi`: `eg=eg1&eg=eg2`
     # Only valid when `in` is `query` or `formData`
-```
+###
+# </type = array>
+###
 
-### Additional
-
-```
-default: anything
-maximum: number
-exclusiveMaximum: boolean
-minimum: number
-exclusiveMinimum: boolean
-maxLength: integer
-minLength: integer
+default: any
 enum:
   - eg1
+  - eg2
+minimum: number
+exclusiveMinimum: boolean
+maximum: number
+exclusiveMaximum: boolean
+maxLength: integer
+minLength: integer
 ```
 
 Schema Object
@@ -213,33 +183,37 @@ Schema Object
 
 ```
 `Items Object`
-  # Merged in at this level
-  #
-  # Cheatsheet:
-    # type: string | integer | number | boolean | array | object
-    # format: date | date-time | email | password | uuid | whatever-you-want
-    #
-    # If `type` is `array`
-      # items: `Items Object`
-      # collectionFormat: csv | ssv | tsv | pipes | multi
-
+  # type, format, etc (see `Items Object`) 
+  # IMPORTANT: `type` has an additional option: `object`
 $ref: '#/definitions/ExampleObjectName1'
   # Optional
   # Reference to a `Schema Object` stored in `definitions` in `Root Document`
-properties:
-  # Optional, used if `type` is `object`
-  - examplePropertyKey1: `Schema Object`
-additionalProperties:
-  # Optional, used if `type` is `object`
-  # Constrains additional / custom properties
-  # Set to `{}` to disable
-required:
-  # Optional, used if `type` is `object`
-  # Specify list of required keys
-  - examplePropertyKey1
 allOf:
-  # Allows to validate against multiple `Schema Object`s
-  # Note: this is an advanced technique
+  # Optional
+  # A composition of multiple `Schema Object`s
+  - $ref: '#/definitions/Example1'
+  - $ref: '#/definitions/Example2'
+  - `SchemaObject`
+
+###
+# <type = object>
+###
+
+properties:
+  # Optional
+  exampleProperty1: `Schema Object`
+  exampleProperty2: `Schema Object`
+additionalProperties: {}
+  # Optional
+  # Use if object is provided by client, and object is *not* allowed additional properties 
+required:
+  # Optional
+  # Specify list of required properties within the object
+  - exampleProperty1
+  - exampleProperty2
+###
+# </type = object>
+###
 ```
 
 Security Definitions Object
@@ -251,7 +225,7 @@ Security Definitions Object
 securityDefinitions:
   uniqueName:
     type: basic
-    description: Optional description.
+    description: Optional description
 ```
 
 ### 2. API key
@@ -260,7 +234,7 @@ securityDefinitions:
 securityDefinitions:
   uniqueName:
     type: apiKey
-    description: Optional description.
+    description: Optional description
     name: param-name
     in: query | header
 ```
@@ -271,14 +245,14 @@ securityDefinitions:
 securityDefinitions:
   uniqueName:
     type: oauth2
-    description: Optional description.
+    description: Optional description
     flow: implicit | password | application | accessCode
     authorizationUrl: string
       # Reqiured if `flow` is `implicit`, or `accessCode`
     tokenUrl: string
       # Required if `flow` is `password`, `application`, or `accessCode`
     scopes:
-      example-scope-name-1: Description of scope.
+      example-scope-name-1: Description of scope
 ```
 
 Security Requirement Object
@@ -308,7 +282,7 @@ securityDefinitions:
     flow: implicit
     authorizationUrl: https://example.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
     scopes:
-      basic: Grants read access to all user data (granted by default).
+      basic: Grants read access to all user data (granted by default)
 security:
   - oauth:
     - basic
@@ -324,8 +298,8 @@ securityDefinitions:
     flow: implicit
     authorizationUrl: https://example.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
     scopes:
-      basic: Grants read access to all user data (granted by default).
-      comments: Grants read/write access to comments. 
+      basic: Grants read access to all user data (granted by default)
+      comments: Grants read/write access to comments
   key:
     type: apiKey
     in: query
