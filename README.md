@@ -9,6 +9,13 @@ I'm always learning, so why not share it?
 Dev
 ---
 
+### API
+
+- [JWT / JSON Web Tokens](dev/api/jwt-json-web-tokens.md)
+- [OAuth2](dev/api/oauth2.md)
+- [OpenAPI Specification / Swagger](dev/api/openapi-spec-swagger.md)
+- [OpenID Connect](dev/api/openid-connect.md)
+
 ### Git
 
 - [Cheatsheet](dev/git/cheatsheet.md)
@@ -210,7 +217,6 @@ Dev
 - [Mustache](dev/other/mustache.md)
 - [Naming conventions](dev/other/naming-conventions.md)
 - [Social sharing](dev/other/social-sharing.md)
-- [OpenAPI Specification / Swagger](dev/other/openapi-spec-swagger.md)
 - [SVN](dev/other/svn.md)
 
 Sysadmin

@@ -62,7 +62,9 @@ parameters:
 # Security
 ###
 
-securityDefinitions: `Security Definitions Object`
+securityDefinitions:
+  uniqueName1: `Security Definitions Object`
+  uniqueName2: `Security Definitions Object`
 security: `Security Requirement Object`
   # Global security settings, individual `Operation Object` can override
   # Logical OR between multiple `Security Requirement Object`
@@ -222,37 +224,32 @@ Security Definitions Object
 ### 1. Basic auth
 
 ```
-securityDefinitions:
-  uniqueName:
-    type: basic
-    description: Optional description
+type: basic
+description: Optional description
 ```
 
 ### 2. API key
 
 ```
-securityDefinitions:
-  uniqueName:
-    type: apiKey
-    description: Optional description
-    name: param-name
-    in: query | header
+type: apiKey
+description: Optional description
+name: param-name
+in: query | header
 ```
 
 ### 3. OAuth2
 
 ```
-securityDefinitions:
-  uniqueName:
-    type: oauth2
-    description: Optional description
-    flow: implicit | password | application | accessCode
-    authorizationUrl: string
-      # Reqiured if `flow` is `implicit`, or `accessCode`
-    tokenUrl: string
-      # Required if `flow` is `password`, `application`, or `accessCode`
-    scopes:
-      example-scope-name-1: Description of scope
+type: oauth2
+description: Optional description
+flow: implicit | password | application | accessCode
+authorizationUrl: string
+  # Required if `flow` is `implicit`, or `accessCode`
+tokenUrl: string
+  # Required if `flow` is `password`, `application`, or `accessCode`
+scopes:
+  example-scope-name-1: Description of scope
+  example-scope-name-2: Description of scope
 ```
 
 Security Requirement Object
@@ -260,14 +257,14 @@ Security Requirement Object
 
 ```
 security:
-  # If security definition `type` is NOT `oauth2`, set to `[]`
-  - securityDefinitionUniqueName: []
-  # If security definition `type` is `oauth2`, provide list of scope names
+  # If security definition `type` is NOT `oauth2`, set to `[]`:
+  - securityDefinitionUniqueName1: []
+  - securityDefinitionUniqueName2: []
+  # If security definition `type` is `oauth2`, provide list of scope names:
   - securityDefinitionUniqueName:
     - example-scope-name-1
+    - example-scope-name-2
 ```
-
-
 
 Examples
 ========
@@ -295,7 +292,7 @@ OAuth2 advanced example
 securityDefinitions:
   oauth:
     type: oauth2
-    flow: implicit
+    flow: implicit``
     authorizationUrl: https://example.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
     scopes:
       basic: Grants read access to all user data (granted by default)
