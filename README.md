@@ -103,7 +103,8 @@ Dev
 ### JavaScript / RxJS
 
 - [Overview](dev/javascript/rxjs/overview.md)
-- [Upgrade(dev/javascript/rxjs/upgrade.md)
+- [Tricks](dev/javascript/rxjs/tricks.md)
+- [Upgrade](dev/javascript/rxjs/upgrade.md)
 
 ### JavaScript / Scripts
 
