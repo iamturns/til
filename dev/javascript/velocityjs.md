@@ -1,5 +1,5 @@
-Velocity
-========
+Velocity.js
+===========
 
 Replace $.animate() with $.velocity() (syntax is identical)
 
