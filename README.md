@@ -49,6 +49,7 @@ Dev
 - [Input events](dev/javascript/input-events.md)
 - [jspm](dev/javascript/jspm.md)
 - [Modules](dev/javascript/modules.md)
+- [Moment.js](dev/javascript/momentjs.md)
 - [npm](dev/javascript/npm.md)
 - [Package managers](dev/javascript/package-managers.md)
 - [Redraw](dev/javascript/redraw.md)
@@ -58,7 +59,7 @@ Dev
 - [Stampit](dev/javascript/stampit.md)
 - [Stop event behaviour](dev/javascript/stop-event-behaviour.md)
 - [Velocity.js](dev/javascript/velocityjs.md)
-- [Zone.js](dev/javascript/velocityjs.md)
+- [Zone.js](dev/javascript/zonejs.md)
 
 ### JavaScript / Angular 1
 
