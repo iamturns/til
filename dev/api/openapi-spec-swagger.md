@@ -32,7 +32,13 @@ paths:
     parameters: `Parameter Object`
       # Optional parameters that apply to entire path
       # Can be overridden within `Operation Object`, but cannot be removed
-    get | put | post | delete | options | head | patch: `Operation Object`
+    get: `Operation Object`
+    put: `Operation Object`
+    post: `Operation Object`
+    delete: `Operation Object`
+    options: `Operation Object`
+    head: `Operation Object`
+    patch: `Operation Object`
 
 ###
 # Tags
