@@ -20,6 +20,7 @@ Commit type
 - :poop: Deprecated
 - :fire: Removed
 - :bug: Bug fix
+- :hushed: Fix accident
 - :lock: Security fix
 - :art: Improving format / structure of code
 - :unamused: / :zzz: Chore
