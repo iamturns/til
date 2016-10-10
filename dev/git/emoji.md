@@ -40,6 +40,8 @@ Code changes
 - :shirt: linter
 - :speaker: logging add
 - :mute: logging remove
+- :traffic_light: Auth
+- :cloud: API
 
 Dependencies
 ------------
