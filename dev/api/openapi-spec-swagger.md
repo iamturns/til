@@ -153,7 +153,7 @@ Items Object
 
 ```
 type: string | integer | number | boolean | array
-format: date | date-time | email | password | uuid | whatever-you-want
+format: date | date-time | unix-time | email | password | uuid | whatever-you-want
   # Optional
   # Note: value can be ANTHING!
   # More common formats: int32, int64, float, double, byte, binary, hostname, ipv4, ipv6, uri
