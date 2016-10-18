@@ -77,6 +77,7 @@ Dev
 - [Bindings overview](dev/javascript/angular2/bindings-overview.md)
 - [Component styles](dev/javascript/angular2/component-styles.md)
 - [Dependency injection](dev/javascript/angular2/dependency-injection.md)
+- [Modules](dev/javascript/angular2/modules.md)
 - [Overview](dev/javascript/angular2/overview.md)
 - [Routing](dev/javascript/angular2/routing.md)
 - [Template syntax](dev/javascript/angular2/template-syntax.md)
