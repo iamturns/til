@@ -29,7 +29,7 @@ Must have
         - Actions > Options
             - Preferred Terminal application: iTerm
         - Clipboard
-            - Untick all keyboard shortcuts
+            - Untick all checkboxes
             - Except 'Paste and remove from history'
                 - Set to All + V
         - Advanced
@@ -46,7 +46,6 @@ Must have
         - Search for following, then click into each group and disable;
             - iTunes
             - Terminal
-        - New > Add folder > Dropbox > Launchbar Bookmarks
         - New > Add folder > ~/Code
             - Options;
                 - Search scope: 1 sub folder level
