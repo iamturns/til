@@ -68,6 +68,15 @@ iTerm
 - Shift + Alt + Cmd + Drag = WOW! Drag the WINDOW part, not the tab
 - Cmd + Right, Cmd + Left = Cycle between panes
 
+- Ctrl + a = Move cursor to beginning of line
+- Ctrl + e = Move cursor to end of line
+- Escape + b = Move cursor back one word
+- Escape + f = Move cursor forward one word
+- Ctrl + k = Delete from cursor to end of line
+- Ctrl + u = Delete from cursor to beginning of line
+- Escape + d = Delete word in front of cursor
+- Ctrl + w = Delete word behind cursor
+
 
 
 Chrome
