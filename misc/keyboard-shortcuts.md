@@ -68,6 +68,8 @@ iTerm
 - Shift + Alt + Cmd + Drag = WOW! Drag the WINDOW part, not the tab
 - Cmd + Right, Cmd + Left = Cycle between panes
 
+Cursor movement
+---------------
 
 - Ctrl + a = Move cursor to beginning of line
 - Ctrl + e = Move cursor to end of line
