@@ -144,7 +144,7 @@ Developer toolbar
 JetBrains / IntelliJ / WebStorm / PhpStorm
 ==========================================
 
-- Add / remove a cursor: Alt + Shift + Click
+- Add / remove a cursor: Alt + Click
 - Select all occurrences: Ctrl + Cmd + G
 - Select / unselect next text occurrence: Ctrl + G / Ctrl + Shift + G
 
