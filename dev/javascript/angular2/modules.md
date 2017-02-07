@@ -12,7 +12,7 @@ ngModule data:
 
 ```
 @NgModule({
-  imports: [ ModuleName ], // Import modules exports
+  imports: [ ModuleName ], // Import modules exported declarations
   declarations: [ Component, Directive, Pipe ], // Must be declared in ONE module of the app. Declare them here if they belong to this module.
   exports: [ ModuleName, Component, Directive, Pipe ], // Mark as public to be imported by other modules
   providers: [ ServiceName ], // Registered with app *root injector*
