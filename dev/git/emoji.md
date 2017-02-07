@@ -5,6 +5,7 @@ Feel free to add more than one of these! In order;
 
 Release
 -------
+
 - :tada: First commit
 - :boom: New release
 - :arrow_double_up: Prepare new version
@@ -15,14 +16,15 @@ Commit type
 
 - :sparkles: / :new: New
 - :zap: Backward-incompatible change
-- :pencil2: Regular change
+- :pencil2: Regular change (maybe not useful)
 
 - :poop: Deprecated
 - :fire: Removed
 - :bug: Bug fix
-- :hushed: Fix accident
 - :lock: Security fix
 - :art: Improving format / structure of code
+
+- :hushed: Fix accident
 - :unamused: / :zzz: Chore
 - :bulb: idea
 - :construction: WIP
@@ -30,6 +32,7 @@ Commit type
 Code changes
 ------------
 
+- :electric_plug: dependencies
 - :memo: documentation
 - :white_check_mark: tests
 - :wrench: tooling and config
@@ -42,14 +45,16 @@ Code changes
 - :mute: logging remove
 - :traffic_light: Auth
 - :cloud: API
+- :floppy_disk: redux store
 
-Dependencies
-------------
+Dependency
+----------
 
+- :sparkles: new
 - :arrow_up: upgrade
 - :arrow_down: downgrade
-- :arrow_forward: lock
-- :arrows_counterclockwise: update shrinkwrap / lock file 
+- :arrow_forward: lock version
+- :arrows_counterclockwise: update lock file only 
 
 Browser
 -------
