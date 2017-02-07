@@ -9,11 +9,11 @@ History
 
 - At first it was a protocol, and very strict
 - During development, many giant companies (Google, Microsoft, Facebook, Twitter, etc) came to the standardization meetings and wanted their particular use cases catered for
-- Over time (due to enterprise bloat), it became a *framework__, with __suggestions* on how to implement OAuth
+- Over time (due to enterprise bloat), it became a *framework*, with *suggestions* on how to implement OAuth
     - Eg: The user MAY authenticate this way or MAY with that way
-- Lead author (Eran Hammer) resigned and very publically wanted his name withdrawn from spec
+- Lead author (Eran Hammer) resigned and very publicly wanted his name withdrawn from spec
 - Progress slow over years, 32 revisions to spec, but companies started implemented it immediately, as they needed it!
-- Companies implemented OAuth at different points, leading to incomaptible implementations
+- Companies implemented OAuth at different points, leading to incompatible implementations
 - It also led to hacks, eg: Facebook was hacked via OAuth
 - Found new lead dev, who finalized spec in October 2012
     - RFC 6749
@@ -49,6 +49,7 @@ Components
 Authorization Code Flow 
 -----------------------
 
+- aka Server-Side Flow
 - Redirect the Resource Owner to the Authorization Server
 - If the Resource Owner is not authenticated, they will be prompted with a login screen
 - Authorization Server shows a 'consent' screen
@@ -69,8 +70,9 @@ Authorization Code Flow
 Implicit Flow
 -------------
 
+- aka Client-Side Flow, Implicit Grant Flow
 - For applications that run on client device
-- Same as Authorziation Code Flow, but receive the access token directly from the Authorization Server
+- Same as Authorization Code Flow, but receive the access token directly from the Authorization Server
 - There is no refresh token
 - Authorization Server does not redirect back with token in query parameters, as these could be sent and logged on the server, or show up in the referrer and leak to a third party
     - Instead, it uses a hash fragment, eg:
@@ -83,7 +85,6 @@ Implicit Flow
 
 Resource Owner Password Credential Flow
 ---------------------------------------
-
 
 - For trusted applications
 - Client types password into the Client application, not forwarded to the Authorization Server
