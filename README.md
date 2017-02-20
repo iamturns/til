@@ -2,7 +2,7 @@
 Notes
 =====
 
-A collection of notes, code snippets, cheatsheets, and ❤
+A collection of code snippets, thoughts, cheatsheets, strange scripts, and ❤
 
 Dev
 ---
