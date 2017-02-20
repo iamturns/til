@@ -1,10 +1,8 @@
 
-Today I Learned
-===============
+Notes
+=====
 
-A collection of code snippets, cheatsheets, mini blog posts, and ❤
-
-I'm always learning, so why not share it?
+A collection of notes, code snippets, cheatsheets, and ❤
 
 Dev
 ---
