@@ -1,8 +1,8 @@
 
-Notes
-=====
+Today I Learned
+===============
 
-A collection of code snippets, thoughts, cheatsheets, and ❤
+A collection of code snippets, cheatsheets, mini blog posts, and ❤
 
 Dev
 ---
