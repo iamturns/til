@@ -225,7 +225,7 @@ d.get('x'); // milliseconds, seconds, minutes, hours, days, weeks, months, years
 d.as('x'); // milliseconds, seconds, minutes, hours, days, weeks, months, years
 
 d.add() // same as m.add()
-d.substract() // same as m.substract()
+d.subtract() // same as m.subtract()
 
 d.humanize(); // a minute
 d.humanize(true); // in a minute, a minute ago
