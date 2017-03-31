@@ -286,6 +286,7 @@ Sysadmin
 
 ### Terminal
 
+- [Bash Options](sysadmin/terminal/bash-options.md)
 - [Compression](sysadmin/terminal/compression.md)
 - [Disk usage](sysadmin/terminal/disk-usage.md)
 - [Encryption](sysadmin/terminal/encryption.md)
