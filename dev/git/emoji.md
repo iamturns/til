@@ -14,15 +14,14 @@ Release
 Commit type
 -----------
 
-- :sparkles: / :new: New
-- :zap: Backward-incompatible change
-- :pencil2: Regular change (maybe not useful)
-
 - :poop: Deprecated
 - :fire: Removed
 - :bug: Bug fix
 - :lock: Security fix
 - :art: Improving format / structure of code
+
+- :sparkles: / :new: New
+- :zap: Change
 
 - :hushed: Fix accident
 - :unamused: / :zzz: Chore
@@ -44,8 +43,11 @@ Code changes
 - :speaker: logging add
 - :mute: logging remove
 - :traffic_light: Auth
-- :cloud: API
-- :floppy_disk: redux store
+- :cloud: API (:electric_plug: :satellite_antenna: :speech_balloon: :left_speech_bubble: :mega:)
+- :floppy_disk: redux store (:package:)
+- :chart_with_upwards_trend: analytics
+- :globe_with_meridians: Internationalization and localization
+- :page_facing_up: license
 
 Dependency
 ----------
