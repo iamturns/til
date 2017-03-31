@@ -157,6 +157,19 @@ function processColour([r, g, b]: [number, number, number]) {
 }
 ```
 
+```typescript
+example(
+  param1: string,
+  {
+    option1 = false,
+    option2 = 'default',
+  }: {
+    option1?: boolean;
+    option2?: string;
+  } = {}
+)
+```
+
 Some fancy examples;
 
 ```javascript
