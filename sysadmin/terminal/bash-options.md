@@ -13,7 +13,7 @@ debug=0
 while [ "$1" != "" ]; do
 	case $1 in
       --something) shift; something=$1;;
-      --debug ) debug=1;;
+      --debug) debug=1;;
       --help) usage; exit;;
       *) usage; exit 1;;
     esac
