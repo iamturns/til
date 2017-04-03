@@ -38,3 +38,5 @@ And delete applicable branches;
 ```
 git branch -d {{branch-name}}
 ```
+
+This may not work with squash merging, try this: `git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d;`
