@@ -41,8 +41,6 @@ Must have
             - iPhoto Library
             - Safari stuff under Web
         - Emoji > Options > Access items via sub-search only > Enable
-        - Google Chrome Bookmarks > Options > Access items via sub-search only > Enable
-        - Google Chrome History > Options > Access items via sub-search only > Enable
         - Search for following, then click into each group and disable;
             - iTunes
             - Terminal
