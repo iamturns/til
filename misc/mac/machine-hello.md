@@ -127,7 +127,7 @@ brew install imagemagick
 Terminal setup
 ==============
 
-Refer to my ['ily-terminal'](https://github.com/turnbullm/ily-terminal) repo.
+Refer to my ['terminal-setup'](https://github.com/turnbullm/terminal-setup) repo.
 
 
 
