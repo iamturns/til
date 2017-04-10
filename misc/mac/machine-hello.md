@@ -94,8 +94,8 @@ brew install node
 
 ### Ruby ###
 
-brew install --HEAD ruby-build
-brew install --HEAD rbenv
+brew install ruby-build
+brew install rbenv
 
 # Init rbenv
 # This is one time only, and will be automatically run within terminal setup later
@@ -105,9 +105,9 @@ eval "$(rbenv init -)"
 # Install latest and use as global default
 
 rbenv install --list
-rbenv install 2.2.1
+rbenv install 2.4.1
 rbenv rehash
-rbenv global 2.2.1
+rbenv global 2.4.1
 
 # Bundler
 
