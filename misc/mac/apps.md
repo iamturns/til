@@ -72,15 +72,13 @@ Must have
 System
 ------
 
+- Amphetamine - keep mac awake
+    - Tick: Launch at login
 - Android File Transfer - for getting files from android phone
 - AppCleaner - uninstalling apps
 - Asepsis - access NTFS drives
 - Boxcryptor - access encrypted files stored on cloud
-- Caffeine - shortcut to keep mac on (good for presentations etc)
-    - Tick: Automatically start Caffeine at login
-    - Untick: Show this message when starting Caffeine
 - Disk Inventory X - find what it using hard drive space
-- Flux - Go easy on the eyes
 - Keka - archive files (zip, etc)
     - Click: Set Keka as default compressor / uncompressor
 - Spectacle - window snapping
