@@ -88,9 +88,10 @@ brew install git
 git config --global user.name "Matthew Turnbull"
 git config --global user.email "turnbullm@gmail.com"
 
-### Node & npm ###
+### Node ###
 
 brew install node
+brew install yarn
 
 ### Ruby ###
 
