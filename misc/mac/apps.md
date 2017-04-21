@@ -75,7 +75,7 @@ System
 - Amphetamine - keep mac awake
     - Tick: Launch at login
 - Android File Transfer - for getting files from android phone
-- AppCleaner - uninstalling apps
+- AppDelete - uninstalling apps
 - Asepsis - access NTFS drives
 - Boxcryptor - access encrypted files stored on cloud
 - Disk Inventory X - find what it using hard drive space
