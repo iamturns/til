@@ -77,21 +77,12 @@ System
 - Android File Transfer - for getting files from android phone
 - AppDelete - uninstalling apps
 - Asepsis - access NTFS drives
-- Boxcryptor - access encrypted files stored on cloud
+- Cryptomator - encrypt files
 - Disk Inventory X - find what it using hard drive space
 - Keka - archive files (zip, etc)
     - Click: Set Keka as default compressor / uncompressor
 - Spectacle - window snapping
     - Set shortcuts as per [keyboard shortcuts](/misc/keyboard-shortcuts.md)
-
-Productivity
-------------
-
-- Evernote
-    - Sign in with `+evernote` account
-    - Shortcut for 'Quick Note': All + E
-- TickTick
-- Workflowy
 
 Fun
 ---
@@ -114,7 +105,7 @@ Dev
 - Chrome Canary
 - Dash - Offline docs
     - Disable launch on startup
-- DiffMerge
+- DeltaWalker
 - Docker
 - FileZilla
 - Firefox - For testing
