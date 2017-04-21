@@ -112,8 +112,7 @@ Dev
 - GitUp
     - Not 100% sure on this
 - JetBrains
-    - Editor > General > Appearance
-        - Enable 'Show whitespaces'
+    - Import settings file
 - Marked - markdown viewer
 - NodeJS
 - Sequel Pro
