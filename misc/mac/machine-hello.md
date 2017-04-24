@@ -130,14 +130,7 @@ Terminal setup
 
 Refer to my ['terminal-setup'](https://github.com/turnbullm/terminal-setup) repo.
 
-Syncing custom fish functions:
 
-```bash
-cd ~/.config/fish/functions/
-git init
-git remote add origin https://turnbullm@bitbucket.org/turnbullm/fish-functions.git
-git pull
-```
 
 Apps
 ====
