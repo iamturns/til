@@ -77,8 +77,10 @@ System
 - Android File Transfer - for getting files from android phone
 - AppDelete - uninstalling apps
 - Asepsis - access NTFS drives
+- Bartender 2 - hide icons in menu bar
 - Cryptomator - encrypt files
 - Disk Inventory X - find what it using hard drive space
+- iStat Menus - stats in menu bar
 - Keka - archive files (zip, etc)
     - Click: Set Keka as default compressor / uncompressor
 - Spectacle - window snapping
