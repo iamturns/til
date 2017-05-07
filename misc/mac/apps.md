@@ -96,9 +96,7 @@ Fun
     - Disable launch on startup (under advanced settings)
 - Steam
     - Turn off automatic chat login
-- Twitter
 - VLC
-- VOX - playing audio files
 
 Dev
 ---
