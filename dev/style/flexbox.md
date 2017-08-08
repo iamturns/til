@@ -121,13 +121,58 @@ Shortcut;
 
 - flex-grow
   - refers to size relative to other flex items in container
-  - 0 = do not stretch (default value)
+  - 0 (default) = do not stretch
   - 1 = stretch
+  - number (eg: 3, 0.6)
+    - represents growth factor of item relative to other flex items
+    - eg: a `flex-grow: 2` can grow to twice as big as `flex-grow: 1`
 - flex-shrink
-  - 1 = shrink (default)
+  - 1 (default) = shrink
+    - May override specified `flex-basis` / `width` / `height`
   - 0 = do not shrink (keep to minimum width)
 - flex-basis
   - the starting size of an element before grow/shrink come into play
-  - set to `auto` by default
-      - meaning: use width, max-width, min-width, etc
-  - generally requires `flex-shrink` to be disabled to strictly adhere to this values
+    - The 'ideal' size, but not guaranteed size
+  - auto (default) = according to its content, or its `width` or `height` (and related) properties
+  - 0 = adhere to `flex-grow`
+  - value (eg: 10em, 3px, etc)
+    - override calculated width with new value (by content or width / height properties)
+    - generally requires `flex-shrink` to be disabled to strictly adhere to this
+
+### Common flex settings
+
+Item should squish if there isn't enough room, but not stretch any wider than it needs to be:
+
+    // flex: 0 1 auto
+    // This is the default flex settings, no code required!
+
+Item should stretch to fill all available space, and squish if there's not enough room:
+
+    flex: 1 1 auto
+    // or
+    flex: auto
+    // or
+    flex-grow: 1;
+  
+Item should not flex at all
+
+    flex: 0 0 auto
+    // or
+    flex: none
+    // or
+    flex-shrink: 0
+
+No effect
+------
+
+The following properties have no effect on flex items:
+
+- `float`
+- `vertical-align`
+
+Misc
+----
+
+- Margins of flex items do not ever collapse
+- The default value of `auto` means flex cannot go below the length of the longest text. Override with `min-width: 0`.
+- `display: inline-flex` on an item to prevent it from being a block, but remain flex
