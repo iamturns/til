@@ -38,6 +38,7 @@ Code changes
 - :rocket: devops / deployment
 - :green_heart: CI build
 - :racehorse: performance
+- :lock: security
 - :non-potable_water: memory leak
 - :shirt: linter
 - :speaker: logging add
