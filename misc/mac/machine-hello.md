@@ -58,7 +58,7 @@ Commands
 ```bash
 ### SSH key ###
 
-ssh-keygen -t rsa -C "machine_identifier_matthew_turnbull_turnbullm@gmail.com"
+ssh-keygen -t rsa -C "matt@iamturns.com - Machine ID"
 
 # Default location is good
 # Enter a strong password
@@ -85,8 +85,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ### Git ###
 
 brew install git
-git config --global user.name "Matthew Turnbull"
-git config --global user.email "turnbullm@gmail.com"
+git config --global user.name "Matt Turnbull"
+git config --global user.email "matt@iamturns.com"
 
 ### Node ###
 
@@ -128,7 +128,7 @@ brew install imagemagick
 Terminal setup
 ==============
 
-Refer to my ['terminal-setup'](https://github.com/turnbullm/terminal-setup) repo.
+Refer to my ['terminal-setup'](https://github.com/iamturns/terminal-setup) repo.
 
 
 
