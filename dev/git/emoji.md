@@ -6,58 +6,51 @@ Feel free to add more than one of these! In order;
 Release
 -------
 
-- :tada: First commit
-- :boom: New release
-- :arrow_double_up: Prepare new version
-- :bookmark: Git tag
+- First commit :tada:
+- New release :boom:
+- Prepare new version :arrow_double_up:
+- Git tag :bookmark:
 
 Commit type
 -----------
 
-- :poop: Deprecated
-- :fire: Removed
-- :bug: Bug fix
-- :lock: Security fix
-- :art: Improving format / structure of code
-
-- :sparkles: / :new: New
-- :zap: Change
-
-- :hushed: Fix accident
-- :unamused: / :zzz: Chore
-- :bulb: idea
-- :construction: WIP
+- Deprecated :poop:
+- Removed :fire:
+- Bug fix :bug:
+- Security fix :lock:
+- Improving format / structure of code :art:
+- Change :zap:
 
 Code changes
 ------------
 
-- :electric_plug: dependencies
-- :memo: documentation
-- :white_check_mark: tests
-- :wrench: tooling and config
-- :rocket: devops / deployment
-- :green_heart: CI build
-- :racehorse: performance
-- :lock: security
-- :non-potable_water: memory leak
-- :shirt: linter
-- :speaker: logging add
-- :mute: logging remove
-- :traffic_light: Auth
-- :cloud: API (:electric_plug: :satellite_antenna: :speech_balloon: :left_speech_bubble: :mega:)
-- :floppy_disk: redux store (:package:)
-- :chart_with_upwards_trend: analytics
-- :globe_with_meridians: Internationalization and localization
-- :page_facing_up: license
-
-Dependency
-----------
-
-- :sparkles: new
-- :arrow_up: upgrade
-- :arrow_down: downgrade
-- :arrow_forward: lock version
-- :arrows_counterclockwise: update lock file only 
+- Analytics :chart_with_upwards_trend:
+- API :cloud: (:electric_plug: :satellite_antenna: :speech_balloon: :left_speech_bubble: :mega:)
+- Auth :traffic_light:
+- Chore :unamused: / :zzz:
+- CI :green_heart:
+- Dependencies :electric_plug:
+  - New :new:
+  - Upgrade :arrow_up:
+  - Downgrade :arrow_down:
+  - Lock version :arrow_forward:
+  - Update lock file only :arrows_counterclockwise:
+- Devops / deployment :rocket:
+- Documentation :memo:
+- Fix accident :hushed:
+- Idea: :bulb:
+- Internationalization and localization :globe_with_meridians:
+- License :page_facing_up:
+- Linter :shirt:
+- Logging add :speaker:
+- Logging remove :mute:
+- Memory leak :non-potable_water:
+- Performance :racehorse:
+- Redux store :floppy_disk: (:package:)
+- Security :lock:
+- Tests :white_check_mark:
+- Tooling and config :wrench:
+- WIP :construction:
 
 Browser
 -------
