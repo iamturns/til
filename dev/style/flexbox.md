@@ -112,63 +112,119 @@ Use `align-self` or `margin`
 }
 ```
 
-Flexible sizes
---------------
+Item properties
+------------
 
-Shortcut;
+These properties go onto a flex items, but can also be set and inherited from flex container
 
-    flex: @@flex-grow@@ @@flex-shrink@@ @@flex-basis@@
+**flex-basis**
 
-- flex-grow
-  - refers to size relative to other flex items in container
-  - 0 (default) = do not stretch
-  - 1 = stretch
-  - number (eg: 3, 0.6)
-    - represents growth factor of item relative to other flex items
-    - eg: a `flex-grow: 2` can grow to twice as big as `flex-grow: 1`
-- flex-shrink
-  - 1 (default) = shrink
-    - May override specified `flex-basis` / `width` / `height`
-  - 0 = do not shrink (keep to minimum width)
-- flex-basis
-  - the starting size of an element before grow/shrink come into play
-    - The 'ideal' size, but not guaranteed size
-  - auto (default) = according to its content, or its `width` or `height` (and related) properties
-  - 0 = adhere to `flex-grow`
-  - value (eg: 10em, 3px, etc)
-    - override calculated width with new value (by content or width / height properties)
-    - generally requires `flex-shrink` to be disabled to strictly adhere to this
+The starting size (but not guaranteed end size) of an element before grow / shrink come into play
 
-### Common flex settings
+- auto (default) = according to its content, or its `width` or `height` (and related) properties
+- 0 = adhere to `flex-grow` value
+- value (eg: 10em, 3px, etc)
+  - override calculated width with new value (by content or width / height properties)
+  - generally requires `flex-shrink` to be disabled to strictly adhere to this
 
-Item should squish if there isn't enough room, but not stretch any wider than it needs to be:
+**flex-grow**
 
-    // flex: 0 1 auto
-    // This is the default flex settings, no code required!
+Grow item relative to other items in container
 
-Item should stretch to fill all available space, and squish if there's not enough room:
+- 0 (default) = do not stretch to fill available space
+- 1 = stretch to fill available space
+- number (eg: 3, 0.6)
+  - represents growth factor of item relative to other flex items
+  - eg: a `flex-grow: 2` can grow to twice as big as `flex-grow: 1` 
 
-    flex: 1 1 auto
-    // or
+**flex-shrink**
+
+- 1 (default) = shrink
+  - May override specified `flex-basis` / `width` / `height`
+- 0 = do not shrink below initial size
+
+Flex shorthand
+-----------
+
+The above can be manipulated with the shorthand `flex` property
+
+**THREE VALUES**
+
+Shorthand
+
+    flex: <flex-grow> <flex-shrink> <flex-basis>
+
+**DEFAULT / INITIAL**
+
+- Initial size respected = yep
+- Grow into extra space = nope
+- Shrink if needed = yep
+
+    flex: initial
+    
+    OR
+
+    flex: 0 1 auto
+
+**FLEX AUTO**
+
+- Grow into extra space = yep
+
     flex: auto
-    // or
-    flex-grow: 1;
-  
-Item should not flex at all
+    
+    OR
+    
+    flex: 1 1 auto
+    
+    OR
+    
+    flex-grow: 1
 
-    flex: 0 0 auto
-    // or
+**FLEX NONE**
+
+- Shrink if needed = nope
+
     flex: none
-    // or
+    
+    OR
+    
+    flex: 0 0 auto
+    
+    OR
+    
     flex-shrink: 0
 
-No effect
+**SINGLE NUMBER**
+
+Shorthand to set `flex-grow` to value, and `flex-basis: 0`
+
+- Initial size respected = nope
+- Grow into extra space = yep, relative to other items flex-grow value
+
+    flex: 5
+    
+    OR
+    
+    flex: 5 1 0 
+
+    OR
+    
+    flex-grow: 5
+    flex-basis: 0
+
+Gotchas
 ------
 
 The following properties have no effect on flex items:
 
 - `float`
 - `vertical-align`
+
+### IE10-11
+
+- 3rd param in `flex` shorthand (`flex-basis`) must be unitless
+- `min-height` of parent ignored
+
 
 Misc
 ----
