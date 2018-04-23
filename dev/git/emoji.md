@@ -9,7 +9,7 @@ Feel free to add more than one of these! In order;
 * Prepare new version :arrow_double_up:
 * Git tag :bookmark:
 
-## Commit Types
+## Semver
 
 * New feature :sparkles:
 * Change feature (backwards compatible) :zap:
@@ -17,13 +17,16 @@ Feel free to add more than one of these! In order;
 * Deprecated :poop:
 * Removed :fire:
 
-## Urgent fixes
+## Common
 
-* Critical hotfix :ambulance:
 * Bug fix :bug:
-* Security / vulnerability fix :lock:
+  * Critical hotfix :ambulance:
+  * Security / vulnerability fix :lock:
+  * Memory leak :non-potable_water:
+* Style :ribbon: :lipstick:
+* Text / blog post / documentation :pencil:
 
-### Dependencies
+## Dependencies
 
 * Dependencies :electric_plug:
   * New :heavy_plus_sign:
@@ -36,7 +39,6 @@ Feel free to add more than one of these! In order;
 ## Fixes & improvements
 
 * Format / structure of code :art:
-* Memory leak :non-potable_water:
 * Performance :racehorse:
 * Refactor :hammer: :recycle:
 * Fix accident :hushed:
@@ -72,12 +74,10 @@ Feel free to add more than one of these! In order;
 * Experimental :pray:
 * WIP :construction:
 
-## Misc
+## Sugar
 
 * API :cloud: (:electric_plug: :satellite_antenna: :speech_balloon: :left_speech_bubble: :mega: :alien:)
 * Auth :traffic_light:
 * Internationalization and localization :globe_with_meridians:
 * Redux store :floppy_disk: (:package:)
 * Revert :rewind:
-* Style :ribbon: :lipstick:
-* Text / blog post / documentation :pencil:
