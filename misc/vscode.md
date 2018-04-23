@@ -1,45 +1,52 @@
-Visual Studio Code 
-==================
+# Visual Studio Code
 
-* Shift + Cmd + P = Command palette
-    * Delete key, type `?` to see all commands
-    * @TODO how to do the `~` in here quickly?
+## IDE
+
+* Cmd + P = Quick open by filename
+* Cmd + Shift + P = Command
+* Control + Tab = Tab history
+* All + Z = Zen mode
+
+## Toggle
+
 * Cmd + B = Toggle sidebar
-* Cmd + \ = Open file on side
+* Ctrl + ` = Toggle terminal
+* Ctrl + 1 | 2 | 3 = Toggle between tabs
+* Shift + Cmd + M = Toggle problems
+  * F8 [+ Shift] = Loop through errors in current file
+
+## Multi panel
+
+* Cmd + \ = Split panel
 * Cmd + Click file in Explorer = Open on side
 * Cmd + 1 | 2 | 3 = Toggle between panes
-* Cmd + P = Quick open by filename
+
+## Search
+
 * Shift + Cmd + F = Search in files
-    * Shift + Cmd + J = Configure search
-    * Exclusions managed by `files.exclude` and `search.exclude`
-* Ctrl + Tab = Cycle between recently opened files
-* Ctrl + - = Navigate backwards between file locations
-    * Ctrl + Shift + - = Go the other way
-* Shift + Cmd + O = Navigate to symbol in file
-    * Type `:` to group by category
-* Ctrl + G = Navigate to specific line
-* Alt + Z = Toggle word wrap
-* Ctrl + Space = Trigger IntelliSense
-    * Keyboard triggers = `.`, `tab`, `enter`
-* F12 = Go to symbol definition
-* Ctrl + Hover = Preview declration
-* Ctrl + Click = Open definition to side
-* Cmd + T = Jump to symbol across files
-* Shift + F12 (FN) = Find reference
-* Alt + F12 (FN) = Peek definition
+  * Shift + Cmd + J = Configure search
+  * Exclusions managed by `files.exclude` and `search.exclude`
+
+## Edit text
+
+* Move line = Opt + Up / Downs
+* Shift + Command + K = Delete line
+* Option + . = Close tag
+* Shift + Control + Command + Left / Right = Shrink / Expand selection
+
+## Navigate
+
+* Control + - = Cursor back
+  * Control + Shift + - = Cursor forward
+* Control + G = Jump to line
+* Shift + Cmd + O = Search for symbol in file
+  * Type `:` to group by category
+* Cmd + T = Search for symbol across files
 * Shift + Cmd + \ = Jump to matching brace
-* F2 = Rename symbol
-* Shift + Cmd + M = View current errors
-* F8 = Loop through errors in current file
-    * Shift + F8
 
-```bash
-# Open current directory
-code .
+## Multi cursor
 
-# Create new files
-code file1 file2 file3
-```
-
-https://code.visualstudio.com/docs/editor/editingevolved
-Up to 'Multiple selections'
+* Cmd + D = Select next occurance of word
+* Option + Click = Add cursor
+* Ctrl + U = Undo last cursor
+* Option + Command + Up/Down = Select cursor up and down
