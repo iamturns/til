@@ -1,0 +1,952 @@
+# Prisma
+
+```bash
+npm install -g prisma
+
+prisma init hello-world
+```
+
+`prisma.yml` = root config file, says which server it will be deployed to
+`datamodel.graphql` = can be renamed to anything (linked in prisma.yml) = defines data model (GraphQL SDL)
+
+## Using Prisma
+
+The most difficult part in building GraphQL servers is implementing resolvers.
+
+Prisma is an easier interface to databases to use in resolvers.
+
+Prisma turns databases (MySQL for now, more to come) into GraphQL APIs with CRUD ops and realtime capabilities. The glue between your database and the GraphQL server.
+
+The goal of Prisma is to make GraphQL a universal query language. Abstract away the complexity of SQL and other database APIs.
+
+With Prisma many resolvers are simple one-liners by using GraphQL bindings.
+
+Prsima does reading and writing data using GraphQL queries, mutations and subscriptions.
+
+Prisma manages your database schema and migrations using GraphQL's SDL.
+
+Remember: Prisma is NOT a database! It's a simplified workflow to read, write, and manage your database.
+
+Primsa overview: provide it types (objects), and it will generate GraphQL schema with query, mutation, and subcriptions.
+
+There are two ways to use Prisma:
+
+* The foundation of your GraphQL server
+* Accessing
+
+There are two layers within a GraphQL API:
+
+* Database layer: CRUD, realtime operations, etc (All managed by Prisma)
+* App layer: business logic, auth, 3rd party integrations, etc. Define the schema, implement resolvers, and deploy it. Usually graphql-yoga.
+
+```
+mkdir database
+touch database/datamodel.graphql
+touch database/prisma.yml
+```
+
+The central part of configuring Prisma is deploying the data model.
+
+The custom types go into `datamodel.graphql`:
+
+```javascript
+type Post {
+  id: ID! @unique
+  title: String!
+  content: String!
+  published: Boolean! @default(value: "false")
+}
+```
+
+Prisma has a couple of nice directives here: `@unique` and `@default`
+
+And here is prisma.yml:
+
+```yaml
+# the name for the service (will be part of the service's HTTP endpoint)
+service: blogr
+# the cluster and stage the service is deployed to
+stage: dev
+
+# protects your Prisma API
+# Used to create JSON Web Tokens (JWTs)
+# If not provided, then Prisma API can be accessed without auth! Anyone can send queries and mutations to the endpoint (read and write to database)
+secret: mysecret123
+
+# REQUIRED
+# the file path pointing to your data model
+datamodel: datamodel.graphql
+# Can be multiple files. These will be concatenated. Eg:
+datamodel:
+  - database/types.graphql
+  - database/enums.graphql
+
+# Optional
+# Specifies HTTP endpoint of Prisma API
+# If not specified, then CLI deployment wizard is used (TODO what is this exactly)
+# This is actually required, but if not set in YAML then CLI will prompt you with interactive wizard
+# Convention is to end with /service-name/stage eg /my-test/dev/ or /cat-pictures/prod
+endpoint: https://us1.prisma.sh/matt-turnbull-0f94a8/hello-world/dev
+
+# Optional
+# Point to graphql file with mutations, executed on first deploy (unless using --no-seed)
+seed:
+  import: database/seed.graphql
+  run: node script.js
+
+# ALSO SUPPORTED:
+# Subscriptions to invoke webhooks. In future will support AWS Lambda invocation and different queue implementations.
+# subscriptions:
+# Custom variables to use within your file
+# custom:
+# Hooks to execute before or after commands (eg: post-deploy)
+```
+
+A simple example of `datamodel.graphql`:
+
+```javascript
+type User {
+  id: ID! @uniue
+  name: String!
+}
+```
+
+Each object type (or type for short) defines the structure for one concrete part of your data model. It represents entities from your application domain. When filled with data the type is a 'node'.
+
+The auto generated `prisma.graphql` file contains:
+
+* Queries to fetch one or many nodes of that type
+* Mutations to create, update, or delete nodes
+* Subscriptions to get notfiied of changes to nodes (eg: created, updated, or deleted)
+
+An example:
+
+```javascript
+type Query {
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  user(where: UserWhereUniqueInput!): User
+}
+
+type Mutation {
+  createUser(data: UserCreateInput!): User!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  deleteUser(where: UserWhereUniqueInput!): User
+}
+
+type Subscription {
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+}
+```
+
+This is simplified. See full here: https://gist.github.com/gc-codesnippets/f302c104f2806f9e13f41d909e07d82d
+
+An example Prisma implementation:
+
+```javascript
+const resolvers = {
+  Query: {
+    feed: (parent, args, context, info) => {
+      return context.db.query.posts({ where: { published: true } }, info);
+    },
+    post: (parent, args, context, info) => {
+      return context.db.query.post({ where: { id: args.id } }, info);
+    }
+  },
+  Mutation: {
+    createDraft: (parent, args, context, info) => {
+      return context.db.mutation.createPost(
+        {
+          data: {
+            title: args.title,
+            published: false
+          }
+        },
+        info
+      );
+    },
+    publish: (parent, args, context, info) => {
+      return context.db.mutation.updatePost(
+        {
+          where: { id: args.id },
+          data: { published: true }
+        },
+        info
+      );
+    },
+    deletePost: (parent, args, context, info) => {
+      return context.db.mutation.deletePost({ where: { id: args.id } }, info);
+    }
+  }
+};
+```
+
+Where does `db` come from? Well from `graphql-yoga` setup:
+
+```javascript
+const server = new GraphQLServer({
+  typeDefs: "./schema.graphql", // reference to the application schema
+  resolvers, // the resolver implementations from above
+  context: req => ({
+    ...req,
+    db: new Prisma({
+      typeDefs: prismaSchema,
+      endpoint: prismaEndpoint,
+      secret: prismaSecret
+    })
+  })
+});
+
+server.start();
+```
+
+When running `prisma deploy` it will generate a GraphQL schema automatically:
+
+```javascript
+type Query {
+  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
+  post(where: PostWhereUniqueInput!): Post
+}
+
+type Mutation {
+  createPost(data: PostCreateInput!): Post!
+  updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post
+  deletePost(where: PostWhereUniqueInput!): Post
+}
+
+type Subscription {
+  post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
+}
+
+type Post implements Node {
+  id: ID!
+  title: String!
+  published: Boolean
+}
+```
+
+There is actually more to the schema, including the `PostWhereInput` types, etc.
+
+## Data modelling
+
+A more advanced `datamodel.graphql`:
+
+```javascript
+type Tweet {
+  id: ID! @unique
+  createdAt: DateTime!
+  text: String!
+  owner: User!
+  location: Location!
+}
+
+type User {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  handle: String! @unique
+  name: String
+  tweets: [Tweet!]!
+}
+
+type Location {
+  latitude: Float!
+  longitude: Float!
+}
+```
+
+The three types are mapped to database tables.
+A user has many tweets, a tweet has one user.
+A tweet has one location.
+
+By running `prisma deploy` it will create database tables, and relations between the types for you.
+
+### Prisma specific scalar types
+
+* `DateTime` as ISO 8601 string
+* `Json` JSON as string (inside double quotes)
+
+### Prisma specific directives
+
+Directives are used to provide additional information in your data model. They look like this: @name(argument: "value") or simply @name when there are no arguments.
+
+#### @unique
+
+Ensures two nodes of that type cannot have same value. Good for ID or Email Address. The check is case INsensitive. Also only the first 191 chars are checked for speed.
+
+```javascript
+type User {
+  email: String! @unique
+  age: Int!
+}
+```
+
+More constraints are on the way: https://github.com/prismagraphql/prisma/issues/728
+Eg: min, max, regex, etc
+
+#### @default
+
+Works for non-list scalar fields.
+
+```javascript
+type Story {
+  isPublished: Boolean @default(value: "false")
+  someNumber: Int! @default(value: "42")
+  title: String! @default(value: "My New Post")
+  publishDate: DateTime! @default(value: "2018-01-26")
+}
+```
+
+The value should always be provided as a string, even for boolean and integers
+
+#### @relation
+
+Imagine a `Story` which is created by a `User`, and can also be liked by multiple `User` too.
+
+```javascript
+type User {
+  id: ID! @unique
+  writtenStories: [Story!]!
+  likedStories: [Story!]!
+}
+
+type Story {
+  id: ID! @unique
+  text: String!
+  author: User!
+  likedBy: [User!]!
+}
+```
+
+GraphQL can't figure this out by itself.
+
+Need to use `@relation`
+
+```javascript
+type User {
+  id: ID! @unique
+  writtenStories: [Story!]! @relation(name: "WrittenStories")
+  likedStories: [Story!]! @relation(name: "LikedStories")
+}
+
+type Story {
+  id: ID! @unique
+  text: String!
+  author: User! @relation(name: "WrittenStories")
+  likedBy: [User!]! @relation(name: "LikedStories")
+}
+```
+
+By default when you delete something, the values in relationship databases will be NULL. If you want to also deletet those items you can. Not going to bother because deleting is very rare.
+
+### System fields
+
+The following fields ALWAYS exist within the database. You cannot write or update them.
+If you want to read them, add these to your types:
+
+```javascript
+type Something {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+```
+
+## Migrations
+
+### Making field required
+
+You can use `updateManyXs` mutation:
+
+```javascript
+mutation {
+  # update the email of all users with no email address to the empty string
+  updateManyUsers(
+    where: {
+      email: null
+    }
+    data: {
+      email: ""
+    }
+  )
+}
+```
+
+## Introspection
+
+If you have an existing database, you can have Prisma automatically generate types for it.
+
+Only works with Postgres, and there are some limitations. But it's a good starting point.
+
+Just call `prisma init` and select the existing database.
+
+## Auth
+
+Use the API secret in YAML file to sign a JWT. Send the token in Authorization header:
+
+```text
+Authorization: Bearer __YOUR_API_TOKEN__
+```
+
+The easiest way to get a token is by calling `prisma token`, which will read the secret and give you a token.
+
+### Programatically
+
+JWT data must include a service, which matches the service you are connecting to.
+
+```javascript
+var jwt = require("jsonwebtoken");
+
+jwt.sign(
+  {
+    data: {
+      service: "my-service@" + process.env.PRISMA_STAGE
+    }
+  },
+  process.env.PRISMA_SECRET,
+  {
+    expiresIn: "1h"
+  }
+);
+```
+
+## Gotchas
+
+### Data loss
+
+If you rename types or fields, Prisma might remove the old type before creating hte new one, resulting in loss of data!
+
+Use the `rename` directive to preventthis.
+
+```javascript
+type Story @rename(oldName: "Post") {
+  content: String @rename(oldName: "text")
+}
+```
+
+Once the one-time migration operation is successful and deployed, the `@rename` can be manually removed.
+
+### Unsupported featuers
+
+Interfaces: https://github.com/graphcool/prisma/issues/83
+
+Union types: https://github.com/graphcool/prisma/issues/165
+
+## Prisma API
+
+Automatically generated API defining CRUD ops for the types.
+
+The best way to see the schema is to use `prisma playground` then click `Schema` on right hand side.
+
+### Node selection
+
+Use `where`. Only works on `@unique` fields (TODO: What?! Really?!)
+
+```javascript
+query {
+  post(where: {
+    email: "hello@graph.cool"
+  }) {
+    id
+  }
+}
+```
+
+Update:
+
+```javascript
+mutation {
+  updatePost(
+    where: {
+      id: "ohco0iewee6eizidohwigheif"
+    }
+    data: {
+      title: "GraphQL is awesome"
+    }
+  ) {
+    id
+  }
+}
+```
+
+Look at this `id_in` (TODO: Is this explained better elsewhere?!)
+
+```javascript
+mutation {
+  updatePost(
+    where: {
+      id_in: ["ohco0iewee6eizidohwigheif", "phah4ooqueengij0kan4sahlo", "chae8keizohmiothuewuvahpa"]
+    }
+    data: {
+      published: true
+    }
+  ) {
+    count
+  }
+}
+```
+
+### Batch operations
+
+Optimised to make changes to large number of nodes.
+
+Limitations:
+
+* Returns how many nodes were affected (not full information on nodes)
+* No subscription events are triggered
+
+```javascript
+mutation {
+  updateManyPosts(
+    where: {
+      createdAt_gte: "2017"
+      createdAt_lt: "2018"
+      published: false
+    }
+    data: {
+      published: true
+    }
+  ) {
+    count
+  }
+}
+```
+
+### Connections
+
+Gives pagination info, and allows aggregation.
+
+Fully compliant with Relay connections.
+
+Provides meta-information about the _edges_ in the data graph. Each edge contains a node (what you're used to querying), but with some additional information about that node.
+
+If you want to count all the posts:
+
+```javascript
+query {
+  postsConnection {
+    # `aggregate` allows to perform common aggregation operations
+    aggregate {
+      count
+    }
+    edges {
+      # each `node` refers to a single `Post` element
+      node {
+        title
+      }
+      # cursor is used for pagination
+      cursor
+    }
+  }
+}
+```
+
+### Queries
+
+TODO is `age_gt` explained somewhere?
+
+```javascript
+query {
+  users(where: {
+    age_gt: 18
+  }) {
+    id
+    name
+  }
+}
+```
+
+#### Sorting
+
+`orderBy` with `<field>_ASC` or `<field>_DESC`
+
+```javascript
+query {
+  posts(orderBy: title_ASC) {
+    id
+    title
+    published
+  }
+}
+```
+
+Limitations:
+
+* Cannot order by multiple fields (https://github.com/prismagraphql/prisma/issues/62)
+* Cannot order by related fields (https://github.com/graphcool/feature-requests/issues/95)
+
+#### Pagination
+
+`first`, `before`, `last`, `after`, `skip`
+
+#### Filtering
+
+Use `where` (as explained earlier)
+
+TODO explained better elsewhere?
+
+```javascript
+title_in: ["one", "two"];
+```
+
+If type has a 'to-one' relation:
+
+```javascript
+query {
+  posts(where: {
+    author: {
+      age_gt: 18
+    }
+  }) {
+    id
+    title
+    author {
+      name
+      age
+    }
+  }
+}
+```
+
+If type has a 'to-many' relation, you have the option of `<relation>_every`, `<relation>_some` and `<relation>_none`.
+
+For every, it means every relationship satisfies the condition.
+
+```javascript
+query {
+  users(where: {
+    posts_some: {
+      published: true
+    }
+  }) {
+    id
+    posts {
+      published
+    }
+  }
+}
+```
+
+Filtering limitations:
+
+* Lists of scalar (not relations) are not supported (https://github.com/prismagraphql/prisma/issues/60)
+* JSON not supported (https://github.com/prismagraphql/prisma/issues/148)
+
+##### Combining filters
+
+* `AND`: all nested conditions must be true
+* `OR`: One of the nested conditions must be true
+* `NOT`: All of the nested conditions must be false
+
+Each accept a _list_ input
+
+```javascript
+query($published: Boolean) {
+  posts(
+    where: {
+      OR: [
+        {
+          AND: [
+            { title_in: ["My biggest Adventure", "My latest Hobbies"] }
+            { published: $published }
+          ]
+        }
+        { id: "cixnen24p33lo0143bexvr52n" }
+      ]
+    }
+  ) {
+    id
+    title
+    published
+  }
+}
+```
+
+### Pagination
+
+To seek forward, use `first:num` and specify starting node with `after`.
+
+To seek backwards, use `last:num` and specify starting node with `before`.
+
+Can also skip a number of nodes using `skip` argument.
+
+Select first two Posts are a certain node:
+
+```javascript
+query {
+  posts(
+    first: 2
+    after: "cixnen24p33lo0143bexvr52n"
+  ) {
+    id
+    title
+  }
+}
+```
+
+### Mutations
+
+Three types:
+
+* Simple mutations: Create, update, upsert, delete single nodes
+* Batch: Update and delete many nodes of certain type
+* Relation: Connect, disconnect, create, update, upsert nodes across relations
+
+Send within `data` argument:
+
+```javascript
+mutation {
+  createUser(
+    data: {
+      age: 42
+      email: "zeus@example.com"
+      name: "Zeus"
+    }
+  ) {
+    id
+    name
+  }
+}
+```
+
+Update:
+
+```javascript
+mutation {
+  updateUser(
+    data: {
+      email: "zeus2@example.com"
+      name: "Zeus2"
+    }
+    where: {
+      email: "zeus@example.com"
+    }
+  ) {
+    id
+    name
+  }
+}
+```
+
+Update related nodes at the same time:
+
+```javascript
+mutation {
+  updateUser(
+    data: {
+      posts: {
+        update: [{
+          where: {
+            id: "cjcf1cj0r017z014605713ym0"
+          }
+          data: {
+            title: "Hello World"
+          }
+        }]
+      }
+    }
+    where: {
+      id: "cjcf1cj0c017y01461c6enbfe"
+    }
+  ) {
+    id
+  }
+}
+```
+
+Upsert. Combo of insert and update, depending if it exists or not.
+
+```javascript
+mutation {
+  upsertUser(
+    where: {
+      email: "zeus@example.com"
+    }
+    create: {
+      email: "zeus@example.com"
+      age: 42
+      name: "Zeus"
+    }
+    update: {
+      name: "Another Zeus"
+    }
+  ) {
+    name
+  }
+}
+```
+
+Delete. Just by a filter.
+
+```javascript
+mutation {
+  deleteUser(where: {
+    id: "cjcdi63l20adx0146vg20j1ck"
+  }) {
+    id
+    name
+    email
+  }
+}
+```
+
+You can delete anything by filtering any field(s) marked as `@unique`
+
+#### Nested mutations
+
+Modifying nodes across relations at the same time.
+
+Options include: `create`, `update`, `upsert`, `delete`.
+
+You can also `connect` and `disconnect` relations from existing content.
+
+Executed as transaction. If something fails along the way, everything is rolled back.
+
+```javascript
+mutation {
+  createPost(data: {
+    title: "This is a draft"
+    published: false
+    author: {
+      connect: {
+        email: "zeus@example.com"
+      }
+    }
+  }) {
+    id
+    author {
+      name
+    }
+  }
+}
+```
+
+Notice the `connect` within `author`. This will find an existing author and connect to it.
+
+Alternatively can use `create` instead of `connect`. This will create and connect.
+
+Creating a user, create 2 new posts, and connect to 2 existing posts:
+
+```javascript
+mutation {
+  createUser(
+    data: {
+      email: "zeus@example.com"
+      name: "Zeus"
+      age: 42
+      posts: {
+        create: [
+          { published: true, title: "First blog post" }
+          { published: true, title: "Second blog post" }
+        ]
+        connect: [
+          { id: "cjcdi63j80adw0146z7r59bn5" }
+          { id: "cjcdi63l80ady014658ud1u02" }
+        ]
+      }
+    }
+  ) {
+    id
+    posts {
+      id
+    }
+  }
+}
+```
+
+#### Scalar list mutations
+
+Lists are usually to other types, but you can have a list of scalar:
+
+```javascript
+type User {
+  id: ID! @unique
+  scores: [Int!]!         # scalar list for integers
+  friends: [String!]!     # scalar list for strings
+  coinFlips: [Boolean!]!  # scalar list for booleans
+}
+```
+
+Uset `set` to set multiple values:
+
+```javascript
+mutation {
+  createUser(data: {
+    scores: { set: [1, 2, 3] }
+    friends: { set: ["Sarah", "Jane"] }
+    throws: { set: [false, false] }
+  }) {
+    id
+  }
+}
+```
+
+For now you can only `set`. Soon you can `push`, `pop`, and `remove`.
+https://github.com/graphcool/prisma/issues/1275
+
+## Servers
+
+There are three kinds of servers can deploy Prisma API to:
+
+1.  Local / self-hosted
+
+Uses Docker, managed through Docker CLI which governs underlying Docker images and containers for you. The containers can be hosted online in Digital Ocean, AWS, etc.
+
+1.  Prisma Cloud Sandbox
+
+Free development servers. Rate limited and storage limits apply.
+
+1.  Prisma Cloud
+
+Private server.
+
+## Prisma CLI
+
+```
+npm install -g prisma
+
+cd /path/to/project/
+prisma init
+```
+
+### Deploy
+
+Syncs changes with remote service.
+
+```
+prisma deploy
+```
+
+Dry run: `prisma deploy --dry-run` or `prisma deploy -d`
+
+Watch mode: `prisma deploy --watch` or `prisma deploy -w`
+
+On initial deploy will seed based on `prisma.yml` `seed` property. Disable with `prisma deploy --no-seed`
+
+## Bindings
+
+`prisma-binding` package provides layer to interact with Prisma from a GraphQL server. It simplifies implementing GraphQL resolvers instead of writing SQL or accessing NoSQL database API.
+
+```javascript
+const prisma = new Prisma({
+  typeDefs: 'schemas/database.graphql',
+  endpoint: 'https://api.graph.cool/simple/v1/my-prisma-service'
+  secret: 'my-super-secret-secret'
+});
+
+// Retrieve `name` of a specific user
+prisma.query.user({ where { id: 'abc' } }, '{ name }')
+
+// Retrieve `id` and `name` of all users
+prisma.query.users(null, '{ id name }')
+
+// Create new user called `Sarah` and retrieve the `id`
+prisma.mutation.createUser({ data: { name: 'Sarah' } }, '{ id }')
+
+// Update name of a specific user and retrieve the `id`
+prisma.mutation.updateUser({ where: { id: 'abc' }, data: { name: 'Sarah' } }, '{ id }')
+
+// Delete a specific user and retrieve the `name`
+prisma.mutation.deleteUser({ where: { id: 'abc' } }, '{ id }')
+```
+
+Each are translated to an HTTP request against the Prisma service (using graphql-request)
