@@ -4,80 +4,80 @@ Feel free to add more than one of these! In order;
 
 ## Release
 
-* First commit :tada:
-* New release :boom: :package:
-* Prepare new version :arrow_double_up:
-* Git tag :bookmark:
+* 👋 First commit
+* 🎉 New release
+* ⏫ Prepare new version
+* 🔖 Git tag
 
 ## Semver
 
-* New feature :sparkles:
-* Change feature (backwards compatible) :zap:
-* Breaking change :warning:
-* Deprecated :poop:
-* Removed :fire:
+* ✨ New feature
+* ⚡️ Change feature (backwards compatible)
+* ⚠️ Breaking change
+* 💥 Deprecated
+* 🔥 Removed
 
 ## Common
 
-* Bug fix :bug:
-  * Critical hotfix :ambulance:
-  * Security / vulnerability fix :lock:
-  * Memory leak :non-potable_water:
-* Style :ribbon: :lipstick:
-* Text / blog post / documentation :pencil:
+* 🐛 Bug fix
+  * 🚑 Critical hotfix
+  * 🔒 Security / vulnerability fix
+  * 🚱 Memory leak
+* 🎀 Style / CSS
+* 📄 Blog
+* ❓ Documentation
+* ✏️ Text
 
 ## Dependencies
 
-* Dependencies :electric_plug:
-  * New :heavy_plus_sign:
-  * Remove :heavy_minus_sign:
-  * Upgrade :arrow_up:
-  * Downgrade :arrow_down:
-  * Lock version :arrow_forward: :pushpin:
-  * Update lock file only :arrows_counterclockwise:
+* 🔌 Dependencies
+  * ➕ New
+  * ➖ Remove
+  * ⬆️ Upgrade
+  * ⬇️ Downgrade
+  * 📌 Lock version
+  * 🔄 Update lock file only
 
 ## Fixes & improvements
 
-* Format / structure of code :art:
-* Performance :racehorse:
-* Refactor :hammer: :recycle:
-* Fix accident :hushed:
+* 🌀 Refactor / Format / Structure of code
+* 🐎 Performance
+* 😯 Fix accident
 
 ## Dev tools
 
-* Build :construction_worker:
-* CI :green_heart:
-* Config :wrench:
-* Devops / deployment :rocket:
-* Docker :whale:
-* Logging add :bell:
-* Logging remove :no_bell:
-* Tooling :wrench:
+* 👷 Build
+* 💚 CI
+* 🚀 Devops / deployment
+* 🐳 Docker
+* 🔔 Logging add
+* 🔕 Logging remove
+* 🔧 Tooling & config
 
 ## Behind the scenes
 
-* Accessibility :eyeglasses:
-* Analytics :chart_with_upwards_trend:
-* Linting :shirt:
-* Tests :white_check_mark:
+* 👓 Accessibility
+* 📈 Analytics
+* 👕 Linting
+* ✅ Tests
 
 ## Browsers & devices
 
-* Mobile phone :iphone:
-* Linux :penguin:
-* MacOS :apple:
-* Windows :checkered_flag:
+* 📱 Mobile phone
+* 🐧 Linux
+* 🍎 MacOS
+* 🏁 Windows
 
 ## Minor
 
-* Minor / chore :zzz:
-* Experimental :pray:
-* WIP :construction:
+* 💤 Minor / chore
+* 🙏 Experimental
+* 🚧 WIP
 
 ## Sugar
 
-* API :cloud: (:electric_plug: :satellite_antenna: :speech_balloon: :left_speech_bubble: :mega: :alien:)
-* Auth :traffic_light:
-* Internationalization and localization :globe_with_meridians:
-* Redux store :floppy_disk: (:package:)
-* Revert :rewind:
+* 👽 ️API
+* 🚥 Auth
+* 🌐 Internationalization and localization
+* 💾 Redux store
+* ⏪ Revert
