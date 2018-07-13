@@ -4,80 +4,80 @@ Feel free to add more than one of these! In order;
 
 ## Release
 
-* 👋 First commit
-* 🎉 New release
-* ⏫ Prepare new version
-* 🔖 Git tag
+- 👋 First commit :wave:
+- 🎉 New release :tada:
+- ⏫ Prepare new version :arrow_double_up:
+- 🔖 Git tag :bookmark:
 
 ## Semver
 
-* ✨ New feature
-* ⚡️ Change feature (backwards compatible)
-* ⚠️ Breaking change
-* 💥 Deprecated
-* 🔥 Removed
+- ✨ New feature :sparkles:
+- ⚡️ Change feature (backwards compatible) :zap:
+- ⚠️ Breaking change :warning:
+- 💥 Deprecated :boom:
+- 🔥 Removed :fire:
 
 ## Common
 
-* 🐛 Bug fix
-  * 🚑 Critical hotfix
-  * 🔒 Security / vulnerability fix
-  * 🚱 Memory leak
-* 🎀 Style / CSS
-* 📄 Blog
-* ❓ Documentation
-* ✏️ Text
+- 🐛 Bug fix :bug:
+  - 🚑 Critical hotfix :ambulance:
+  - 🔒 Security / vulnerability fix :lock:
+  - 🚱 Memory leak :non-potable_water:
+- 🎀 Style / CSS :ribbon:
+- 📄 Blog :page_facing_up:
+- ❓ Documentation :question:
+- ✏️ Text :pencil2:
 
 ## Dependencies
 
-* 🔌 Dependencies
-  * ➕ New
-  * ➖ Remove
-  * ⬆️ Upgrade
-  * ⬇️ Downgrade
-  * 📌 Lock version
-  * 🔄 Update lock file only
+- 🔌 Dependencies :electric_plug:
+  - ➕ New :heavy_plus_sign:
+  - ➖ Remove :heavy_minus_sign:
+  - ⬆️ Upgrade :arrow_up:
+  - ⬇️ Downgrade :arrow_down:
+  - 📌 Lock version :pushpin:
+  - 🔄 Update lock file only :arrows_counterclockwise:
 
 ## Fixes & improvements
 
-* 🌀 Refactor / Format / Structure of code
-* 🐎 Performance
-* 😯 Fix accident
+- 🌀 Refactor / Format / Structure of code :cyclone:
+- 🐎 Performance :racehorse:
+- 😯 Fix accident :hushed:
 
 ## Dev tools
 
-* 👷 Build
-* 💚 CI
-* 🚀 Devops / deployment
-* 🐳 Docker
-* 🔔 Logging add
-* 🔕 Logging remove
-* 🔧 Tooling & config
+- 👷 Build :construction_worker:
+- 💚 CI :green_heart:
+- 🚀 Devops / deployment :rocket:
+- 🐳 Docker :whale:
+- 🔔 Logging add :bell:
+- 🔕 Logging remove :no_bell:
+- 🔧 Tooling & config :wrench:
 
 ## Behind the scenes
 
-* 👓 Accessibility
-* 📈 Analytics
-* 👕 Linting
-* ✅ Tests
+- 👓 Accessibility :eyeglasses:
+- 📈 Analytics :chart_with_upwards_trend:
+- 👕 Linting :tshirt:
+- ✅ Tests :white_check_mark:
 
 ## Browsers & devices
 
-* 📱 Mobile phone
-* 🐧 Linux
-* 🍎 MacOS
-* 🏁 Windows
+- 📱 Mobile phone :iphone:
+- 🐧 Linux :penguin:
+- 🍎 MacOS :apple:
+- 🏁 Windows :checkered_flag:
 
 ## Minor
 
-* 💤 Minor / chore
-* 🙏 Experimental
-* 🚧 WIP
+- 💤 Minor / chore :zzz:
+- 🙏 Experimental :pray:
+- 🚧 WIP :construction:
 
 ## Sugar
 
-* 👽 ️API
-* 🚥 Auth
-* 🌐 Internationalization and localization
-* 💾 Redux store
-* ⏪ Revert
+- 👽 ️API :alien:
+- 🚥 Auth :traffic_light:
+- 🌐 Internationalization and localization :globe_with_meridians:
+- 💾 Redux store :floppy_disk:
+- ⏪ Revert :rewind:
