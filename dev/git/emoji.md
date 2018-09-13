@@ -25,7 +25,7 @@ Feel free to add more than one of these! In order;
   - 🚱 Memory leak :non-potable_water:
 - 🎀 Style / CSS :ribbon:
 - 📄 Blog :page_facing_up:
-- ❓ Documentation :question:
+- 📖 Documentation :book:
 - ✏️ Text :pencil2:
 
 ## Dependencies
