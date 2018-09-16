@@ -112,7 +112,9 @@ brew install python
 brew install imagemagick
 ```
 
-## Global .gitignore
+## Git advanced
+
+### Global .gitignore
 
 ```bash
 git config --global core.excludesfile ~/.gitignore_global
@@ -152,6 +154,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 ```
+
+### Commit verification
+
+https://help.github.com/articles/managing-commit-signature-verification/
 
 ## Terminal setup
 
