@@ -1,14 +1,10 @@
-Machine hello
-=============
+# Machine hello
 
 First step: download Xcode via App Store. It takes forever!
 
-When complete, open and accept the T&Cs. 
+When complete, open and accept the T&Cs.
 
-
-
-Faster keyboard
-===============
+## Faster keyboard
 
 ```bash
 # Repeat key when key is held down
@@ -21,28 +17,24 @@ defaults write -g KeyRepeat -int 2
 
 Logout / login for settings to take effect
 
-
-
-Finder
-======
+## Finder
 
 - Open Finder
 - View
-    - Customize toolbar
-        - Add in 'Path'
+  - Customize toolbar
+    - Add in 'Path'
 - Preferences
-    - General
-        - New Finder window shows: 
-    - Sidebar
-        - Remove crud, including;
-            - All my files
-            - iCloud Drive
-            - Tags
-    - Advanced
-        - Tick 'Show all filename extensions'
+  - General
+    - New Finder window shows:
+  - Sidebar
+    - Remove crud, including;
+      - All my files
+      - iCloud Drive
+      - Tags
+  - Advanced
+    - Tick 'Show all filename extensions'
 
-Hidden files
-------------
+### Hidden files
 
 In terminal;
 
@@ -50,10 +42,7 @@ In terminal;
 
 Hold alt (⌥), right click Finder in dock, Relaunch
 
-
-
-Commands
-========
+## Commands
 
 ```bash
 ### SSH key ###
@@ -73,7 +62,7 @@ sudo ln -s ~/Code /var/www
 
 # Enter password
 
-mkdir /var/www/personal
+mkdir /var/www/iamturns
 mkdir /var/www/play
 mkdir /var/www/vendor
 mkdir /var/www/@@COMPANY_NAME@@
@@ -123,41 +112,68 @@ brew install python
 brew install imagemagick
 ```
 
+## Global .gitignore
+
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+vim ~/.gitignore_global
+```
+
+Contents:
+
+```text
+# https://raw.githubusercontent.com/github/gitignore/master/Global/macOS.gitignore
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
 
 
-Terminal setup
-==============
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+```
+
+## Terminal setup
 
 Refer to my ['terminal-setup'](https://github.com/iamturns/terminal-setup) repo.
 
-
-
-Apps
-====
+## Apps
 
 See [`apps.md`](./apps.md).
 
-
-
-Dock
-====
+## Dock
 
 - Finder
 - Chrome
-- Calendar
 - iTerm
 - IDE
-- TimeDoser
-- Workflowy
 - Activity Monitor
-    - With 'Show CPU history'
+  - With 'Show CPU history'
 - Slack
 - Franz
+- Spotify
 
-
-
-IE virtualization
-=================
+## IE virtualization
 
 http://modern.ie/
 
@@ -167,10 +183,7 @@ Devices > Install Guest Additions
 
 Take a snapshot in Virtualbox
 
-
-
-Hide .DS_Store from desktop
-===========================
+## Hide .DS_Store from desktop
 
 - Press Shift-Command-Control-4, and drag out a square over any area. Release the mouse when done, and the area is now on your clipboard.
 - Open Preview and press Command-N to open a window with your capture.
