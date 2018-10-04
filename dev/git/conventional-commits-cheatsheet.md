@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org/) spec.
 aka [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
 
 ```text
-<fix|feat|build|ci|chore|docs|perf|refactor|feature|revert|style|test>[(optional scope)]: <description, imperative, present tense, lowercase, no dot at end>
+<fix|feat|build|ci|chore|docs|perf|refactor|revert|style|test>[(optional scope)]: <description, imperative, present tense, lowercase, no dot at end>
 
 [
   Optional body section.
