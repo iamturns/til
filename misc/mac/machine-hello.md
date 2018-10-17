@@ -80,7 +80,11 @@ git config --global user.email "matt@iamturns.com"
 ### Node ###
 
 brew install node
-brew install yarn
+
+# Install NVM: https://github.com/creationix/nvm
+
+nvm install node
+nvm install --lts
 
 ### Ruby ###
 
