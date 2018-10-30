@@ -205,3 +205,7 @@ Take a snapshot in Virtualbox
 - Press Command-C to copy this empty grey square to clipboard.
 - Select ".DS_Store" and Command-I to get info.
 - Select the icon in the top-left and Command-V to replace with transparency from clipboard.
+
+## Zoom scroll
+
+- Acessibility > Enable scroll with "Control" modifier
