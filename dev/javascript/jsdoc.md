@@ -14,11 +14,11 @@
  * const canYouUseMultipleExampleTags = true;
  *
  * @param {type} paramName
- * @param {type} paramName - With an optional description.
+ * @param {type} paramName - With an optional description (and a leading dash).
  * Parameter description can support multiple lines.
  * Supports <strong>HTML</strong>, _markdown (with plugin)_, and {@link Identifier}.
  * @param {type} [paramName] - this parameter is optional
- * @param {type} [paramName=Default Value]
+ * @param {type} [paramName="Default Value"]
  * @param {(type1|type2)} paramName
  * @param {type[]} paramName - an array containing `type`s
  * @param {Array.<type>} paramName - same as above
@@ -32,6 +32,8 @@
  * @param {Object[]} paramName - An array of objects with params
  * @param {type} paramName[].prop1 - Optional description
  * @param {type} paramName[].prop2 - Optional description
+ *
+ * @return {type} With an optional description (and no leading dash)
  */
 function example(paramName) {}
 
