@@ -85,6 +85,8 @@ brew install node
 
 nvm install node
 nvm install --lts
+nvm alias default 10.12.0
+nvm use default
 
 ### Ruby ###
 
