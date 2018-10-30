@@ -116,6 +116,8 @@ brew install python
 ### Misc ###
 
 brew install imagemagick
+
+ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/smerge
 ```
 
 ## Git advanced
