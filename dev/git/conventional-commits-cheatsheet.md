@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org/) spec.
 aka [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
 
 ```text
-<fix|feat|build|ci|chore|docs|perf|refactor|revert|style|test>[(optional scope)]: <description, imperative, present tense, lowercase, no dot at end>
+<type=feat|fix|perf|build|ci|chore|docs|refactor|revert|style|test>[(optional scope)]: <description, imperative, present tense, lowercase, no dot at end>
 
 [
   Optional body section.
@@ -26,20 +26,27 @@ aka [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/
 ]
 ```
 
-## Standard types
+## Main types
 
+- feat
+  - :sparkles:
+  - Feature
+  - Change log entry
+  - Minor semantic version (aka feature release)
 - fix
   - :bug:
   - Bug fix
-  - Correlates with PATCH in semantic versioning
-- feat
-  - :sparkles:
-  - New feature
-  - Correlates with MINOR in semantic versioning
+  - Change log entry
+  - Patch semantic version
+- perf
+  - :racehorse:
+  - Performance
+  - Change log entry
+  - Patch semantic version
 
-## Additional types
+### Additional types
 
-These do not affect semantic versioning.
+Other types are up to your discretion. Below are some suggestions.
 
 - build
   - :construction_worker:
@@ -51,8 +58,6 @@ These do not affect semantic versioning.
   - Maintenance
 - docs
   - :book:
-- perf
-  - :racehorse:
 - refactor
   - :cyclone:
   - Code change that neither fixes a bug nor adds a feature
@@ -67,16 +72,8 @@ These do not affect semantic versioning.
 - test
   - :white_check_mark:
 
-## Semantic versioning
+## Relationship with change log and semantic version
 
-### Major
-
-The text "BREAKING CHANGE: " exists at beginning of optional body or footer text.
-
-### Minor
-
-Type: feat
-
-### Patch
-
-Type: fix
+- `BREAKING CHANGE:` = entry in change log (for _all_ types), and _major_ semantic version (breaking release)
+- `feat` = entry in change log, and _minor_ semantic version (feature release)
+- `fix` and `perf` = entry in change log, and _patch_ semantic version
