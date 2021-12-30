@@ -40,8 +40,9 @@ Feel free to add more than one of these! In order;
 
 ## Fixes & improvements
 
-- 🌀 Refactor / Format / Structure of code :cyclone:
+- 🎨 Refactor / Format / Structure of code :art:
 - 🐎 Performance :racehorse:
+- 🚚 Moving / renaming files :truck:
 - 😯 Fix accident :hushed:
 
 ## Dev tools
@@ -50,13 +51,13 @@ Feel free to add more than one of these! In order;
 - 💚 CI :green_heart:
 - 🚀 Devops / deployment :rocket:
 - 🐳 Docker :whale:
-- 🔔 Logging add :bell:
-- 🔕 Logging remove :no_bell:
+- 🔊 Logging add :loud_sound:
+- 🔇 Logging remove :mute:
 - 🔧 Tooling & config :wrench:
 
 ## Behind the scenes
 
-- 👓 Accessibility :eyeglasses:
+- 👓 Accessibility / usability :eyeglasses:
 - 📈 Analytics :chart_with_upwards_trend:
 - 👕 Linting :tshirt:
 - ✅ Tests :white_check_mark:
@@ -71,13 +72,21 @@ Feel free to add more than one of these! In order;
 ## Minor
 
 - 💤 Minor / chore :zzz:
-- 🙏 Experimental :pray:
+- ⚗ Experimental :alembic:
 - 🚧 WIP :construction:
 
 ## Sugar
 
 - 👽 ️API :alien:
+- 🏗 Architecture :building_construction:
+- 🍱 Assets :bento:
 - 🚥 Auth :traffic_light:
+- 👥 Contributors :busts_in_silhouette:
+- 🗃 Database :card_file_box:
+- 🙈 Ignore files :see_no_evil:
 - 🌐 Internationalization and localization :globe_with_meridians:
 - 💾 Redux store :floppy_disk:
 - ⏪ Revert :rewind:
+- 🔍 SEO :mag:
+- 📸 Snapshots :camera_flash:
+- 🏷️ Types :label:
